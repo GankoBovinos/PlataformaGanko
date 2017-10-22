@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="ganko.movil.ganko1.ui.login.LoginActivity">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background_login" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:stretchColumns="*">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:src="@drawable/logo_ganko"
+                android:layout_marginTop="@dimen/medium"
+                />
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/small"
+                    android:gravity="center_vertical"
+                    >
+
+                    <ImageView
+                        android:layout_width="@dimen/icon"
+                        android:layout_height="@dimen/icon"
+                        android:src="@drawable/ic_user" />
+
+                   <EditText
+                       android:id="@+id/username"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:background="@drawable/input"
+                       android:hint="@string/username"
+                       android:inputType="text"
+                       />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/small"
+                    android:gravity="center_vertical"
+                    >
+
+                    <ImageView
+                        android:layout_width="@dimen/icon"
+                        android:layout_height="@dimen/icon"
+                        android:src="@drawable/ic_pass"
+                        />
+
+                    <EditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        />
+
+                </TableRow>
+
+                    <TextView
+                        android:id="@+id/olvido_pass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/remember_pass"
+                        android:autoLink="all"
+                        android:gravity="center"
+                        android:textColor="#140669"
+                        android:layout_marginTop="30dp"
+                        />
+
+            </LinearLayout>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnlogin"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                app:fabSize="normal"
+                app:backgroundTint="@color/colorPrimary"
+                android:src="@drawable/ic_login"
+                />
+
+        </TableLayout>
+
+    </FrameLayout>
+</layout>
+

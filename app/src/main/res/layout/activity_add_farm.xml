@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="ganko.movil.ganko1.ui.AddFarm.AddFarm">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/big"
+                android:padding="@dimen/less_small"
+                >
+
+                <EditText
+                    android:id="@+id/farm_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="@string/farm_name"
+                    android:inputType="text"
+                    />
+
+                <EditText
+                    android:id="@+id/farm_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="@string/farm_location"
+                    android:inputType="text"
+                    android:layout_marginTop="@dimen/small"
+                    />
+
+                <EditText
+                    android:id="@+id/farm_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="Hectáreas"
+                    android:inputType="text"
+                    android:layout_marginTop="@dimen/small"
+                    />
+
+            </LinearLayout>
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/big"
+                android:onClick="confirm"
+                android:src="@drawable/ic_confirm"
+                app:backgroundTint="@color/colorPrimary"
+                app:fabSize="normal" />
+
+    </LinearLayout>
+</layout>
+

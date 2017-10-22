@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="icon">24dp</dimen>
+    <dimen name="small">10dp</dimen>
+    <dimen name="medium">30dp</dimen>
+    <dimen name="subtitle">25sp</dimen>
+    <dimen name="text_size">20sp</dimen>
+    <dimen name="big">60dp</dimen>
+    <dimen name="actionBarSize">50dp</dimen>
+    <dimen name="less_small">15dp</dimen>
+</resources>
