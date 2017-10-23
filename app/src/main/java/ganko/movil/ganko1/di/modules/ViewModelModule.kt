@@ -33,8 +33,8 @@ abstract class ViewModelModule{
     abstract fun bindMainViewModel(viewModel: MainViewModel): ViewModel
 
 
-//    @Binds
-//    @IntoMap
-//    @ViewModelKey(LoginViewModel::class)
-//    abstract fun bindLoginViewModel(viewModel: LoginViewModel): ViewModel
+    @Binds
+    @IntoMap
+    @ViewModelKey(LoginViewModel::class)
+    abstract fun bindLoginViewModel(viewModel: LoginViewModel): ViewModel
 }

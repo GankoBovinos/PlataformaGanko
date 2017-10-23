@@ -12,8 +12,9 @@ import ganko.movil.ganko1.databinding.ActivityMainBinding
 
 import ganko.movil.ganko1.di.Injectable
 import ganko.movil.ganko1.utils.buildViewModel
-import io.reactivex.rxkotlin.subscribeBy
+import ganko.movil.ganko1.utils.subscribeByShot
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.toast
 import javax.inject.Inject
 
 
@@ -32,15 +33,16 @@ class MainActivity : AppCompatActivity(), Injectable {
         recycler.adapter = adapter
 
         mainViewModel.getAll()
-                .subscribeBy(
+                .subscribeByShot(
                         onNext = {
                             adapter.fincas = it
                             if(adapter.fincas.isEmpty()){
-                                msgVacio.text = "No hay fincas registradas"
+                                msgVacio.text = getString(R.string.zero_farms)
                                 msgVacio.visibility = View.VISIBLE
                             }
-
-                        }
+                        },
+                        onHttpError = this::toast,
+                        onError = {toast(it.message!!)}
                 )
     }
 }

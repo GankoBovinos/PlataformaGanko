@@ -7,6 +7,7 @@ import dagger.Module
 import dagger.Provides
 import ganko.movil.ganko1.R
 import ganko.movil.ganko1.net.FincaClient
+import ganko.movil.ganko1.net.LoginClient
 import io.reactivex.schedulers.Schedulers
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -22,7 +23,7 @@ class NetModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(gson: Gson, context: Context): Retrofit = Retrofit.
+    fun provideRetrofit(context: Context): Retrofit = Retrofit.
             Builder()
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder()
                     .setDateFormat("dd/MM/yyyy")
@@ -36,5 +37,10 @@ class NetModule {
     @Singleton
     fun provideFincaClient(retrofit: Retrofit): FincaClient =
             retrofit.create(FincaClient::class.java)
+
+    @Provides
+    @Singleton
+    fun provideLoginClient(retrofit: Retrofit): LoginClient =
+            retrofit.create(LoginClient::class.java)
 
 }

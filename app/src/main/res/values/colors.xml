@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#29702c</color>
     <color name="colorAccent">#F3F1BD</color>
     <color name="et_transparent">#0fff</color>
+
+    //Loader
+    <color name="btn_disabled">#6629702c</color>
 </resources>

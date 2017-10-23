@@ -6,7 +6,10 @@
     >
 
     <data>
-
+        <import type="android.view.View"/>
+        <variable
+            name="loader"
+            type="ganko.movil.ganko1.utils.Loader"/>
     </data>
 
     <FrameLayout
@@ -36,7 +39,7 @@
 
             <LinearLayout
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -90,26 +93,44 @@
                         android:id="@+id/olvido_pass"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/remember_pass"
+                        android:text='@{loader.loading.get() ? @string/loading : @string/remember_pass }'
                         android:autoLink="all"
                         android:gravity="center"
                         android:textColor="#140669"
                         android:layout_marginTop="30dp"
+                        tools:text="Cargando"
                         />
 
             </LinearLayout>
 
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/btnlogin"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.1"
-                app:fabSize="normal"
-                app:backgroundTint="@color/colorPrimary"
-                android:src="@drawable/ic_login"
-                />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/btnlogin"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginBottom="@dimen/medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fabSize="normal"
+                    app:backgroundTint="@color/colorPrimary"
+                    android:src="@drawable/ic_login"
+                    app:enabled="@{!loader.loading.get()}"
+                    android:visibility='@{loader.loading.get() ? View.INVISIBLE : View.VISIBLE }'
+                    />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginBottom="@dimen/medium"
+                    android:progressTint="@color/colorPrimary"
+                    android:visibility='@{loader.loading.get() ? View.VISIBLE : View.INVISIBLE}' />
+            </FrameLayout>
 
         </TableLayout>
 

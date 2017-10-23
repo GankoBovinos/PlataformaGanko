@@ -95,3 +95,4 @@ fun <T> Observable<T>.subscribeByShot(onNext: (T) -> Unit, onHttpError: (resStri
             }
         }
                 .subscribe(onNext, {})
+
