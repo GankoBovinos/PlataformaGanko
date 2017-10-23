@@ -4,6 +4,7 @@ import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.LifecycleObserver
 import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.OnLifecycleEvent
+import ganko.movil.ganko1.data.models.LoginResponse
 import ganko.movil.ganko1.net.ResponseData
 import io.reactivex.Flowable
 import io.reactivex.Observable
@@ -48,5 +49,6 @@ fun <T> Observable<T>.applySchedulers(): Observable<T> {
 
 fun <T> validateResponse(res: ResponseData<T>) = Observable.create<T> {
     if (res.success) it.onNext(res.data)
-    else Throwable(res.err)
+    else throw Throwable(res.err)
 }
+

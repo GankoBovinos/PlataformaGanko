@@ -13,9 +13,6 @@ import retrofit2.http.POST
  */
 interface FincaClient {
 
-//    @POST("users/login")
-//    fun login(@Body userLogin: UserLogin): Observable<ResponseData<List<>>>
-
     @GET("get-fincas/")
     fun getAllFincas(@Header("Authorization") token:String): Observable<ResponseData<List<Finca>>>
 

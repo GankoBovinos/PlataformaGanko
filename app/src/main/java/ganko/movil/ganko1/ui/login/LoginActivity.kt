@@ -23,24 +23,24 @@ import javax.inject.Inject
 
 class LoginActivity : AppCompatActivity() {
 
-//    @Inject
-//    lateinit var factory:ViewModelProvider.Factory
+    @Inject
+    lateinit var factory:ViewModelProvider.Factory
     lateinit var binding: ActivityLoginBinding
-//    lateinit var viewModel: LoginViewModel
-//    val dis: LifeDisposable = LifeDisposable(this)
+    lateinit var viewModel: LoginViewModel
+    val dis: LifeDisposable = LifeDisposable(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
-//        viewModel = ViewModelProviders.of(this,factory).get(LoginViewModel::class.java)
-        btnlogin.setOnClickListener { startActivity<MainActivity>() }
+        viewModel = ViewModelProviders.of(this,factory).get(LoginViewModel::class.java)
+//        btnlogin.setOnClickListener { startActivity<MainActivity>() }
 
     }
 
-//    override fun onResume() {
-//        super.onResume()
+    override fun onResume() {
+        super.onResume()
 //        dis add btnlogin.clicks()
 //                .flatMap { viewModel.Login(UserLogin(username = username.text(),password = password.text())) }
-//                .flatMap {  }
-//    }
+//                .(startActivity<MainActivity>())
+    }
 }
