@@ -7,4 +7,10 @@
     <string name="txt_remember_pass">Por favor ingrese su correo electrónico, al cual se le enviará una contraseña temporal que podrá cambiar más adelante en sus configuraciones.</string>
     <string name="farm_name">Nombre</string>
     <string name="farm_location">Ubicación</string>
+
+    //Extensiones
+    <string name="socket">El servidor no responde</string>
+    <string name="http_404">Recurso no encontrado</string>
+    <string name="http_401">Accion no autorizada</string>
+    <string name="http_500">Error en el servidor</string>
 </resources>
