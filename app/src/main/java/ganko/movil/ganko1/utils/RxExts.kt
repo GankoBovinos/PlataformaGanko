@@ -50,3 +50,4 @@ fun <T> validateResponse(res: ResponseData<T>) = Observable.create<T> {
     if (res.success) it.onNext(res.data)
     else Throwable(res.err)
 }
+

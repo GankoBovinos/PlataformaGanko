@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(), Injectable {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.recycler.adapter = adapter
+        recycler.adapter = adapter
 
         mainViewModel.getAll()
                 .subscribeBy(
