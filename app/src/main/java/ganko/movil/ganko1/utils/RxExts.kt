@@ -54,6 +54,9 @@ fun <T> validateResponse(res: ResponseData<T>) = Observable.create<T> {
     else Throwable(res.err)
 }
 
+
+ //Extension para usar unicamente en subjects y como respuesta a acciones del usuario
+
 fun <T> Observable<T>.subscribeByAction(onNext: (T) -> Unit, onHttpError: (resString: Int) -> Unit,
                                         onError: ((error: Throwable) -> Unit)? = null): Disposable =
 
@@ -72,6 +75,8 @@ fun <T> Observable<T>.subscribeByAction(onNext: (T) -> Unit, onHttpError: (resSt
         }
                 .retry()
                 .subscribe(onNext, {})
+
+//Extension para validar errores con observables
 
 fun <T> Observable<T>.subscribeByShot(onNext: (T) -> Unit, onHttpError: (resString: Int) -> Unit,
                                         onError: ((error: Throwable) -> Unit)? = null): Disposable =
