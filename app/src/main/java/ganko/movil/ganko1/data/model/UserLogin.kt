@@ -1,4 +1,4 @@
-package ganko.movil.ganko1.data.models
+package ganko.movil.ganko1.data.model
 
 /**
  * Created by Cristian on 21/10/2017.

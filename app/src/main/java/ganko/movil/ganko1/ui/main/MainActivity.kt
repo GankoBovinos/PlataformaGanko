@@ -8,7 +8,6 @@ import android.view.View
 
 import ganko.movil.ganko1.R
 import ganko.movil.ganko1.ui.adapters.FincaAdapter
-import ganko.movil.ganko1.data.models.Finca
 import ganko.movil.ganko1.databinding.ActivityMainBinding
 
 import ganko.movil.ganko1.di.Injectable
@@ -30,7 +29,7 @@ class MainActivity : AppCompatActivity(), Injectable {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.recycler.adapter = adapter
+        recycler.adapter = adapter
 
         mainViewModel.getAll()
                 .subscribeBy(

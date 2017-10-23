@@ -19,24 +19,22 @@ import javax.inject.Singleton
 @Module
 class NetModule {
 
-    @Provides
-    @Singleton
-    fun provideGson(): Gson = GsonBuilder()
-            .setDateFormat("dd/MM/yyyy")
-            .create()
 
     @Provides
     @Singleton
     fun provideRetrofit(gson: Gson, context: Context): Retrofit = Retrofit.
             Builder()
-            .addConverterFactory(GsonConverterFactory.create(gson))
+            .addConverterFactory(GsonConverterFactory.create(GsonBuilder()
+                    .setDateFormat("dd/MM/yyyy")
+                    .create()
+            ))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
             .baseUrl("http://192.168.1.78:3000/users/")
             .build()
 
     @Provides
     @Singleton
-    fun provideFincaClient(retrofit: Retrofit) : FincaClient =
+    fun provideFincaClient(retrofit: Retrofit): FincaClient =
             retrofit.create(FincaClient::class.java)
 
 }

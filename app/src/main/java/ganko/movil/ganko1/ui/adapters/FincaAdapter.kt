@@ -5,7 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import ganko.movil.ganko1.R
-import ganko.movil.ganko1.data.models.Finca
+import ganko.movil.ganko1.data.model.Finca
 import ganko.movil.ganko1.databinding.TemplateFincaBinding
 import ganko.movil.ganko1.di.ActivityScope
 import ganko.movil.ganko1.utils.inflate

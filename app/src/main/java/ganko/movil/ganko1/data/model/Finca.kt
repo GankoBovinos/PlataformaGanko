@@ -1,4 +1,4 @@
-package ganko.movil.ganko1.data.models
+package ganko.movil.ganko1.data.model
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey

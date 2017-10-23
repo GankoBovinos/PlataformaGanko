@@ -2,8 +2,8 @@ package ganko.movil.ganko1.data
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
-import ganko.movil.ganko1.data.daos.FincaDao
-import ganko.movil.ganko1.data.models.Finca
+import ganko.movil.ganko1.data.dao.FincaDao
+import ganko.movil.ganko1.data.model.Finca
 
 /**
  * Created by Ana Marin on 18/10/2017.

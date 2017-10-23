@@ -6,7 +6,7 @@
     <data>
         <variable
             name="finca"
-            type="ganko.movil.ganko1.data.models.Finca"/>
+            type="ganko.movil.ganko1.data.model.Finca"/>
         <variable
             name="clickFinca"
             type="io.reactivex.subjects.PublishSubject"/>

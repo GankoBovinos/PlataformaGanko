@@ -1,8 +1,7 @@
 package ganko.movil.ganko1.net
 
-import ganko.movil.ganko1.data.models.Finca
-import ganko.movil.ganko1.data.models.LoginResponse
-import ganko.movil.ganko1.data.models.UserLogin
+import ganko.movil.ganko1.data.model.LoginResponse
+import ganko.movil.ganko1.data.model.UserLogin
 import io.reactivex.Observable
 import retrofit2.http.Body
 import retrofit2.http.POST

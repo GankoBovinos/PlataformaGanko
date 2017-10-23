@@ -1,13 +1,11 @@
 package ganko.movil.ganko1.ui.main
 
 import android.arch.lifecycle.ViewModel
-import ganko.movil.ganko1.data.models.Finca
+import ganko.movil.ganko1.data.model.Finca
 import ganko.movil.ganko1.net.FincaClient
 import ganko.movil.ganko1.utils.applySchedulers
 import ganko.movil.ganko1.utils.validateResponse
-import io.reactivex.Flowable
 import io.reactivex.Observable
-import io.reactivex.Single
 import javax.inject.Inject
 
 /**

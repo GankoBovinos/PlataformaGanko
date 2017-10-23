@@ -3,10 +3,11 @@ package ganko.movil.ganko1.di.modules
 import android.app.Application
 import android.arch.persistence.room.Room
 import android.content.Context
+import android.content.SharedPreferences
 import dagger.Module
 import dagger.Provides
 import ganko.movil.ganko1.data.AppDatabase
-import ganko.movil.ganko1.data.daos.FincaDao
+import ganko.movil.ganko1.data.dao.FincaDao
 import javax.inject.Singleton
 
 /**
@@ -29,5 +30,10 @@ class AppModule{
     @Provides
     fun providesFincaDao(appDatabase: AppDatabase): FincaDao =
             appDatabase.fincaDao()
+
+    @Singleton
+    @Provides
+    fun providesPreferences(application: Application):SharedPreferences =
+            application.getSharedPreferences("ganko", 0)
 
 }

@@ -1,7 +1,7 @@
-package ganko.movil.ganko1.data.daos
+package ganko.movil.ganko1.data.dao
 
 import android.arch.persistence.room.*
-import ganko.movil.ganko1.data.models.Finca
+import ganko.movil.ganko1.data.model.Finca
 import io.reactivex.Flowable
 
 /**
