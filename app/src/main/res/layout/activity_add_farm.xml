@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="ganko.movil.ganko1.ui.AddFarm.AddFarm">
+        tools:context=".ui.farm.add.AddFarm">
 
             <LinearLayout
                 android:layout_width="match_parent"

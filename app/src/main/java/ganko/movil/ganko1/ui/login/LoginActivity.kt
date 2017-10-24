@@ -10,7 +10,6 @@ import ganko.movil.ganko1.databinding.ActivityLoginBinding
 import ganko.movil.ganko1.R
 import ganko.movil.ganko1.data.model.UserLogin
 import ganko.movil.ganko1.di.Injectable
-import ganko.movil.ganko1.ui.main.MainActivity
 import ganko.movil.ganko1.utils.LifeDisposable
 import ganko.movil.ganko1.utils.Loader
 import ganko.movil.ganko1.utils.subscribeByAction

@@ -1,4 +1,4 @@
-package ganko.movil.ganko1.ui.AddFarm
+package ganko.movil.ganko1.ui.farm.add
 
 import android.content.Intent
 import android.databinding.DataBindingUtil
@@ -8,7 +8,7 @@ import android.view.View
 
 import ganko.movil.ganko1.R
 import ganko.movil.ganko1.databinding.ActivityAddFarmBinding
-import ganko.movil.ganko1.ui.main.MainActivity
+import ganko.movil.ganko1.ui.farm.MainActivity
 
 class AddFarmActivity : AppCompatActivity() {
 

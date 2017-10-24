@@ -2,10 +2,10 @@ package ganko.movil.ganko1.di
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import ganko.movil.ganko1.ui.AddFarm.AddFarmActivity
+import ganko.movil.ganko1.ui.farm.add.AddFarmActivity
 import ganko.movil.ganko1.ui.login.LoginActivity
-import ganko.movil.ganko1.ui.main.MainActivity
-import ganko.movil.ganko1.ui.password.PasswordActivity
+import ganko.movil.ganko1.ui.farm.MainActivity
+import ganko.movil.ganko1.ui.login.password.PasswordActivity
 import javax.inject.Scope
 
 /**

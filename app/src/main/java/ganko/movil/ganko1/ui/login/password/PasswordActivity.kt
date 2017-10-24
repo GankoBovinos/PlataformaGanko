@@ -1,4 +1,4 @@
-package ganko.movil.ganko1.ui.password
+package ganko.movil.ganko1.ui.login.password
 
 import android.content.Intent
 import android.databinding.DataBindingUtil

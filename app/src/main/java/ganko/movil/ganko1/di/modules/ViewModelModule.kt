@@ -8,7 +8,7 @@ import ganko.movil.ganko1.utils.AppViewModelFactory
 import android.arch.lifecycle.ViewModel
 import dagger.multibindings.IntoMap
 import ganko.movil.ganko1.ui.login.LoginViewModel
-import ganko.movil.ganko1.ui.main.MainViewModel
+import ganko.movil.ganko1.ui.farm.MainViewModel
 import kotlin.reflect.KClass
 
 /**

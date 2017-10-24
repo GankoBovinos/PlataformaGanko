@@ -1,4 +1,4 @@
-package ganko.movil.ganko1.ui.main
+package ganko.movil.ganko1.ui.farm
 
 import android.arch.lifecycle.ViewModel
 import ganko.movil.ganko1.data.model.Finca
