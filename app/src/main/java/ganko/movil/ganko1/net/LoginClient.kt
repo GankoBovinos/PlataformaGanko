@@ -11,6 +11,6 @@ import retrofit2.http.POST
  */
 interface LoginClient {
 
-    @POST("users/login")
+    @POST("user/login")
     fun login(@Body userLogin: UserLogin): Observable<ResponseData<LoginResponse>>
 }

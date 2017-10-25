@@ -39,6 +39,7 @@ fun SharedPreferences.save(vararg data:Pair<String, Any>){
 fun AppCompatActivity.validateForm(message: Int,
                                    vararg fields: String) : Observable<List<String>>
         = Observable.create<List<String>>{
-    if(fields.contains("")) toast(message) else it.onNext(fields.toList())
+    if(fields.contains("")) toast(message)
+    else it.onNext(fields.toList())
     it.onComplete()
 }
