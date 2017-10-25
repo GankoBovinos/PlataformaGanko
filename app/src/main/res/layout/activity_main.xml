@@ -5,26 +5,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="ganko.movil.ganko1.ui.farm.MainActivity">
 
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="loader"
+            type="ganko.movil.ganko1.utils.Loader"/>
+    </data>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#22dddddd">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler"
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:listitem="@layout/template_finca"
-            app:layoutManager="android.support.v7.widget.StaggeredGridLayoutManager"
-            app:spanCount="2"/>
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/template_finca"
+                app:layoutManager="android.support.v7.widget.StaggeredGridLayoutManager"
+                app:spanCount="2" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+
 
         <TextView
             android:id="@+id/msgVacio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="No hay fincas registradas"
-            android:visibility="invisible"
+            android:text="@string/zero_farms"
+            android:visibility="gone"
             android:layout_gravity="center" />
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility='@{loader.loading.get() ? View.VISIBLE : View.GONE }'
+            tools:visibility="gone"/>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fabAdd"

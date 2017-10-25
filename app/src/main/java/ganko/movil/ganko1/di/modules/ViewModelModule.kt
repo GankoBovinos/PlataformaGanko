@@ -9,6 +9,7 @@ import android.arch.lifecycle.ViewModel
 import dagger.multibindings.IntoMap
 import ganko.movil.ganko1.ui.login.LoginViewModel
 import ganko.movil.ganko1.ui.farm.MainViewModel
+import ganko.movil.ganko1.ui.farm.add.AddFarmViewModel
 import kotlin.reflect.KClass
 
 /**
@@ -37,4 +38,9 @@ abstract class ViewModelModule{
     @IntoMap
     @ViewModelKey(LoginViewModel::class)
     abstract fun bindLoginViewModel(viewModel: LoginViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(AddFarmViewModel::class)
+    abstract fun bindAddFarmViewModel(viewModel: AddFarmViewModel): ViewModel
 }

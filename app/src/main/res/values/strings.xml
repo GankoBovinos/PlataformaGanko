@@ -30,4 +30,6 @@
     <string name="mother_id">ID Madre</string>
     <string name="add_bovine_photo">add bovine photo</string>
     <string name="save">Guardar</string>
+    <string name="required">Campos requeridos</string>
+    <string name="farm_size">Hectáreas</string>
 </resources>

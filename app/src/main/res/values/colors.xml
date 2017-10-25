@@ -7,4 +7,5 @@
 
     //Loader
     <color name="btn_disabled">#6629702c</color>
+    <color name="light_grey_card">#eff2f7</color>
 </resources>
