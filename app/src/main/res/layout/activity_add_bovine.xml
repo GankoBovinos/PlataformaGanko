@@ -1,9 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context="ganko.movil.ganko1.ui.inventory.add.AddBovineActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/small">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/bovine_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="@string/number"
+                    android:inputType="number"
+                    android:layout_marginTop="@dimen/medium" />
+
+                <EditText
+                    android:id="@+id/bovine_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="@string/farm_name"
+                    android:inputType="text"
+                    android:layout_marginTop="@dimen/small" />
+
+                <EditText
+                    android:id="@+id/bovine_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="@string/sex"
+                    android:inputType="text"
+                    android:layout_marginTop="@dimen/small" />
+
+                <EditText
+                    android:id="@+id/bovine_birth_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="@string/birth_date"
+                    android:inputType="date"
+                    android:layout_marginTop="@dimen/small" />
+
+                <EditText
+                    android:id="@+id/bovine_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="@string/type"
+                    android:inputType="text"
+                    android:layout_marginTop="@dimen/small" />
+
+                <EditText
+                    android:id="@+id/bovine_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="@string/weight"
+                    android:inputType="number"
+                    android:layout_marginTop="@dimen/small" />
+
+                <EditText
+                    android:id="@+id/bovine_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="@string/color"
+                    android:inputType="text"
+                    android:layout_marginTop="@dimen/small" />
+
+                <EditText
+                    android:id="@+id/bovine_breed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="@string/breed"
+                    android:inputType="text"
+                    android:layout_marginTop="@dimen/small" />
+
+                <EditText
+                    android:id="@+id/bovine_father_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="@string/father_id"
+                    android:inputType="number"
+                    android:layout_marginTop="@dimen/small" />
+
+                <EditText
+                    android:id="@+id/bovine_mother_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="@string/mother_id"
+                    android:inputType="number"
+                    android:layout_marginTop="@dimen/small" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="@dimen/medium">
+
+                    <ImageView
+                        android:id="@+id/bovine_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#333333"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@string/add_bovine_photo" />
+
+                    <ImageView
+                        android:id="@+id/add_photo_icon"
+                        android:layout_width="@dimen/big"
+                        android:layout_height="@dimen/big"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add_photo"
+                        android:contentDescription="@string/add_bovine_photo" />
+
+                </FrameLayout>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/add_bovine_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save" />
+
+    </LinearLayout>
+
+</layout>
+
+

@@ -19,4 +19,15 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="number">Número</string>
+    <string name="sex">Sexo</string>
+    <string name="birth_date">Fecha de nacimiento</string>
+    <string name="type">Tipo</string>
+    <string name="weight">Peso</string>
+    <string name="color">Color</string>
+    <string name="breed">Raza</string>
+    <string name="father_id">ID Padre</string>
+    <string name="mother_id">ID Madre</string>
+    <string name="add_bovine_photo">add bovine photo</string>
+    <string name="save">Guardar</string>
 </resources>
