@@ -30,7 +30,7 @@ class NetModule {
                     .create()
             ))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
-            .baseUrl("http://192.168.1.78:3000/users/")
+            .baseUrl("https://gankotest.herokuapp.com/")
             .build()
 
     @Provides

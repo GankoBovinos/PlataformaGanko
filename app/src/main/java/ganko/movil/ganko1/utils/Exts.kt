@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.EditText
+import io.reactivex.Observable
+import org.jetbrains.anko.toast
 import kotlin.reflect.KClass
 
 /**
@@ -32,4 +34,12 @@ fun SharedPreferences.save(vararg data:Pair<String, Any>){
 
     }
     editor.apply()
+}
+
+fun AppCompatActivity.validateForm(message: Int,
+                                   vararg fields: String) : Observable<List<String>>
+        = Observable.create<List<String>>{
+    if(fields.contains("")) toast(message)
+    else it.onNext(fields.toList())
+    it.onComplete()
 }
