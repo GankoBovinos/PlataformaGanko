@@ -208,7 +208,7 @@
                 android:layout_height="wrap_content"
                 android:text="Siguiente"
                 android:textColor="@color/colorPrimary"
-                android:visibility='@{state == 3 ? View.GONE : View.VISIBLE}'/>
+                android:visibility='@{state == 2 ? View.GONE : View.VISIBLE}'/>
             <Button
                 tools:visibility="gone"
                 android:id="@+id/add_bovine_button"
@@ -218,7 +218,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/save"
                 android:textColor="@color/colorPrimary"
-                android:visibility='@{state == 3 ? View.VISIBLE : View.GONE}'/>
+                android:visibility='@{state == 2 ? View.VISIBLE : View.GONE}'/>
 
 
         </LinearLayout>

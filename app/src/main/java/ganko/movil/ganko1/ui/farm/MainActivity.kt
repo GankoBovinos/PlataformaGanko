@@ -47,6 +47,12 @@ class MainActivity : AppCompatActivity(), Injectable {
                             goToAdd()
                         }
                 )
+
+        adapter.clickFinca.subscribeBy(
+                onNext = {
+                    goToAddbovine()
+                }
+        )
     }
 
     override fun onResume() {
@@ -80,5 +86,9 @@ class MainActivity : AppCompatActivity(), Injectable {
 
     fun goToAdd(){
         startActivity<AddFarmActivity>()
+    }
+
+    fun goToAddbovine(){
+        startActivity<AddBovineActivity>()
     }
 }
