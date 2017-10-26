@@ -4,12 +4,10 @@
     <color name="colorPrimaryDark">#29702c</color>
     <color name="colorAccent">#F3F1BD</color>
     <color name="et_transparent">#0fff</color>
+    <color name="light_grey_card">#eff2f7</color>
 
     //Loader
     <color name="btn_disabled">#6629702c</color>
-<<<<<<< HEAD
-    <color name="light_grey_card">#eff2f7</color>
-=======
 
     //Menu principal
     <color name="bovines">#00D887</color>
@@ -27,5 +25,5 @@
     <color name="img">#333333</color>
     <color name="milk">#8836C3</color>
     <color name="btn_menu">#444444</color>
->>>>>>> master
+
 </resources>

@@ -8,14 +8,10 @@ import ganko.movil.ganko1.utils.AppViewModelFactory
 import android.arch.lifecycle.ViewModel
 import dagger.multibindings.IntoMap
 import ganko.movil.ganko1.ui.login.LoginViewModel
-<<<<<<< HEAD
-import ganko.movil.ganko1.ui.farm.MainViewModel
-import ganko.movil.ganko1.ui.farm.add.AddFarmViewModel
-=======
 import ganko.movil.ganko1.ui.farm.FarmViewModel
+import ganko.movil.ganko1.ui.farm.add.AddFarmViewModel
 import ganko.movil.ganko1.ui.login.password.PasswordViewModel
 import ganko.movil.ganko1.ui.menu.MenuViewModel
->>>>>>> master
 import kotlin.reflect.KClass
 
 /**
@@ -46,15 +42,18 @@ abstract class ViewModelModule{
 
     @Binds
     @IntoMap
-<<<<<<< HEAD
     @ViewModelKey(AddFarmViewModel::class)
     abstract fun bindAddFarmViewModel(viewModel: AddFarmViewModel): ViewModel
-=======
+
+    @Binds
+    @IntoMap
     @ViewModelKey(MenuViewModel::class)
     abstract fun bindMenuViewModel(viewModel: MenuViewModel): ViewModel
 
+    @Binds
+    @IntoMap
     @ViewModelKey(PasswordViewModel::class)
     abstract fun bindPasswordViewModel(viewModel: PasswordViewModel): ViewModel
 
->>>>>>> master
+
 }
