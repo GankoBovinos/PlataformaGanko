@@ -8,7 +8,7 @@ import android.arch.persistence.room.PrimaryKey
  * Created by jlbel on 11/10/2017.
  */
 @Entity
-data class Finca(@PrimaryKey(autoGenerate = true) var localId:Long? = 0,
+data class Farm(@PrimaryKey(autoGenerate = true) var localId:Long? = 0,
                  var id: Long?,
                  var nombre:String,
                  var ubicacion:String,

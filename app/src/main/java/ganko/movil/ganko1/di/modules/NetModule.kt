@@ -1,12 +1,10 @@
 package ganko.movil.ganko1.di.modules
 
 import android.content.Context
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
-import ganko.movil.ganko1.R
-import ganko.movil.ganko1.net.FincaClient
+import ganko.movil.ganko1.net.FarmClient
 import ganko.movil.ganko1.net.LoginClient
 import ganko.movil.ganko1.net.ResetPasswordClient
 import io.reactivex.schedulers.Schedulers
@@ -36,8 +34,8 @@ class NetModule {
 
     @Provides
     @Singleton
-    fun provideFincaClient(retrofit: Retrofit): FincaClient =
-            retrofit.create(FincaClient::class.java)
+    fun provideFarmClient(retrofit: Retrofit): FarmClient =
+            retrofit.create(FarmClient::class.java)
 
     @Provides
     @Singleton

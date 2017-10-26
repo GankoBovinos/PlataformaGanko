@@ -8,9 +8,8 @@ import android.view.View
 import com.jakewharton.rxbinding2.view.clicks
 
 import ganko.movil.ganko1.R
-import ganko.movil.ganko1.data.model.Finca
-import ganko.movil.ganko1.ui.adapters.FincaAdapter
-import ganko.movil.ganko1.databinding.ActivityMainBinding
+import ganko.movil.ganko1.databinding.ActivityFarmBinding
+import ganko.movil.ganko1.ui.adapters.FarmAdapter
 
 import ganko.movil.ganko1.di.Injectable
 import ganko.movil.ganko1.ui.bovines.add.AddBovineActivity
@@ -20,7 +19,7 @@ import ganko.movil.ganko1.utils.buildViewModel
 import ganko.movil.ganko1.utils.subscribeByAction
 import ganko.movil.ganko1.utils.subscribeByShot
 import io.reactivex.rxkotlin.subscribeBy
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_farm.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import javax.inject.Inject
@@ -32,13 +31,13 @@ class FarmActivity : AppCompatActivity(), Injectable {
     lateinit var factory: ViewModelProvider.Factory
     val farmViewModel: FarmViewModel by lazy { buildViewModel(factory, FarmViewModel::class) }
     @Inject
-    lateinit var adapter: FincaAdapter
-    lateinit var binding: ActivityMainBinding
+    lateinit var adapter: FarmAdapter
+    lateinit var binding: ActivityFarmBinding
     val loader: Loader = Loader()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_farm)
         recycler.adapter = adapter
         binding.loader = loader
 
@@ -49,7 +48,7 @@ class FarmActivity : AppCompatActivity(), Injectable {
                         }
                 )
 
-        adapter.clickFinca.subscribeBy(
+        adapter.clickFarm.subscribeBy(
                 onNext = {
                     goToAddbovine()
                 }
@@ -83,8 +82,8 @@ class FarmActivity : AppCompatActivity(), Injectable {
         farmViewModel.getAllRemote()
                 .subscribeByShot(
                         onNext = {
-                            adapter.fincas = it
-                            if(adapter.fincas.isEmpty()){
+                            adapter.farms = it
+                            if(adapter.farms.isEmpty()){
                                 msgVacio.visibility = View.VISIBLE
                             }
                             else{

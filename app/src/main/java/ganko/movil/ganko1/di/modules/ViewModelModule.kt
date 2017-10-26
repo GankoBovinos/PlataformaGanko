@@ -33,7 +33,7 @@ abstract class ViewModelModule{
     @Binds
     @IntoMap
     @ViewModelKey(FarmViewModel::class)
-    abstract fun bindMainViewModel(viewModel: FarmViewModel): ViewModel
+    abstract fun bindFarmViewModel(viewModel: FarmViewModel): ViewModel
 
     @Binds
     @IntoMap

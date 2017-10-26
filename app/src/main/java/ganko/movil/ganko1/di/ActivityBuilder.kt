@@ -21,7 +21,7 @@ abstract class ActivityBuilders{
 
     @ActivityScope
     @ContributesAndroidInjector
-    abstract fun bindMainActivity(): FarmActivity
+    abstract fun bindFarmActivity(): FarmActivity
 
     @ActivityScope
     @ContributesAndroidInjector
