@@ -11,7 +11,7 @@ import javax.inject.Inject
 /**
  * Created by Ana Marin on 18/10/2017.
  */
-class MainViewModel @Inject constructor(val fincaClient: FincaClient): ViewModel(){
+class FarmViewModel @Inject constructor(val fincaClient: FincaClient): ViewModel(){
 
     val token: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiaWF0IjoxNTA4NjkxOTY2fQ.ZC-FBN7_39EXvPVsO1OCeo3EaHeFhFxqs2tw28IdV7s"
 

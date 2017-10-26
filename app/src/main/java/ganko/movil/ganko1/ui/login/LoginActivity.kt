@@ -10,7 +10,7 @@ import ganko.movil.ganko1.databinding.ActivityLoginBinding
 import ganko.movil.ganko1.R
 import ganko.movil.ganko1.data.model.UserLogin
 import ganko.movil.ganko1.di.Injectable
-import ganko.movil.ganko1.ui.farm.MainActivity
+import ganko.movil.ganko1.ui.farm.FarmActivity
 import ganko.movil.ganko1.ui.login.password.PasswordActivity
 import ganko.movil.ganko1.utils.*
 import kotlinx.android.synthetic.main.activity_login.*
@@ -45,7 +45,7 @@ class LoginActivity : AppCompatActivity(), Injectable {
                 .flatMap { validateForm(R.string.empty_fields,username.text(),password.text()) }
                 .flatMap { viewModel.Login(UserLogin(it[0],it[1])) }
                 .subscribeByAction(
-                        onNext = {startActivity<MainActivity>()},
+                        onNext = {startActivity<FarmActivity>()},
                         onHttpError = this::toast,
                         onError = { toast(it.message!!) }
                 )

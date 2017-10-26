@@ -21,15 +21,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.farm.MainActivity" />
+        <activity android:name=".ui.farm.FarmActivity" />
         <activity
-            android:name="ganko.movil.ganko1.ui.login.password.PasswordActivity"
+            android:name=".ui.login.password.PasswordActivity"
             android:theme="@style/NoActionBar" />
         <activity android:name=".ui.farm.add.AddFarmActivity" />
         <activity android:name=".ui.login.LoginActivity" />
-        <activity android:name=".ui.inventory.detail.DetailBovineActivity" />
-        <activity android:name=".ui.inventory.out.OutBovineActivity" />
-        <activity android:name=".ui.inventory.add.AddBovineActivity"></activity>
+        <activity android:name=".ui.bovines.detail.DetailBovineActivity" />
+        <activity android:name=".ui.bovines.out.OutBovineActivity" />
+        <activity android:name=".ui.bovines.add.AddBovineActivity" />
+        <activity android:name=".ui.bovines.detail.reproductive.ReproductiveActivity"></activity>
     </application>
 
 </manifest>

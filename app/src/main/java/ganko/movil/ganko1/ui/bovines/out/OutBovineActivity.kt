@@ -1,4 +1,4 @@
-package ganko.movil.ganko1.ui.inventory.out
+package ganko.movil.ganko1.ui.bovines.out
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

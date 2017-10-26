@@ -45,7 +45,8 @@
                     android:background="@color/btn_menu"
                     android:drawableLeft="@drawable/ic_back_white"
                     android:padding="@dimen/small"
-                    android:text="@string/change_farm" />
+                    android:text="@string/change_farm"
+                    />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler"
@@ -57,6 +58,7 @@
                     tools:listitem="@layout/template_menu" />
 
                 <Button
+                    android:id="@+id/logout"
                     style="@style/Base.TextAppearance.AppCompat.Inverse"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

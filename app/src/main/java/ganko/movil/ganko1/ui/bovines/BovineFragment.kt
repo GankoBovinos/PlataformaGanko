@@ -1,4 +1,4 @@
-package ganko.movil.ganko1.ui.inventory.list
+package ganko.movil.ganko1.ui.bovines
 
 
 import android.os.Bundle
@@ -13,13 +13,13 @@ import ganko.movil.ganko1.R
 /**
  * A simple [Fragment] subclass.
  */
-class ListBovineFragment : Fragment() {
+class BovineFragment : Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater!!.inflate(R.layout.fragment_list_bovine, container, false)
+        return inflater!!.inflate(R.layout.fragment_bovine, container, false)
     }
 
 }// Required empty public constructor

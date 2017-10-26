@@ -18,11 +18,11 @@ import org.jetbrains.anko.toast
 import javax.inject.Inject
 
 
-class MainActivity : AppCompatActivity(), Injectable {
+class FarmActivity : AppCompatActivity(), Injectable {
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
-    val mainViewModel: MainViewModel by lazy { buildViewModel(factory, MainViewModel::class) }
+    val farmViewModel: FarmViewModel by lazy { buildViewModel(factory, FarmViewModel::class) }
     @Inject
     lateinit var adapter: FincaAdapter
     lateinit var binding: ActivityMainBinding
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity(), Injectable {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         recycler.adapter = adapter
 
-        mainViewModel.getAll()
+        farmViewModel.getAll()
                 .subscribeByShot(
                         onNext = {
                             adapter.fincas = it

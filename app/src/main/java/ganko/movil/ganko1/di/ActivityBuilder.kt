@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import ganko.movil.ganko1.ui.farm.add.AddFarmActivity
 import ganko.movil.ganko1.ui.login.LoginActivity
-import ganko.movil.ganko1.ui.farm.MainActivity
+import ganko.movil.ganko1.ui.farm.FarmActivity
 import ganko.movil.ganko1.ui.login.password.PasswordActivity
 import ganko.movil.ganko1.ui.menu.MenuActivity
 import javax.inject.Scope
@@ -21,7 +21,7 @@ abstract class ActivityBuilders{
 
     @ActivityScope
     @ContributesAndroidInjector
-    abstract fun bindMainActivity(): MainActivity
+    abstract fun bindMainActivity(): FarmActivity
 
     @ActivityScope
     @ContributesAndroidInjector

@@ -31,6 +31,7 @@ class MenuAdapter @Inject constructor(): RecyclerView.Adapter<MenuAdapter.MenuHo
     override fun onBindViewHolder(holder: MenuHolder, position: Int){
         holder.binding.item = items[position]
         holder.binding.clickMenuItem = clickMenu
+        holder.binding.root.tag = position
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuHolder

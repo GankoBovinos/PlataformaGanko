@@ -8,7 +8,7 @@ import android.view.View
 
 import ganko.movil.ganko1.R
 import ganko.movil.ganko1.databinding.ActivityAddFarmBinding
-import ganko.movil.ganko1.ui.farm.MainActivity
+import ganko.movil.ganko1.ui.farm.FarmActivity
 
 class AddFarmActivity : AppCompatActivity() {
 
@@ -29,7 +29,7 @@ class AddFarmActivity : AppCompatActivity() {
     }
 
     fun confirm(v: View){
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, FarmActivity::class.java)
         startActivity(intent)
     }
 }
