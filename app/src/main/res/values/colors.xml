@@ -7,5 +7,25 @@
 
     //Loader
     <color name="btn_disabled">#6629702c</color>
+<<<<<<< HEAD
     <color name="light_grey_card">#eff2f7</color>
+=======
+
+    //Menu principal
+    <color name="bovines">#00D887</color>
+    <color name="reproductive">#D81EBF</color>
+    <color name="reports">#8836C3</color>
+    <color name="meat">#244960</color>
+    <color name="vaccination">#FF1269</color>
+    <color name="health">#D81EBF</color>
+    <color name="manage">#FF4B3A</color>
+    <color name="prairies">#FF7F0B</color>
+    <color name="feeding">#0098E2</color>
+    <color name="movements">#91A5A7</color>
+    <color name="statistics">#FF4B3A</color>
+    <color name="light">#fff</color>
+    <color name="img">#333333</color>
+    <color name="milk">#8836C3</color>
+    <color name="btn_menu">#444444</color>
+>>>>>>> master
 </resources>

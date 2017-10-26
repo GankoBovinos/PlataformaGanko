@@ -16,8 +16,13 @@ class UserSession @Inject constructor(val prefs:SharedPreferences){
         get() = prefs.getString(KEY_TOKEN,"")
         set(value) = prefs.save(KEY_TOKEN to value)
 
+    var logged: Boolean
+        get() = prefs.getBoolean(KEY_LOGGED, false)
+        set(value) = prefs.save(KEY_LOGGED to value)
+
     companion object {
         private val KEY_TOKEN = "token"
+        private val KEY_LOGGED = "logged"
     }
 
 }

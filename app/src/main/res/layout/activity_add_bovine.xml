@@ -3,7 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+<<<<<<< HEAD
     tools:context="ganko.movil.ganko1.ui.inventory.add.AddBovineActivity">
+=======
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ganko.movil.ganko1.ui.bovines.add.AddBovineActivity">
+>>>>>>> master
 
     <data>
         <import type="android.view.View"/>

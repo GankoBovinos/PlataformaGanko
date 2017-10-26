@@ -1,4 +1,4 @@
-package ganko.movil.ganko1.ui.inventory.add
+package ganko.movil.ganko1.ui.bovines.add
 
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity

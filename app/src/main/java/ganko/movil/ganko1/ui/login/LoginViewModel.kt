@@ -24,7 +24,7 @@ class LoginViewModel @Inject constructor(val loginClient: LoginClient,
             it.onNext(loginResponse.token)
 
         }
-        else throw Throwable("Error en validateState")
+        else throw Throwable("Usuario Inactivo, Contacte a su Proveedor")
     }
 
 }

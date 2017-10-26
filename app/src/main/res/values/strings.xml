@@ -16,10 +16,30 @@
     <string name="http_500">Error en el servidor</string>
     <string name="zero_farms">No hay fincas registradas</string>
 
+    //Loading
     <string name="loading">Cargando</string>
+
+    //Menu principal
+    <string name="bovines">Bovinos</string>
+    <string name="vaccination">Vacunación</string>
+    <string name="health">Sanidad</string>
+    <string name="manage">Manejo</string>
+    <string name="prairies">Praderas</string>
+    <string name="feeding">Alimentación</string>
+    <string name="movements">Movimientos</string>
+    <string name="reports">Reportes</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="change_farm">Cambiar finca</string>
+
+    //Menu de bovinos
+    <string name="reproductive">Reproductivo</string>
+    <string name="milk">Leche</string>
+    <string name="meat">Ceba</string>
+    <string name="statistics">Estadísticas</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+<<<<<<< HEAD
     <string name="number">Número</string>
     <string name="sex">Sexo</string>
     <string name="birth_date">Fecha de nacimiento</string>
@@ -33,4 +53,7 @@
     <string name="save">Guardar</string>
     <string name="required">Campos requeridos</string>
     <string name="farm_size">Hectáreas</string>
+=======
+
+>>>>>>> master
 </resources>

@@ -12,7 +12,6 @@ import ganko.movil.ganko1.R
 import ganko.movil.ganko1.data.model.Finca
 import ganko.movil.ganko1.databinding.ActivityAddFarmBinding
 import ganko.movil.ganko1.di.Injectable
-import ganko.movil.ganko1.ui.farm.MainActivity
 import ganko.movil.ganko1.utils.buildViewModel
 import ganko.movil.ganko1.utils.subscribeByShot
 import ganko.movil.ganko1.utils.text
@@ -27,6 +26,7 @@ class AddFarmActivity : AppCompatActivity(), Injectable {
     @Inject
     lateinit var factory: ViewModelProvider.Factory
     val addFarmViewModel: AddFarmViewModel by lazy { buildViewModel(factory, AddFarmViewModel::class) }
+
     lateinit var binding: ActivityAddFarmBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

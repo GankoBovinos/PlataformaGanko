@@ -13,8 +13,8 @@ import ganko.movil.ganko1.ui.adapters.FincaAdapter
 import ganko.movil.ganko1.databinding.ActivityMainBinding
 
 import ganko.movil.ganko1.di.Injectable
+import ganko.movil.ganko1.ui.bovines.add.AddBovineActivity
 import ganko.movil.ganko1.ui.farm.add.AddFarmActivity
-import ganko.movil.ganko1.ui.inventory.add.AddBovineActivity
 import ganko.movil.ganko1.utils.Loader
 import ganko.movil.ganko1.utils.buildViewModel
 import ganko.movil.ganko1.utils.subscribeByAction
@@ -26,11 +26,11 @@ import org.jetbrains.anko.toast
 import javax.inject.Inject
 
 
-class MainActivity : AppCompatActivity(), Injectable {
+class FarmActivity : AppCompatActivity(), Injectable {
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
-    val mainViewModel: MainViewModel by lazy { buildViewModel(factory, MainViewModel::class) }
+    val farmViewModel: FarmViewModel by lazy { buildViewModel(factory, FarmViewModel::class) }
     @Inject
     lateinit var adapter: FincaAdapter
     lateinit var binding: ActivityMainBinding
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity(), Injectable {
                 }
         )
         adapter.clickDelete
-                .flatMap { mainViewModel.deleteRemote(it.id!!) }
+                .flatMap { farmViewModel.deleteRemote(it.id!!) }
                 .subscribeByAction(
                 onNext = {
                     toast("eliminado")
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity(), Injectable {
     }
 
     fun getFincas(){
-        mainViewModel.getAllRemote()
+        farmViewModel.getAllRemote()
                 .subscribeByShot(
                         onNext = {
                             adapter.fincas = it

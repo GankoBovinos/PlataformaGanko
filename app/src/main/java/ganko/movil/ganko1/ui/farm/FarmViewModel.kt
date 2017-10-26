@@ -16,8 +16,7 @@ import javax.inject.Inject
 /**
  * Created by Ana Marin on 18/10/2017.
  */
-class MainViewModel @Inject constructor(val fincaClient: FincaClient, val fincaDao: FincaDao, val userSession: UserSession): ViewModel(){
-
+class FarmViewModel @Inject constructor(val fincaClient: FincaClient, val fincaDao: FincaDao, val userSession: UserSession): ViewModel(){
 
     fun getAllRemote(): Observable<List<Finca>> = fincaClient.getAllFincas(userSession.token)
             .flatMap{validateResponse(it)}

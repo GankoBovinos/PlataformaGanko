@@ -1,4 +1,4 @@
-package ganko.movil.ganko1.ui.inventory
+package ganko.movil.ganko1.ui.bovines.detail.reproductive.service
 
 
 import android.os.Bundle
@@ -13,13 +13,13 @@ import ganko.movil.ganko1.R
 /**
  * A simple [Fragment] subclass.
  */
-class InventoryFragment : Fragment() {
+class ServiceFragment : Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater!!.inflate(R.layout.fragment_inventory, container, false)
+        return inflater!!.inflate(R.layout.fragment_service, container, false)
     }
 
 }// Required empty public constructor
