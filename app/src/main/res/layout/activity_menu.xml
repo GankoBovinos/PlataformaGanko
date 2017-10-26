@@ -1,9 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="ganko.movil.ganko1.ui.menu.MenuActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-</android.support.constraint.ConstraintLayout>
+    <data>
+
+    </data>
+
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="ganko.movil.ganko1.ui.menu.MenuActivity">
+
+        <FrameLayout
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/img">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Base.TextAppearance.AppCompat.Title.Inverse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/small"
+                    android:text="Nombre Finca"
+                    android:textSize="@dimen/farm_name"
+                    tools:text="Nombre Finca" />
+
+                <Button
+                    android:id="@+id/change_farm"
+                    style="@style/Base.TextAppearance.AppCompat.Inverse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/btn_menu"
+                    android:drawableLeft="@drawable/ic_back_white"
+                    android:padding="@dimen/small"
+                    android:text="@string/change_farm" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    app:layoutManager="android.support.v7.widget.StaggeredGridLayoutManager"
+                    app:spanCount="2"
+                    tools:listitem="@layout/template_menu" />
+
+                <Button
+                    style="@style/Base.TextAppearance.AppCompat.Inverse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@color/btn_menu"
+                    android:drawableLeft="@drawable/ic_logout"
+                    android:padding="@dimen/small"
+                    android:text="@string/logout" />
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.v4.widget.DrawerLayout>
+</layout>
+
