@@ -11,6 +11,7 @@ import ganko.movil.ganko1.R
 import ganko.movil.ganko1.data.model.UserLogin
 import ganko.movil.ganko1.di.Injectable
 import ganko.movil.ganko1.ui.farm.MainActivity
+import ganko.movil.ganko1.ui.login.password.PasswordActivity
 import ganko.movil.ganko1.utils.*
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.startActivity
@@ -31,7 +32,6 @@ class LoginActivity : AppCompatActivity(), Injectable {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         viewModel = ViewModelProviders.of(this,factory).get(LoginViewModel::class.java)
-//        btnlogin.setOnClickListener { startActivity<MainActivity>() }
         loader.loading.set(false)
         binding.loader = loader
 
@@ -49,5 +49,8 @@ class LoginActivity : AppCompatActivity(), Injectable {
                         onHttpError = this::toast,
                         onError = { toast(it.message!!) }
                 )
+
+        dis add olvido_pass.clicks()
+                .subscribe{startActivity<PasswordActivity>()}
     }
 }
