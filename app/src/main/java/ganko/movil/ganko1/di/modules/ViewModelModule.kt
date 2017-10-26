@@ -11,12 +11,6 @@ import ganko.movil.ganko1.ui.login.LoginViewModel
 import ganko.movil.ganko1.ui.farm.MainViewModel
 import ganko.movil.ganko1.ui.login.password.PasswordViewModel
 import ganko.movil.ganko1.ui.menu.MenuViewModel
-
-<<<<<<< HEAD
-import ganko.movil.ganko1.ui.menu.MenuViewModel
-=======
-import ganko.movil.ganko1.ui.login.password.PasswordViewModel
->>>>>>> dc3f52d5e39baa0d99f8a206f993791062fbf03a
 import kotlin.reflect.KClass
 
 /**
