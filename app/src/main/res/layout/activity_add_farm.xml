@@ -59,7 +59,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/big"
-                android:onClick="confirm"
                 android:src="@drawable/ic_confirm"
                 app:backgroundTint="@color/colorPrimary"
                 app:fabSize="normal" />

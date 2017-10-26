@@ -14,10 +14,12 @@ import ganko.movil.ganko1.databinding.ActivityAddFarmBinding
 import ganko.movil.ganko1.di.Injectable
 import ganko.movil.ganko1.ui.farm.MainActivity
 import ganko.movil.ganko1.utils.buildViewModel
+import ganko.movil.ganko1.utils.subscribeByShot
 import ganko.movil.ganko1.utils.text
 import ganko.movil.ganko1.utils.validateForm
 import io.reactivex.rxkotlin.subscribeBy
 import kotlinx.android.synthetic.main.activity_add_farm.*
+import org.jetbrains.anko.toast
 import javax.inject.Inject
 
 class AddFarmActivity : AppCompatActivity(), Injectable {
@@ -44,16 +46,15 @@ class AddFarmActivity : AppCompatActivity(), Injectable {
     override fun onResume() {
         super.onResume()
         fabAddFarm.clicks()
-                .flatMap { validateForm(R.string.required, farm_name.text(), farm_location.text(), farm_size.text()) }
+                .flatMap { validateForm(R.string.empty_fields, farm_name.text(), farm_location.text(), farm_size.text()) }
                 .flatMap { addFarmViewModel.insertFincaRemote(Finca(it[0],it[1],it[2].toLong())) }
-                .subscribeBy(
+                .subscribeByShot(
                         onNext = {
                             finish()
-                        }
+                        },
+                        onHttpError = this::toast,
+                        onError = {toast(it.message!!)}
                 )
     }
 
-    fun confirm(v: View){
-        finish()
-    }
 }

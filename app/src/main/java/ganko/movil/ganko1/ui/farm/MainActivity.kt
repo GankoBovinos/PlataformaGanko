@@ -17,6 +17,7 @@ import ganko.movil.ganko1.ui.farm.add.AddFarmActivity
 import ganko.movil.ganko1.ui.inventory.add.AddBovineActivity
 import ganko.movil.ganko1.utils.Loader
 import ganko.movil.ganko1.utils.buildViewModel
+import ganko.movil.ganko1.utils.subscribeByAction
 import ganko.movil.ganko1.utils.subscribeByShot
 import io.reactivex.rxkotlin.subscribeBy
 import kotlinx.android.synthetic.main.activity_main.*
@@ -53,35 +54,21 @@ class MainActivity : AppCompatActivity(), Injectable {
                     goToAddbovine()
                 }
         )
+        adapter.clickDelete
+                .flatMap { mainViewModel.deleteRemote(it.id!!) }
+                .subscribeByAction(
+                onNext = {
+                    toast("eliminado")
+                    getFincas()
+                },
+                onHttpError = this::toast,
+                onError = {toast(it.message!!)}
+        )
     }
 
     override fun onResume() {
         super.onResume()
-        mainViewModel.getAllRemote()
-                .subscribeByShot(
-                        onNext = {
-                            adapter.fincas = it
-                            if(adapter.fincas.isEmpty()){
-                                msgVacio.visibility = View.VISIBLE
-                            }
-                        },
-                        onHttpError = {
-                            //                            if(it == R.string.socket)
-                            mainViewModel.getAllLocal()
-                                    .subscribeBy(
-                                            onNext = {
-                                                adapter.fincas = it
-                                                if(adapter.fincas.isEmpty()){
-                                                    msgVacio.visibility = View.VISIBLE
-                                                    toast(R.string.zero_farms)
-                                                }
-                                            }
-                                    )
-//                            else
-//                                toast(it)
-                        },
-                        onError = {toast(it.message!!)}
-                )
+        getFincas()
     }
 
     fun goToAdd(){
@@ -90,5 +77,37 @@ class MainActivity : AppCompatActivity(), Injectable {
 
     fun goToAddbovine(){
         startActivity<AddBovineActivity>()
+    }
+
+    fun getFincas(){
+        mainViewModel.getAllRemote()
+                .subscribeByShot(
+                        onNext = {
+                            adapter.fincas = it
+                            if(adapter.fincas.isEmpty()){
+                                msgVacio.visibility = View.VISIBLE
+                            }
+                            else{
+                                msgVacio.visibility = View.GONE
+                            }
+                        },
+                        onHttpError = {
+                            toast(it)
+                            //                            if(it == R.string.socket)
+//                            mainViewModel.getAllLocal()
+//                                    .subscribeBy(
+//                                            onNext = {
+//                                                adapter.fincas = it
+//                                                if(adapter.fincas.isEmpty()){
+//                                                    msgVacio.visibility = View.VISIBLE
+//                                                    toast(R.string.zero_farms)
+//                                                }
+//                                            }
+//                                    )
+//                            else
+//                                toast(it)
+                        },
+                        onError = {toast(it.message!!)}
+                )
     }
 }
