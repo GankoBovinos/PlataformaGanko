@@ -8,6 +8,7 @@ import dagger.Provides
 import ganko.movil.ganko1.R
 import ganko.movil.ganko1.net.FincaClient
 import ganko.movil.ganko1.net.LoginClient
+import ganko.movil.ganko1.net.ResetPasswordClient
 import io.reactivex.schedulers.Schedulers
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -30,7 +31,7 @@ class NetModule {
                     .create()
             ))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
-            .baseUrl("http://192.168.1.78:3000/users/")
+            .baseUrl("https://gankotest.herokuapp.com/")
             .build()
 
     @Provides
@@ -42,5 +43,10 @@ class NetModule {
     @Singleton
     fun provideLoginClient(retrofit: Retrofit): LoginClient =
             retrofit.create(LoginClient::class.java)
+
+    @Provides
+    @Singleton
+    fun provideResetPasswordClient(retrofit: Retrofit): ResetPasswordClient =
+            retrofit.create(ResetPasswordClient::class.java)
 
 }
