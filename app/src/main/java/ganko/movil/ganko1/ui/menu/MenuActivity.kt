@@ -5,9 +5,9 @@ import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.jakewharton.rxbinding2.view.clicks
-import dagger.android.AndroidInjection
 
 import ganko.movil.ganko1.R
+import ganko.movil.ganko1.R.id.*
 import ganko.movil.ganko1.databinding.ActivityMenuBinding
 import ganko.movil.ganko1.di.Injectable
 import ganko.movil.ganko1.ui.adapters.MenuAdapter
