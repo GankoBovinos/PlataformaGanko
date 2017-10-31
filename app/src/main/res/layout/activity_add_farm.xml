@@ -46,19 +46,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/input"
-                    android:hint="Hectáreas"
-                    android:inputType="text"
+                    android:hint="@string/farm_size"
+                    android:inputType="numberDecimal"
                     android:layout_marginTop="@dimen/small"
                     />
 
             </LinearLayout>
 
             <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fabAddFarm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/big"
-                android:onClick="confirm"
                 android:src="@drawable/ic_confirm"
                 app:backgroundTint="@color/colorPrimary"
                 app:fabSize="normal" />

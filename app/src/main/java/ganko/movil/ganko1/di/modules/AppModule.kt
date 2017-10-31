@@ -7,7 +7,7 @@ import android.content.SharedPreferences
 import dagger.Module
 import dagger.Provides
 import ganko.movil.ganko1.data.AppDatabase
-import ganko.movil.ganko1.data.dao.FincaDao
+import ganko.movil.ganko1.data.dao.FarmDao
 import javax.inject.Singleton
 
 /**
@@ -23,13 +23,13 @@ class AppModule{
     @Singleton
     @Provides
     fun provideDatabase(context: Context) : AppDatabase =
-            Room.databaseBuilder(context, AppDatabase::class.java, "finca.db")
+            Room.databaseBuilder(context, AppDatabase::class.java, "ganko.db")
                     .build()
 
     @Singleton
     @Provides
-    fun providesFincaDao(appDatabase: AppDatabase): FincaDao =
-            appDatabase.fincaDao()
+    fun providesFarmDao(appDatabase: AppDatabase): FarmDao =
+            appDatabase.farmDao()
 
     @Singleton
     @Provides

@@ -1,22 +1,29 @@
 package ganko.movil.ganko1.ui.farm
 
 import android.arch.lifecycle.ViewModel
-import ganko.movil.ganko1.data.model.Finca
-import ganko.movil.ganko1.net.FincaClient
+import ganko.movil.ganko1.data.dao.FarmDao
+import ganko.movil.ganko1.data.model.Farm
+import ganko.movil.ganko1.data.model.FarmResponse
+import ganko.movil.ganko1.data.prefs.UserSession
+import ganko.movil.ganko1.net.FarmClient
+import ganko.movil.ganko1.net.ResponseData
 import ganko.movil.ganko1.utils.applySchedulers
 import ganko.movil.ganko1.utils.validateResponse
+import io.reactivex.Flowable
 import io.reactivex.Observable
 import javax.inject.Inject
 
 /**
  * Created by Ana Marin on 18/10/2017.
  */
-class FarmViewModel @Inject constructor(val fincaClient: FincaClient): ViewModel(){
+class FarmViewModel @Inject constructor(val farmClient: FarmClient, val farmDao: FarmDao, val userSession: UserSession): ViewModel(){
 
-    val token: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiaWF0IjoxNTA4NjkxOTY2fQ.ZC-FBN7_39EXvPVsO1OCeo3EaHeFhFxqs2tw28IdV7s"
-
-    fun getAll(): Observable<List<Finca>> = fincaClient.getAllFincas(token)
+    fun getAllRemote(): Observable<List<Farm>> = farmClient.getAllFincas(userSession.token)
             .flatMap{validateResponse(it)}
             .applySchedulers()
+
+    fun getAllLocal(): Flowable<List<Farm>> = farmDao.all().applySchedulers()
+
+    fun deleteRemote(id:Long): Observable<ResponseData<FarmResponse>> = farmClient.deleteFinca(userSession.token,id).applySchedulers()
 
 }
