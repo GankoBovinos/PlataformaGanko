@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:visibility='@{state == 0 ? View.VISIBLE : View.GONE}'
-                    tools:visibility="gone">
+                    tools:visibility="visible">
 
                     <EditText
                         android:id="@+id/bovine_number"
@@ -44,7 +44,7 @@
                         android:background="@drawable/input"
                         android:hint="@string/number"
                         android:inputType="number"
-                        android:layout_marginTop="@dimen/medium" />
+                        />
 
                     <EditText
                         android:id="@+id/bovine_name"
@@ -65,6 +65,15 @@
                         android:layout_marginTop="@dimen/small" />
 
                     <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:layout_marginTop="@dimen/small"
+                        android:hint="@string/births_number"
+                        android:visibility="gone"
+                        />
+
+                    <EditText
                         android:id="@+id/bovine_breed"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -80,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:visibility='@{state == 1 ? View.VISIBLE : View.GONE}'
-                    tools:visibility="visible">
+                    tools:visibility="gone">
 
                     <EditText
                         android:id="@+id/bovine_type"
@@ -136,7 +145,6 @@
                     android:orientation="vertical"
                     android:visibility='@{state == 2 ? View.VISIBLE : View.GONE}'
                     tools:visibility="gone">
-
 
 
                     <EditText

@@ -12,12 +12,11 @@ import kotlinx.android.synthetic.main.activity_add_bovine.*
 class AddBovineActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityAddBovineBinding
-    var state: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_add_bovine)
-        binding.state = state
+        binding.state = 0
 
         back_bovine_button.clicks()
                 .subscribeBy (
@@ -32,13 +31,11 @@ class AddBovineActivity : AppCompatActivity() {
     }
 
     fun minusState(){
-        state -= 1
-        binding.state = state
+        binding.state -= 1
     }
 
     fun plusState(){
-        state += 1
-        binding.state = state
+        binding.state += 1
     }
     fun fin(){
         finish()

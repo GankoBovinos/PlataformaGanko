@@ -53,16 +53,23 @@ class FarmActivity : AppCompatActivity(), Injectable {
                     goToAddbovine()
                 }
         )
+//        adapter.clickDelete
+//                .flatMap { farmViewModel.deleteRemote(it.id!!) }
+//                .subscribeByAction(
+//                onNext = {
+//                    toast("eliminado")
+//                    getFincas()
+//                },
+//                onHttpError = this::toast,
+//                onError = {toast(it.message!!)}
+//        )
         adapter.clickDelete
-                .flatMap { farmViewModel.deleteRemote(it.id!!) }
-                .subscribeByAction(
-                onNext = {
-                    toast("eliminado")
-                    getFincas()
-                },
-                onHttpError = this::toast,
-                onError = {toast(it.message!!)}
-        )
+                .flatMap { farmViewModel.deleteLocal(it) }
+                .subscribeBy(
+                        onNext = {
+                            toast("eliminado")
+                        }
+                )
     }
 
     override fun onResume() {
@@ -78,35 +85,34 @@ class FarmActivity : AppCompatActivity(), Injectable {
         startActivity<AddBovineActivity>()
     }
 
+//    fun getFincas(){
+//        farmViewModel.getAllRemote()
+//                .subscribeByShot(
+//                        onNext = {
+//                            adapter.farms = it
+//                            if(adapter.farms.isEmpty()){
+//                                msgVacio.visibility = View.VISIBLE
+//                            }
+//                            else{
+//                                msgVacio.visibility = View.GONE
+//                            }
+//                        },
+//                        onHttpError = { toast(it) },
+//                        onError = {toast(it.message!!)}
+//                )
+//    }
     fun getFincas(){
-        farmViewModel.getAllRemote()
-                .subscribeByShot(
-                        onNext = {
-                            adapter.farms = it
-                            if(adapter.farms.isEmpty()){
-                                msgVacio.visibility = View.VISIBLE
-                            }
-                            else{
-                                msgVacio.visibility = View.GONE
-                            }
-                        },
-                        onHttpError = {
-                            toast(it)
-                            //                            if(it == R.string.socket)
-//                            mainViewModel.getAllLocal()
-//                                    .subscribeBy(
-//                                            onNext = {
-//                                                adapter.fincas = it
-//                                                if(adapter.fincas.isEmpty()){
-//                                                    msgVacio.visibility = View.VISIBLE
-//                                                    toast(R.string.zero_farms)
-//                                                }
-//                                            }
-//                                    )
-//                            else
-//                                toast(it)
-                        },
-                        onError = {toast(it.message!!)}
-                )
+    farmViewModel.getAllLocal()
+            .subscribeBy(
+                    onNext = {
+                        adapter.farms = it
+                        if(adapter.farms.isEmpty()){
+                            msgVacio.visibility = View.VISIBLE
+                        }
+                        else{
+                            msgVacio.visibility = View.GONE
+                        }
+                    }
+            )
     }
 }

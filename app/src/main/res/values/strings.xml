@@ -52,4 +52,9 @@
     <string name="save">Guardar</string>
     <string name="required">Campos requeridos</string>
     <string name="farm_size">Hectáreas</string>
+    <string name="births_number">Número de Partos</string>
+    <string-array name="bovine_sexs">
+        <item>Macho</item>
+        <item>Hembra</item>
+    </string-array>
 </resources>
