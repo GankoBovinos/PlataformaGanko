@@ -15,11 +15,11 @@
     <color name="reports">#8836C3</color>
     <color name="meat">#244960</color>
     <color name="vaccination">#FF1269</color>
-    <color name="health">#D81EBF</color>
+    <color name="movements">#D81EBF</color>
     <color name="manage">#FF4B3A</color>
     <color name="prairies">#FF7F0B</color>
     <color name="feeding">#0098E2</color>
-    <color name="movements">#91A5A7</color>
+    <color name="health">#91A5A7</color>
     <color name="statistics">#FF4B3A</color>
     <color name="light">#fff</color>
     <color name="img">#333333</color>
