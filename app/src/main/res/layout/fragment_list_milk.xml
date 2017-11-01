@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.detail.reproductive.birth.BirthFragment">
+    tools:context="ganko.movil.ganko1.ui.detail.milk.list.ListMilkFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
