@@ -48,11 +48,11 @@ class FarmActivity : AppCompatActivity(), Injectable {
                         }
                 )
 
-        adapter.clickFarm.subscribeBy(
+        /*adapter.clickFarm.subscribeBy(
                 onNext = {
                     goToAddbovine()
                 }
-        )
+        )*/
         adapter.clickDelete
                 .flatMap { farmViewModel.deleteRemote(it.id!!) }
                 .subscribeByAction(

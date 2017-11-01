@@ -31,7 +31,7 @@
         <activity android:name=".ui.bovines.detail.DetailBovineActivity" />
         <activity android:name=".ui.bovines.out.OutBovineActivity" />
         <activity android:name=".ui.bovines.add.AddBovineActivity" />
-        <activity android:name=".ui.bovines.detail.reproductive.ReproductiveActivity"></activity>
+        <activity android:name=".ui.bovines.detail.reproductive.ReproductiveActivity"/>
     </application>
 
 </manifest>
