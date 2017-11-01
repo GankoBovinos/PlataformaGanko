@@ -11,4 +11,5 @@
     <dimen name="farm_name">30sp</dimen>
     <dimen name="menu_size">280dp</dimen>
     <dimen name="img_menu_template">100dp</dimen>
+    <dimen name="medium_small">20dp</dimen>
 </resources>
