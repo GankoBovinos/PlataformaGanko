@@ -33,7 +33,7 @@ class AddFarmActivity : AppCompatActivity(), Injectable {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_add_farm)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "Agregar finca"
+        supportActionBar?.title = getString(R.string.add_farm)
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -45,7 +45,7 @@ class AddFarmActivity : AppCompatActivity(), Injectable {
         super.onResume()
         fabAddFarm.clicks()
                 .flatMap { validateForm(R.string.empty_fields, farm_name.text(), farm_location.text(), farm_size.text()) }
-//                .flatMap { addFarmViewModel.insertRemoteFarm(Farm(it[0],it[1],it[2].toLong())) }
+//                .flatMap { addFarmViewModel.insertRemoteFarm(it[0],it[1],it[2].toInt()) }
 //                .subscribeByShot(
 //                        onNext = {
 //                            finish()
@@ -53,7 +53,7 @@ class AddFarmActivity : AppCompatActivity(), Injectable {
 //                        onHttpError = this::toast,
 //                        onError = {toast(it.message!!)}
 //                )
-                .flatMap { addFarmViewModel.insertLocalFarm(Farm(it[0],it[1],it[2].toLong())) }
+                .flatMap { addFarmViewModel.insertLocalFarm(it[0],it[1],it[2].toInt()) }
                 .subscribeBy(
                         onNext = {
                             finish()

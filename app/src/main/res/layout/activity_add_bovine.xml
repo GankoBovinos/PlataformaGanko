@@ -131,7 +131,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:visibility='@{state == 1 ? View.VISIBLE : View.GONE}'
-                    tools:visibility="gone">
+                    tools:visibility="visible">
 
 
 
@@ -206,19 +206,19 @@
                             android:id="@+id/milk"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Lechería especializada"
+                            android:text="@string/specialized_dairy"
                             />
                         <RadioButton
                             android:id="@+id/meat"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Carne"
+                            android:text="@string/meat"
                             />
                         <RadioButton
                             android:id="@+id/double_purpose"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Doble propósito"/>
+                            android:text="@string/double_purpose"/>
 
                     </RadioGroup>
 
@@ -266,7 +266,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/medium"
-                        android:text="Foto"/>
+                        android:text="@string/photo"/>
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="200dp">

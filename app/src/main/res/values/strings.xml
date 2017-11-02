@@ -58,6 +58,10 @@
     <string name="weaned">Destetado</string>
     <string name="back">Atras</string>
     <string name="next">Siguiente</string>
+    <string name="specialized_dairy">Lechería especializada</string>
+    <string name="double_purpose">Doble propósito</string>
+    <string name="photo">Foto</string>
+    <string name="add_farm">Agregar finca</string>
     <string-array name="bovine_sexs">
         <item>Macho</item>
         <item>Hembra</item>
