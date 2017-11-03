@@ -8,6 +8,7 @@
     </data>
 
     <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="ganko.movil.ganko1.ui.menu.MenuActivity">
@@ -38,7 +39,7 @@
                     tools:text="Nombre Finca" />
 
                 <Button
-                    android:id="@+id/change_farm"
+                    android:id="@+id/changeFarm"
                     style="@style/Base.TextAppearance.AppCompat.Inverse"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

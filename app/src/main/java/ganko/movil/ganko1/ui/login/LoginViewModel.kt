@@ -21,6 +21,7 @@ class LoginViewModel @Inject constructor(val loginClient: LoginClient,
     fun validateState(loginResponse: LoginResponse) = Observable.create<String>{
         if(loginResponse.user.estado == "activo"){
             session.token = loginResponse.token
+            session.logged = true
             it.onNext(loginResponse.token)
 
         }

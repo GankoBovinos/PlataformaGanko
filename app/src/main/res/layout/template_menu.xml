@@ -6,6 +6,7 @@
     >
 
     <data>
+
         <variable
             name="item"
             type="ganko.movil.ganko1.ui.adapters.MenuItem"/>

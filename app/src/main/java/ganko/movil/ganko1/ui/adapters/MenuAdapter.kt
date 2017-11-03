@@ -1,6 +1,7 @@
 package ganko.movil.ganko1.ui.adapters
 
 import android.databinding.DataBindingUtil
+import android.support.annotation.ColorInt
 import android.support.constraint.R.id.parent
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -18,8 +19,8 @@ import javax.inject.Inject
 @ActivityScope
 class MenuAdapter @Inject constructor(): RecyclerView.Adapter<MenuAdapter.MenuHolder>(){
 
-    val clickMenu = PublishSubject.create<MenuItem>()
-
+    val clickMenu = PublishSubject.create<Int>()
+    var selected:Int = 0
 
     var items: List<MenuItem> = emptyList()
         set(value){
@@ -43,6 +44,13 @@ class MenuAdapter @Inject constructor(): RecyclerView.Adapter<MenuAdapter.MenuHo
         val binding: TemplateMenuBinding = DataBindingUtil.bind(itemView)
 
     }
+
+    fun selectItem(position: Int, color:Int){
+        items[selected].color = R.color.img
+        items[position].color = color
+        selected = position
+        notifyDataSetChanged()
+    }
 }
 
-data class MenuItem(val color: Int, val icon: Int, val title: Int)
+data class MenuItem(var color: Int, val icon: Int, val title: Int)
