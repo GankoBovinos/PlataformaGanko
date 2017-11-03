@@ -1,13 +1,36 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="ganko.movil.ganko1.ui.bovines.list.ListBovineFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context="ganko.movil.ganko1.ui.bovines.list.ListBovineFragment"
+        >
 
-</FrameLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_bovine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_bovine"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabAddBovine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/small"
+            app:fabSize="normal"
+            android:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/ic_add" />
+
+    </FrameLayout>
+</layout>
+

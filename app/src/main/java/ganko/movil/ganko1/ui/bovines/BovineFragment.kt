@@ -22,4 +22,6 @@ class BovineFragment : Fragment() {
         return inflater!!.inflate(R.layout.fragment_bovine, container, false)
     }
 
+
+
 }// Required empty public constructor
