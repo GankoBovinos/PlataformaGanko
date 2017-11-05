@@ -3,21 +3,20 @@ package ganko.movil.ganko1.ui.menu
 import android.arch.lifecycle.ViewModelProvider
 import android.databinding.DataBindingUtil
 import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.GridLayoutManager
 import android.view.MenuItem
 import android.view.View
-import com.jakewharton.rxbinding2.view.clicks
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import ganko.movil.ganko1.R
-import ganko.movil.ganko1.data.prefs.UserSession
 import ganko.movil.ganko1.databinding.ActivityMenuBinding
 import ganko.movil.ganko1.ui.adapters.MenuAdapter
 import ganko.movil.ganko1.utils.LifeDisposable
@@ -30,8 +29,6 @@ class MenuActivity : AppCompatActivity(), HasSupportFragmentInjector, DrawerLayo
     lateinit var binding: ActivityMenuBinding
     var dis: LifeDisposable = LifeDisposable(this)
     lateinit var toggle: ActionBarDrawerToggle
-    var content: Int = 0
-
 
     @Inject
     lateinit var nav: MenuNavigation
@@ -50,24 +47,36 @@ class MenuActivity : AppCompatActivity(), HasSupportFragmentInjector, DrawerLayo
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_menu)
 
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         toggle = ActionBarDrawerToggle(this, drawer, R.string.open_menu, R.string.close_menu)
         drawer.addDrawerListener(this)
         recycler.adapter = adapter
         adapter.items = menuViewModel.data
+
+        val gridManager: GridLayoutManager = GridLayoutManager(this, 2)
+        gridManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup(){
+            override fun getSpanSize(position: Int): Int = when(menuViewModel.data[position].type){
+                MenuViewModel.MenuItem.TYPE_MENU -> 1
+                else -> 2
+            }
+        }
+        recycler.layoutManager = gridManager
+        clickOnMenu(menuViewModel.content)
+
     }
 
     override fun onResume() {
         super.onResume()
 
-        dis add changeFarm.clicks()
-                .subscribe { nav.navigateToFarm() }
-
-        dis add logout.clicks()
-                .subscribe { nav.navigateToLogout() }
-
         adapter.clickMenu
                 .subscribe {
-                    clickOnMenu(it)
+                    drawer.closeDrawers()
+                    when(it){
+                        1-> nav.navigateToFarm()
+                        in 2..9 -> clickOnMenu(it)
+                        10-> nav.navigateToLogout()
+                    }
                 }
     }
 
@@ -76,29 +85,34 @@ class MenuActivity : AppCompatActivity(), HasSupportFragmentInjector, DrawerLayo
 
     fun clickOnMenu(content: Int){
 
+        menuViewModel.content = content
         val item = menuViewModel.data[content]
-        val color = menuViewModel.selectedColors[content]
+        val colorID = menuViewModel.selectedColors[content-2]
+        val color = ContextCompat.getColor(this, colorID)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = menuViewModel.getStatusBarColor(color)
+        }
         supportActionBar?.setTitle(item.title)
-        supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this, color)))
-        adapter.selectItem(content, color)
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(color))
+        adapter.selectItem(content, colorID)
 
         when(content){
-            0-> nav.navigateToBovines()
-            1-> nav.navigateToFeeding()
-            2-> nav.navigateToManage()
-            3-> nav.navigateToMovements()
-            4-> nav.navigateToVaccination()
-            5-> nav.navigateToHealth()
-            6-> nav.navigateToPrairies()
-            7-> nav.navigateToReports()
+            2-> nav.navigateToBovines()
+            3-> nav.navigateToFeeding()
+            4-> nav.navigateToManage()
+            5-> nav.navigateToMovements()
+            6-> nav.navigateToVaccination()
+            7-> nav.navigateToHealth()
+            8-> nav.navigateToPrairies()
+            9-> nav.navigateToReports()
         }
 
     }
 
     //region Toggle setup
 
-    override fun onPostCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onPostCreate(savedInstanceState, persistentState)
+    override fun onPostCreate(savedInstanceState: Bundle?) {
+        super.onPostCreate(savedInstanceState)
         toggle.syncState()
     }
 
