@@ -1,6 +1,7 @@
 package ganko.movil.ganko1.ui.login
 
 import android.arch.lifecycle.ViewModel
+import ganko.movil.ganko1.data.dao.FarmDao
 import ganko.movil.ganko1.data.model.LoginResponse
 import ganko.movil.ganko1.data.model.UserLogin
 import ganko.movil.ganko1.data.prefs.UserSession
@@ -11,7 +12,8 @@ import io.reactivex.Observable
 import javax.inject.Inject
 
 class LoginViewModel @Inject constructor(val loginClient: LoginClient,
-                                         val session:UserSession) : ViewModel() {
+                                         val session:UserSession,
+                                         val farmDao: FarmDao) : ViewModel() {
 
     fun Login(userLogin: UserLogin): Observable<String> = loginClient.login(userLogin)
             .flatMap { validateResponse(it) }
@@ -22,6 +24,7 @@ class LoginViewModel @Inject constructor(val loginClient: LoginClient,
         if(loginResponse.user.estado == "activo"){
             session.token = loginResponse.token
             session.userId = loginResponse.user.id
+            session.logged = true
             it.onNext(loginResponse.token)
 
         }

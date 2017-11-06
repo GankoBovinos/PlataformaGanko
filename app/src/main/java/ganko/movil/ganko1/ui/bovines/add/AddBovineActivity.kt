@@ -3,6 +3,7 @@ package ganko.movil.ganko1.ui.bovines.add
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.jakewharton.rxbinding2.view.clicks
 import ganko.movil.ganko1.R
 import ganko.movil.ganko1.databinding.ActivityAddBovineBinding
@@ -31,11 +32,13 @@ class AddBovineActivity : AppCompatActivity() {
     }
 
     fun minusState(){
-        binding.state -= 1
+        binding.state = binding.state!!.minus(1)
+        Log.i("STATE", ""+binding.state)
     }
 
     fun plusState(){
-        binding.state += 1
+        binding.state = binding.state!!.plus(1)
+        Log.i("STATE", ""+binding.state)
     }
     fun fin(){
         finish()

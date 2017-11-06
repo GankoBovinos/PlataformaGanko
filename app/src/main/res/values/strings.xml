@@ -31,6 +31,10 @@
     <string name="logout">Cerrar sesión</string>
     <string name="change_farm">Cambiar finca</string>
 
+    //Boton hamburguesa
+    <string name="open_menu">Menu abierto</string>
+    <string name="close_menu">Menu cerrado</string>
+
     //Menu de bovinos
     <string name="reproductive">Reproductivo</string>
     <string name="milk">Leche</string>

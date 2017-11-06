@@ -6,9 +6,10 @@
     >
 
     <data>
+
         <variable
             name="item"
-            type="ganko.movil.ganko1.ui.adapters.MenuItem"/>
+            type="ganko.movil.ganko1.ui.menu.MenuViewModel.MenuItem"/>
         <variable
             name="clickMenuItem"
             type="io.reactivex.subjects.PublishSubject"/>

@@ -78,6 +78,8 @@ class FarmActivity : AppCompatActivity(), Injectable {
                             toast("eliminado")
                         }
                 )
+
+        swipe.setOnRefreshListener { getFincas() }
     }
 
     override fun onResume() {
@@ -118,6 +120,7 @@ class FarmActivity : AppCompatActivity(), Injectable {
             .subscribeBy(
                     onNext = {
                         adapter.farms = it
+                        swipe.isRefreshing = false
                         if(adapter.farms.isEmpty()){
                             msgVacio.visibility = View.VISIBLE
                         }
