@@ -21,6 +21,14 @@ class AddFarmViewModel @Inject constructor(val farmClient: FarmClient,
             .fromCallable { farmDao.insert(Farm(name,location,size,session.userId)) }
             .applySchedulers()
 
+    fun editLocalFarm(farm: Farm, name:String, location: String, size: Int): Observable<Unit>{
+        farm.nombre = name
+        farm.ubicacion = location
+        farm.hectareas = size
+        return Observable.fromCallable { farmDao.update(farm) }
+                .applySchedulers()
+    }
+
 
     fun insertRemoteFarm(name:String,location: String, size:Int)
             = farmClient.insertFinca(session.token, Farm(name,location,size,session.userId))

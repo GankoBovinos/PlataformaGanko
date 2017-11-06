@@ -8,6 +8,7 @@ import android.view.View
 import com.jakewharton.rxbinding2.view.clicks
 
 import ganko.movil.ganko1.R
+import ganko.movil.ganko1.data.model.Farm
 import ganko.movil.ganko1.databinding.ActivityFarmBinding
 import ganko.movil.ganko1.ui.adapters.FarmAdapter
 
@@ -63,6 +64,13 @@ class FarmActivity : AppCompatActivity(), Injectable {
 //                onHttpError = this::toast,
 //                onError = {toast(it.message!!)}
 //        )
+
+        adapter.clickEdit.subscribeBy(
+                onNext = {
+                    goToEdit(it)
+                }
+        )
+
         adapter.clickDelete
                 .flatMap { farmViewModel.deleteLocal(it) }
                 .subscribeBy(
@@ -79,6 +87,10 @@ class FarmActivity : AppCompatActivity(), Injectable {
 
     fun goToAdd(){
         startActivity<AddFarmActivity>()
+    }
+
+    fun goToEdit(farm:Farm){
+        startActivity<AddFarmActivity>("farm" to farm)
     }
 
     fun goToAddbovine(){

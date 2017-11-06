@@ -35,7 +35,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:visibility='@{state == 0 ? View.VISIBLE : View.GONE}'
-                    tools:visibility="gone">
+                    tools:visibility="visible">
 
                         <TextView
                             style="@style/TextAppearance.AppCompat.Caption"
@@ -48,7 +48,7 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/input"
                             android:hint="@string/number"
-                            android:inputType="number" />
+                            android:inputType="text" />
 
 
                         <TextView
@@ -86,11 +86,16 @@
                             />
 
 
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_marginTop="@dimen/small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sex"/>
                     <RadioGroup
                         android:id="@+id/bovine_sex"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/small"
                         android:orientation="horizontal">
                         <RadioButton
                             android:id="@+id/male_bovine"

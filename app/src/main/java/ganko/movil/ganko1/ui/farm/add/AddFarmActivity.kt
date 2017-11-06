@@ -26,14 +26,22 @@ class AddFarmActivity : AppCompatActivity(), Injectable {
     val addFarmViewModel: AddFarmViewModel by lazy { buildViewModel(factory, AddFarmViewModel::class) }
 
     lateinit var binding: ActivityAddFarmBinding
+    lateinit var farm:Farm
+    var edit: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_add_farm)
-
+        if (intent.hasExtra("farm")){
+            farm = intent.getParcelableExtra("farm")
+            binding.farm = farm
+            supportActionBar?.title = getString(R.string.edit_farm)
+            edit = true
+        }else{
+            supportActionBar?.title = getString(R.string.add_farm)
+        }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = getString(R.string.add_farm)
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -53,7 +61,7 @@ class AddFarmActivity : AppCompatActivity(), Injectable {
 //                        onHttpError = this::toast,
 //                        onError = {toast(it.message!!)}
 //                )
-                .flatMap { addFarmViewModel.insertLocalFarm(it[0],it[1],it[2].toInt()) }
+                .flatMap { if(edit) addFarmViewModel.editLocalFarm(farm, it[0],it[1],it[2].toInt()) else addFarmViewModel.insertLocalFarm(it[0],it[1],it[2].toInt()) }
                 .subscribeBy(
                         onNext = {
                             finish()

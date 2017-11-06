@@ -62,6 +62,7 @@
     <string name="double_purpose">Doble propósito</string>
     <string name="photo">Foto</string>
     <string name="add_farm">Agregar finca</string>
+    <string name="edit_farm">Editar finca</string>
     <string-array name="bovine_sexs">
         <item>Macho</item>
         <item>Hembra</item>

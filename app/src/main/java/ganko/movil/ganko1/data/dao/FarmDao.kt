@@ -19,7 +19,7 @@ interface FarmDao {
     @Delete
     fun delete(farm: Farm)
 
-    @Query("SELECT * FROM farm")
-    fun all(): Flowable<List<Farm>>
+    @Query("SELECT * FROM farm WHERE usuario = :usuario")
+    fun all(usuario: Int): Flowable<List<Farm>>
 
 }

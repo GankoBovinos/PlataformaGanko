@@ -85,3 +85,7 @@ dependencies {
 repositories {
     mavenCentral()
 }
+
+androidExtensions {
+    experimental true
+}

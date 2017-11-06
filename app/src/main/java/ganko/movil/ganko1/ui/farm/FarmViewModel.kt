@@ -22,7 +22,7 @@ class FarmViewModel @Inject constructor(val farmClient: FarmClient, val farmDao:
             .flatMap{validateResponse(it)}
             .applySchedulers()
 
-    fun getAllLocal(): Flowable<List<Farm>> = farmDao.all().applySchedulers()
+    fun getAllLocal(): Flowable<List<Farm>> = farmDao.all(userSession.userId).applySchedulers()
 
     fun deleteRemote(id:Long): Observable<ResponseData<FarmResponse>>
             = farmClient.deleteFinca(userSession.token,id).applySchedulers()
