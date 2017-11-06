@@ -10,10 +10,7 @@ import ganko.movil.ganko1.R
 import ganko.movil.ganko1.data.model.Farm
 import ganko.movil.ganko1.databinding.ActivityAddFarmBinding
 import ganko.movil.ganko1.di.Injectable
-import ganko.movil.ganko1.utils.buildViewModel
-import ganko.movil.ganko1.utils.subscribeByShot
-import ganko.movil.ganko1.utils.text
-import ganko.movil.ganko1.utils.validateForm
+import ganko.movil.ganko1.utils.*
 import io.reactivex.rxkotlin.subscribeBy
 import kotlinx.android.synthetic.main.activity_add_farm.*
 import org.jetbrains.anko.toast
@@ -24,7 +21,7 @@ class AddFarmActivity : AppCompatActivity(), Injectable {
     @Inject
     lateinit var factory: ViewModelProvider.Factory
     val addFarmViewModel: AddFarmViewModel by lazy { buildViewModel(factory, AddFarmViewModel::class) }
-
+    val dis: LifeDisposable = LifeDisposable(this)
     lateinit var binding: ActivityAddFarmBinding
     lateinit var farm:Farm
     var edit: Boolean = false
@@ -51,7 +48,7 @@ class AddFarmActivity : AppCompatActivity(), Injectable {
 
     override fun onResume() {
         super.onResume()
-        fabAddFarm.clicks()
+        dis add fabAddFarm.clicks()
                 .flatMap { validateForm(R.string.empty_fields, farm_name.text(), farm_location.text(), farm_size.text()) }
 //                .flatMap { addFarmViewModel.insertRemoteFarm(it[0],it[1],it[2].toInt()) }
 //                .subscribeByShot(
