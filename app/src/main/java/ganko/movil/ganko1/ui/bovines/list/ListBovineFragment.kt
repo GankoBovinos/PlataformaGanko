@@ -26,7 +26,7 @@ class ListBovineFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_list_bovine, container, false)
-
+        binding.recyclerBovine.adapter = adapter
         return binding.root
     }
 

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import ganko.movil.ganko1.R
 import ganko.movil.ganko1.data.model.Bovine
 import ganko.movil.ganko1.databinding.ItemBovineBinding
+import ganko.movil.ganko1.di.FragmentScope
 import ganko.movil.ganko1.utils.inflate
 import io.reactivex.subjects.PublishSubject
 import javax.inject.Inject
@@ -14,6 +15,8 @@ import javax.inject.Inject
 /**
  * Created by Asus on 2/11/2017.
  */
+
+@FragmentScope
 class BovineAdapter @Inject constructor() : RecyclerView.Adapter<BovineAdapter.BovineHolder>() {
 
     val clickBovine = PublishSubject.create<Bovine>()
