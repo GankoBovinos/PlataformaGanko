@@ -52,4 +52,5 @@
     <string name="save">Guardar</string>
     <string name="required">Campos requeridos</string>
     <string name="farm_size">Hectáreas</string>
+    <string name="retired">Ver retirados</string>
 </resources>
