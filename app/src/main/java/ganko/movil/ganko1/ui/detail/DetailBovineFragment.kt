@@ -15,7 +15,6 @@ import ganko.movil.ganko1.R
  */
 class DetailBovineFragment : Fragment() {
 
-
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment

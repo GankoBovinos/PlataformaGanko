@@ -1,5 +1,6 @@
 package ganko.movil.ganko1.ui.menu
 
+import ganko.movil.ganko1.data.prefs.UserSession
 import ganko.movil.ganko1.di.ActivityScope
 import ganko.movil.ganko1.ui.farm.FarmActivity
 import ganko.movil.ganko1.ui.login.LoginActivity
@@ -10,7 +11,7 @@ import javax.inject.Inject
  * Created by Ana Marin on 26/10/2017.
  */
 @ActivityScope
-class MenuNavigation @Inject constructor(val activity: MenuActivity){
+class MenuNavigation @Inject constructor(val activity: MenuActivity, val userSession: UserSession){
 
     fun navigateToFarm(){
         activity.startActivity<FarmActivity>()
@@ -46,6 +47,9 @@ class MenuNavigation @Inject constructor(val activity: MenuActivity){
     }
 
     fun navigateToLogout(){
+        userSession.logged = false
+        userSession.token = ""
+
         activity.startActivity<LoginActivity>()
         activity.finish()
     }

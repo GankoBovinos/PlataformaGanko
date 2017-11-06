@@ -6,9 +6,7 @@ import dagger.Component
 import dagger.android.AndroidInjectionModule
 import ganko.movil.ganko1.App
 import ganko.movil.ganko1.di.ActivityBuilders
-import ganko.movil.ganko1.di.modules.AppModule
-import ganko.movil.ganko1.di.modules.NetModule
-import ganko.movil.ganko1.di.modules.ViewModelModule
+import ganko.movil.ganko1.di.modules.*
 import javax.inject.Singleton
 
 /**

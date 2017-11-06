@@ -8,6 +8,7 @@
     </data>
 
     <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="ganko.movil.ganko1.ui.menu.MenuActivity">
@@ -17,7 +18,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <android.support.v4.widget.NestedScrollView
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/template_menu"
+            android:layout_gravity="start"
+            />
+
+       <!-- <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
@@ -38,7 +47,7 @@
                     tools:text="Nombre Finca" />
 
                 <Button
-                    android:id="@+id/change_farm"
+                    android:id="@+id/changeFarm"
                     style="@style/Base.TextAppearance.AppCompat.Inverse"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -51,11 +60,10 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:clipToPadding="false"
-                    app:layoutManager="android.support.v7.widget.StaggeredGridLayoutManager"
-                    app:spanCount="2"
-                    tools:listitem="@layout/template_menu" />
+                    tools:listitem="@layout/template_menu"
+                    />
 
                 <Button
                     android:id="@+id/logout"
@@ -69,7 +77,7 @@
                     android:text="@string/logout" />
 
             </LinearLayout>
-        </android.support.v4.widget.NestedScrollView>
+        </android.support.v4.widget.NestedScrollView>-->
 
     </android.support.v4.widget.DrawerLayout>
 </layout>
