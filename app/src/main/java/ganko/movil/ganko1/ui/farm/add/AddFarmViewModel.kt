@@ -17,12 +17,21 @@ class AddFarmViewModel @Inject constructor(val farmClient: FarmClient,
                                            val farmDao: FarmDao,
                                            val session:UserSession) : ViewModel() {
 
-    fun insertLocalFarm(farm: Farm) = Observable
-            .fromCallable { farmDao.insert(farm) }
+    fun insertLocalFarm(name:String,location: String, size:Int) = Observable
+            .fromCallable { farmDao.insert(Farm(name,location,size,session.userId)) }
             .applySchedulers()
-//            .map { finca }
 
-    fun insertRemoteFarm(farm: Farm) = farmClient.insertFinca(session.token,farm)
+    fun editLocalFarm(farm: Farm, name:String, location: String, size: Int): Observable<Unit>{
+        farm.nombre = name
+        farm.ubicacion = location
+        farm.hectareas = size
+        return Observable.fromCallable { farmDao.update(farm) }
+                .applySchedulers()
+    }
+
+
+    fun insertRemoteFarm(name:String,location: String, size:Int)
+            = farmClient.insertFinca(session.token, Farm(name,location,size,session.userId))
             .flatMap { validateResponse(it) }
             .applySchedulers()
 

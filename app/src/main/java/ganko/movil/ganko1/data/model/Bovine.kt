@@ -1,4 +1,5 @@
 package ganko.movil.ganko1.data.model
+
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.Ignore
 import android.arch.persistence.room.PrimaryKey
@@ -9,8 +10,8 @@ import java.util.*
  */
 
 @Entity
-data class Bovine(@PrimaryKey(autoGenerate = true) var _id:Long?,
-                  var id : Long?,
+data class Bovine(@PrimaryKey(autoGenerate = true) var localId:Int?,
+                  var id : Int?,
                   var id_bovino: String,
                   var imagen: String?,
                   var name: String?,
@@ -34,7 +35,7 @@ data class Bovine(@PrimaryKey(autoGenerate = true) var _id:Long?,
                   var precio_compra : Int?,
                   var precio_venta : Int?,
                   var toSync : Boolean? = false
-                  )
+)
 {
     @Ignore
     constructor(id_bovino: String, imagen: String?, name: String?, fecha: Date, genero: String, proposito: String, peso: Int,

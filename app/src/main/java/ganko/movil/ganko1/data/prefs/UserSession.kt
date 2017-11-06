@@ -20,6 +20,10 @@ class UserSession @Inject constructor(val prefs:SharedPreferences){
         get() = prefs.getBoolean(KEY_LOGGED, false)
         set(value) = prefs.save(KEY_LOGGED to value)
 
+    var userId: Int
+        get() = prefs.getInt(KEY_USERID, 0)
+        set(value) = prefs.save(KEY_USERID to value)
+
     var farm: String
         get() = prefs.getString(KEY_FARM, "")
         set(value) = prefs.save(KEY_FARM to value)
@@ -29,9 +33,11 @@ class UserSession @Inject constructor(val prefs:SharedPreferences){
         set(value) = prefs.save(KEY_FARM_ID to value)
 
 
+
     companion object {
         private val KEY_TOKEN = "token"
         private val KEY_LOGGED = "logged"
+        private val KEY_USERID = "userId"
         private val KEY_FARM = "farm"
         private val KEY_FARM_ID = "farmID"
     }

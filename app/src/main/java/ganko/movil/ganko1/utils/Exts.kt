@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.content.SharedPreferences
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -20,6 +21,9 @@ fun EditText.text(): String = text.toString()
 fun ViewGroup.inflate(layout: Int) = LayoutInflater.from(context).inflate(layout, this, false)
 
 fun <T: ViewModel> AppCompatActivity.buildViewModel(factory: ViewModelProvider.Factory, kClass: KClass<T>):T
+        = ViewModelProviders.of(this, factory).get(kClass.java)
+
+fun <T: ViewModel> Fragment.buildViewModel(factory: ViewModelProvider.Factory, kClass: KClass<T>):T
         = ViewModelProviders.of(this, factory).get(kClass.java)
 
 fun SharedPreferences.save(vararg data:Pair<String, Any>){

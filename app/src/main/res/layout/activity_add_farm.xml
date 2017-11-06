@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="farm"
+            type="ganko.movil.ganko1.data.model.Farm"/>
     </data>
 
     <LinearLayout
@@ -22,15 +24,27 @@
                 android:padding="@dimen/less_small"
                 >
 
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/farm_name"/>
                 <EditText
                     android:id="@+id/farm_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/input"
                     android:hint="@string/farm_name"
+                    android:text='@{farm.nombre}'
                     android:inputType="text"
                     />
 
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/farm_location"
+                    android:layout_marginTop="@dimen/small"/>
                 <EditText
                     android:id="@+id/farm_location"
                     android:layout_width="match_parent"
@@ -38,17 +52,23 @@
                     android:background="@drawable/input"
                     android:hint="@string/farm_location"
                     android:inputType="text"
-                    android:layout_marginTop="@dimen/small"
+                    android:text='@{farm.ubicacion}'
                     />
 
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/farm_size"
+                    android:layout_marginTop="@dimen/small"/>
                 <EditText
                     android:id="@+id/farm_size"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/input"
                     android:hint="@string/farm_size"
-                    android:inputType="numberDecimal"
-                    android:layout_marginTop="@dimen/small"
+                    android:text='@{farm != null ? ""+farm.hectareas : "" }'
+                    android:inputType="number"
                     />
 
             </LinearLayout>
