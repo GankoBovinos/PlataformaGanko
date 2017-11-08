@@ -40,7 +40,11 @@ class FarmActivity : AppCompatActivity(), Injectable {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_farm)
         recycler.adapter = adapter
         binding.loader = loader
+        swipe.setOnRefreshListener { getFincas() }
+    }
 
+    override fun onResume() {
+        super.onResume()
         dis add  fabAdd.clicks()
                 .subscribeBy(
                         onNext = {
@@ -78,13 +82,8 @@ class FarmActivity : AppCompatActivity(), Injectable {
                             toast("eliminado")
                         }
                 )
-
-        swipe.setOnRefreshListener { getFincas() }
-    }
-
-    override fun onResume() {
-        super.onResume()
         getFincas()
+
     }
 
     fun goToAdd(){
