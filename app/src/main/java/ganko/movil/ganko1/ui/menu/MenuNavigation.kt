@@ -23,7 +23,7 @@ class MenuNavigation @Inject constructor(val activity: MenuActivity, val userSes
     }
 
     fun navigateToBovines(){
-      //  putFragment(R.id.content_frame, ListBovineFragment.instance())
+        putFragment(R.id.content_frame, ListBovineFragment.instance())
     }
 
     fun navigateToFeeding(){
@@ -62,14 +62,10 @@ class MenuNavigation @Inject constructor(val activity: MenuActivity, val userSes
 
     }
 
-    /*
     fun putFragment (container: Int, fragment : Fragment){
         val ft = activity.supportFragmentManager.beginTransaction()
         ft.replace(container, fragment )
         ft.commit()
     }
-    */
-
-
 
 }
