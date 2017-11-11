@@ -31,4 +31,9 @@ class FarmViewModel @Inject constructor(val farmClient: FarmClient, val farmDao:
             = Observable.fromCallable { farmDao.delete(farm) }
             .applySchedulers()
 
+    fun ss(farm: Farm){
+        userSession.farm = farm.nombre
+        userSession.farmID = farm.id.toString()
+    }
+
 }

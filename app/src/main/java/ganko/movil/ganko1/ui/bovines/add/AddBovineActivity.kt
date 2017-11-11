@@ -27,19 +27,16 @@ class AddBovineActivity : AppCompatActivity() {
                 .subscribeBy ( onNext = {plusState()} )
         add_bovine_button.clicks()
                 .subscribeBy(onNext = {fin()})
-
-
     }
 
     fun minusState(){
         binding.state = binding.state!!.minus(1)
-        Log.i("STATE", ""+binding.state)
     }
 
     fun plusState(){
         binding.state = binding.state!!.plus(1)
-        Log.i("STATE", ""+binding.state)
     }
+
     fun fin(){
         finish()
     }
