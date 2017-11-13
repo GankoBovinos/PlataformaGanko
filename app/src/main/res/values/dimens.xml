@@ -12,4 +12,6 @@
     <dimen name="menu_size">280dp</dimen>
     <dimen name="img_menu_template">100dp</dimen>
     <dimen name="medium_small">20dp</dimen>
+    <dimen name="elevation">2dp</dimen>
+    <dimen name="margin_xxxs">1dp</dimen>
 </resources>

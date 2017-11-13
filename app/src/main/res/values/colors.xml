@@ -27,5 +27,6 @@
     <color name="btn_menu">#444444</color>
     <color name="btn_menu_light">#555555</color>
     <color name="ripple_mask">#66ffffff</color>
+    <color name="ColorBtnAddMilk">#10A614</color>
 
 </resources>

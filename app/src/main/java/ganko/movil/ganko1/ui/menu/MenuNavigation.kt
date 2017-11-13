@@ -15,42 +15,42 @@ import javax.inject.Inject
  * Created by Ana Marin on 26/10/2017.
  */
 @ActivityScope
-class MenuNavigation @Inject constructor(val activity: MenuActivity, val userSession: UserSession){
+class MenuNavigation @Inject constructor(val activity: MenuActivity, val userSession: UserSession) {
 
-    fun navigateToFarm(){
+    fun navigateToFarm() {
         activity.startActivity<FarmActivity>()
         activity.finish()
     }
 
-    fun navigateToBovines(){
+    fun navigateToBovines() {
         putFragment(R.id.content_frame, ListBovineFragment.instance())
     }
 
-    fun navigateToFeeding(){
+    fun navigateToFeeding() {
 
     }
 
-    fun navigateToHealth(){
+    fun navigateToHealth() {
 
     }
 
-    fun navigateToManage(){
+    fun navigateToManage() {
 
     }
 
-    fun navigateToMovements(){
+    fun navigateToMovements() {
 
     }
 
-    fun navigateToPrairies(){
+    fun navigateToPrairies() {
 
     }
 
-    fun navigateToVaccination(){
+    fun navigateToVaccination() {
 
     }
 
-    fun navigateToLogout(){
+    fun navigateToLogout() {
         userSession.logged = false
         userSession.token = ""
 
@@ -58,14 +58,14 @@ class MenuNavigation @Inject constructor(val activity: MenuActivity, val userSes
         activity.finish()
     }
 
-    fun navigateToReports(){
+    fun navigateToReports() {
 
     }
 
-    fun putFragment (container: Int, fragment : Fragment){
-        val ft = activity.supportFragmentManager.beginTransaction()
-        ft.replace(container, fragment )
-        ft.commit()
+    private fun putFragment(container: Int, fragment: Fragment) {
+        activity.supportFragmentManager.beginTransaction()
+                .replace(container, fragment)
+                .commit()
     }
 
 }
