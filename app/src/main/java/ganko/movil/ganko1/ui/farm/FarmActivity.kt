@@ -40,6 +40,7 @@ class FarmActivity : AppCompatActivity(), Injectable {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_farm)
         recycler.adapter = adapter
         binding.loader = loader
+        title = getString(R.string.farms)
         swipe.setOnRefreshListener { getFincas() }
     }
 
@@ -54,20 +55,12 @@ class FarmActivity : AppCompatActivity(), Injectable {
 
         dis add adapter.clickFarm.subscribeBy(
                 onNext = {
-                    //goToAddbovine()
+
+                    farmViewModel.ss(it)
+
                     goToMenu()
                 }
         )
-//        adapter.clickDelete
-//                .flatMap { farmViewModel.deleteRemote(it.id!!) }
-//                .subscribeByAction(
-//                onNext = {
-//                    toast("eliminado")
-//                    getFincas()
-//                },
-//                onHttpError = this::toast,
-//                onError = {toast(it.message!!)}
-//        )
 
         dis add adapter.clickEdit.subscribeBy(
                 onNext = {
@@ -102,22 +95,6 @@ class FarmActivity : AppCompatActivity(), Injectable {
         startActivity<MenuActivity>()
     }
 
-//    fun getFincas(){
-//        farmViewModel.getAllRemote()
-//                .subscribeByShot(
-//                        onNext = {
-//                            adapter.farms = it
-//                            if(adapter.farms.isEmpty()){
-//                                msgVacio.visibility = View.VISIBLE
-//                            }
-//                            else{
-//                                msgVacio.visibility = View.GONE
-//                            }
-//                        },
-//                        onHttpError = { toast(it) },
-//                        onError = {toast(it.message!!)}
-//                )
-//    }
     fun getFincas(){
     dis add farmViewModel.getAllLocal()
             .subscribeBy(

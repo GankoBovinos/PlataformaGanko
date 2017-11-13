@@ -27,8 +27,8 @@
         </activity>
         <activity android:name=".ui.bovines.out.OutBovineActivity" />
         <activity android:name=".ui.bovines.add.AddBovineActivity" />
-
-        <activity android:name=".ui.detail.reproductive.ReproductiveActivity" />
+        <activity android:name=".ui.detail.reproductive.ReproductiveActivity"
+            android:theme="@style/NoActionBar"/>
         <activity android:name=".ui.bovines.search.SearchBovineActivity"/>
 
     </application>

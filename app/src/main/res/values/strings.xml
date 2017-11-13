@@ -68,6 +68,7 @@
     <string name="photo">Foto</string>
     <string name="add_farm">Agregar finca</string>
     <string name="edit_farm">Editar finca</string>
+    <string name="farms">Fincas</string>
     <string-array name="bovine_sexs">
         <item>Macho</item>
         <item>Hembra</item>
