@@ -69,11 +69,8 @@
     <string name="add_farm">Agregar finca</string>
     <string name="edit_farm">Editar finca</string>
     <string name="farms">Fincas</string>
-    <string name="milk">Leche</string>
-    <string name="reproductive">Reproductivo</string>
     <string name="bait">Ceba</string>
     <string name="alimentation">Alimentacion</string>
-    <string name="manage">Manejo</string>
     <string name="vaccine">Vacunas</string>
     <string-array name="bovine_sexs">
         <item>Macho</item>
