@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/small">
+
+            <!--region Details of the bovine 1-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/small">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->clickBovine.onNext(bovine)}">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:src="@drawable/ic_android"
+                        android:background="@color/img"
+                        android:layout_marginBottom="@dimen/small" />
+
+                    <TextView
+                        android:id="@+id/bovine_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        tools:text="Nombre:" />
+
+                    <TextView
+                        android:id="@+id/bovine_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Base.TextAppearance.AppCompat.Body2"
+                        tools:text="Numero:" />
+
+                    <TextView
+                        android:id="@+id/bovine_birth_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Base.TextAppearance.AppCompat.Body2"
+                        tools:text="Fecha de nacimiento:" />
+
+                    <TextView
+                        android:id="@+id/bovine_breed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Base.TextAppearance.AppCompat.Body2"
+                        tools:text="Raza:" />
+
+                    <TextView
+                        android:id="@+id/bovine_sex"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Base.TextAppearance.AppCompat.Body2"
+                        tools:text="Sexo:" />
+
+                    <TextView
+                        android:id="@+id/bovine_purpose"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/small"
+                        style="@style/Base.TextAppearance.AppCompat.Body2"
+                        tools:text="Proposito:" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <!--endregion-->
+
+            <!--region Actions-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_xxxs"
+                    android:background="@color/img">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnMilk"
+                            android:layout_width="0dp"
+                            android:layout_weight="7"
+                            android:layout_height="wrap_content"
+                            android:background="@color/light"
+                            android:layout_marginBottom="@dimen/margin_xxxs"
+                            android:gravity="left|center"
+                            android:paddingLeft="@dimen/medium_small"
+                            android:text="@string/milk" />
+
+                        <ImageView
+                            android:id="@+id/btnAddMilk"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_add"
+                            android:background="@color/prairies" />
+
+                    </LinearLayout>
+
+
+                    <Button
+                        android:id="@+id/btnReproductive"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light"
+                        android:layout_marginBottom="@dimen/margin_xxxs"
+                        android:gravity="left|center"
+                        android:paddingLeft="@dimen/medium_small"
+                        android:text="@string/reproductive" />
+
+                    <Button
+                        android:id="@+id/btnBait"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light"
+                        android:layout_marginBottom="@dimen/margin_xxxs"
+                        android:gravity="left|center"
+                        android:paddingLeft="@dimen/medium_small"
+                        android:text="@string/bait" />
+
+                    <Button
+                        android:id="@+id/btnAlimentation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light"
+                        android:layout_marginBottom="@dimen/margin_xxxs"
+                        android:gravity="left|center"
+                        android:paddingLeft="@dimen/medium_small"
+                        android:text="@string/alimentation" />
+
+                    <Button
+                        android:id="@+id/btnManage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light"
+                        android:layout_marginBottom="@dimen/margin_xxxs"
+                        android:gravity="left|center"
+                        android:paddingLeft="@dimen/medium_small"
+                        android:text="@string/manage" />
+
+                    <Button
+                        android:id="@+id/btnMovements"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light"
+                        android:layout_marginBottom="@dimen/margin_xxxs"
+                        android:gravity="left|center"
+                        android:paddingLeft="@dimen/medium_small"
+                        android:text="@string/movements" />
+
+                    <Button
+                        android:id="@+id/btnVaccine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light"
+                        android:layout_marginBottom="@dimen/margin_xxxs"
+                        android:gravity="left|center"
+                        android:paddingLeft="@dimen/medium_small"
+                        android:text="@string/vaccine" />
+
+                    <Button
+                        android:id="@+id/btnHealth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/light"
+                        android:layout_marginBottom="@dimen/margin_xxxs"
+                        android:gravity="left|center"
+                        android:paddingLeft="@dimen/medium_small"
+                        android:text="@string/health" />
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+            <!--endregion-->
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</layout>
