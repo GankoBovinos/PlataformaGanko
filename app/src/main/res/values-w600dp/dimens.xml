@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="side_menu">200dp</dimen>
+    <dimen name="list_bovine">200dp</dimen>
+</resources>

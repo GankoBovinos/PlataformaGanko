@@ -1,84 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ganko.movil.ganko1.ui.menu.MenuActivity">
 
-    <data>
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-    </data>
-
-    <android.support.v4.widget.DrawerLayout
-        android:id="@+id/drawer"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="ganko.movil.ganko1.ui.menu.MenuActivity">
+        android:layout_gravity="start"
+        tools:listitem="@layout/template_menu" />
 
-        <FrameLayout
-            android:id="@+id/content_frame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:listitem="@layout/template_menu"
-            android:layout_gravity="start"
-            />
-
-       <!-- <android.support.v4.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:background="@color/img">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/Base.TextAppearance.AppCompat.Title.Inverse"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/small"
-                    android:text="Nombre Finca"
-                    android:textSize="@dimen/farm_name"
-                    tools:text="Nombre Finca" />
-
-                <Button
-                    android:id="@+id/changeFarm"
-                    style="@style/Base.TextAppearance.AppCompat.Inverse"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/btn_menu"
-                    android:drawableLeft="@drawable/ic_back_white"
-                    android:padding="@dimen/small"
-                    android:text="@string/change_farm"
-                    />
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/recycler"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:clipToPadding="false"
-                    tools:listitem="@layout/template_menu"
-                    />
-
-                <Button
-                    android:id="@+id/logout"
-                    style="@style/Base.TextAppearance.AppCompat.Inverse"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:background="@color/btn_menu"
-                    android:drawableLeft="@drawable/ic_logout"
-                    android:padding="@dimen/small"
-                    android:text="@string/logout" />
-
-            </LinearLayout>
-        </android.support.v4.widget.NestedScrollView>-->
-
-    </android.support.v4.widget.DrawerLayout>
-</layout>
+</android.support.v4.widget.DrawerLayout>
 

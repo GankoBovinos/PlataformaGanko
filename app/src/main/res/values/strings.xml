@@ -56,4 +56,20 @@
     <string name="save">Guardar</string>
     <string name="required">Campos requeridos</string>
     <string name="farm_size">Hectáreas</string>
+    <string name="births_number">Número de Partos</string>
+    <string name="male">Macho</string>
+    <string name="female">Hembra</string>
+    <string name="weaned">Destetado</string>
+    <string name="back">Atras</string>
+    <string name="next">Siguiente</string>
+    <string name="specialized_dairy">Lechería especializada</string>
+    <string name="double_purpose">Doble propósito</string>
+    <string name="photo">Foto</string>
+    <string name="add_farm">Agregar finca</string>
+    <string name="edit_farm">Editar finca</string>
+    <string name="farms">Fincas</string>
+    <string-array name="bovine_sexs">
+        <item>Macho</item>
+        <item>Hembra</item>
+    </string-array>
 </resources>

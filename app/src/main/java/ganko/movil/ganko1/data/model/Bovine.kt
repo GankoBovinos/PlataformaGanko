@@ -1,6 +1,7 @@
 package ganko.movil.ganko1.data.model
-import android.arch.persistence.room.Entity
+
 import android.arch.persistence.room.Ignore
+import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 import java.util.*
 
@@ -9,8 +10,9 @@ import java.util.*
  */
 
 @Entity
-data class Bovine(@PrimaryKey(autoGenerate = true) var _id:Long?,
-                  var id : Long?,
+
+data class Bovine(@PrimaryKey(autoGenerate = true) var localId:Int?,
+                  var id : Int?,
                   var id_bovino: String,
                   var imagen: String?,
                   var name: String?,
@@ -34,7 +36,9 @@ data class Bovine(@PrimaryKey(autoGenerate = true) var _id:Long?,
                   var precio_compra : Int?,
                   var precio_venta : Int?,
                   var toSync : Boolean? = false
+
                   )
+
 {
     @Ignore
     constructor(id_bovino: String, imagen: String?, name: String?, fecha: Date, genero: String, proposito: String, peso: Int,
@@ -43,5 +47,7 @@ data class Bovine(@PrimaryKey(autoGenerate = true) var _id:Long?,
                 fecha_compra: Date?, precio_compra: Int?, precio_venta: Int?) : this (
             null, null, id_bovino, imagen, name, fecha, genero, proposito, peso, color, raza, id_madre, id_padre, salida, lote,
             salida_por, numero_partos, parto_fallo, fecha_salida, finca, usuario, fecha_compra, precio_compra, precio_venta, true )
+
 }
+
 
