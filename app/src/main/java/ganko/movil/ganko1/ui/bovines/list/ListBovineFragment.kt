@@ -28,6 +28,9 @@ class ListBovineFragment : Fragment(), Injectable {
     lateinit var adapter : BovineAdapter
     lateinit var binding : FragmentListBovineBinding
 
+    val phone = resources.getBoolean(R.bool.phone)
+    val land = resources.getBoolean(R.bool.land)
+
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
@@ -53,11 +56,14 @@ class ListBovineFragment : Fragment(), Injectable {
 
     }
 
-    fun getBovines(){
+    private fun getBovines(){
         dis add listBovineViewModel.getAllLocal()
                 .subscribeBy(
                         onNext = {
                             adapter.bovines = it
+                            if(adapter.bovines.isNotEmpty()  && land && !phone){
+                                bovineSelected().onNext(adapter.bovines[0])
+                            }
                         }
                 )
     }
