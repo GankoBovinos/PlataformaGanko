@@ -26,56 +26,56 @@ class DetailNavigation @Inject constructor(){
         activity.startActivity<DetailBovineActivity>(DetailBovineActivity.EXTRA_CONTENT to DetailBovineActivity.CONTENT_DETAIL)
     }
 
-    fun navigateToMilk(fragment: Fragment, id: Long, addStack: Boolean = true){
-        fragment.addFragment(R.id.container, MilkBovineFragment.instance(), addStack)
+    fun navigateToMilk(fragment: Fragment, id: Int, addStack: Boolean = true){
+        fragment.addFragment(R.id.container, MilkBovineFragment.instance(id), addStack)
     }
 
     fun navigateToMilk(activity: AppCompatActivity, bovine: Bovine){
         activity.startActivity<DetailBovineActivity>(DetailBovineActivity.EXTRA_CONTENT to DetailBovineActivity.CONTENT_MILK)
     }
 
-    fun navigateToFeed(fragment: Fragment, id: Long, addStack: Boolean = true){
-        fragment.addFragment(R.id.container, FeedBovineFragment.instance(), addStack)
+    fun navigateToFeed(fragment: Fragment, id: Int, addStack: Boolean = true){
+        fragment.addFragment(R.id.container, FeedBovineFragment.instance(id), addStack)
     }
 
     fun navigateToFeed(activity: AppCompatActivity, bovine: Bovine){
         activity.startActivity<DetailBovineActivity>(DetailBovineActivity.EXTRA_CONTENT to DetailBovineActivity.CONTENT_FEED)
     }
 
-    fun navigateToHealth(fragment: Fragment, id: Long, addStack: Boolean = true){
-        fragment.addFragment(R.id.container, HealthBovineFragment.instance(), addStack)
+    fun navigateToHealth(fragment: Fragment, id: Int, addStack: Boolean = true){
+        fragment.addFragment(R.id.container, HealthBovineFragment.instance(id), addStack)
     }
 
     fun navigateToHealth(activity: AppCompatActivity, bovine: Bovine){
         activity.startActivity<DetailBovineActivity>(DetailBovineActivity.EXTRA_CONTENT to DetailBovineActivity.CONTENT_HEALTH)
     }
 
-    fun navigateToManage(fragment: Fragment, id: Long, addStack: Boolean = true){
-        fragment.addFragment(R.id.container, ManageBovineFragment.instance(), addStack)
+    fun navigateToManage(fragment: Fragment, id: Int, addStack: Boolean = true){
+        fragment.addFragment(R.id.container, ManageBovineFragment.instance(id), addStack)
     }
 
     fun navigateToManage(activity: AppCompatActivity, bovine: Bovine){
         activity.startActivity<DetailBovineActivity>(DetailBovineActivity.EXTRA_CONTENT to DetailBovineActivity.CONTENT_MANAGE)
     }
 
-    fun navigateToMeat(fragment: Fragment, id: Long,  addStack: Boolean = true){
-        fragment.addFragment(R.id.container, MeatBovineFragment.instance(), addStack)
+    fun navigateToMeat(fragment: Fragment, id: Int,  addStack: Boolean = true){
+        fragment.addFragment(R.id.container, MeatBovineFragment.instance(id), addStack)
     }
 
     fun navigateToMeat(activity: AppCompatActivity, bovine: Bovine){
         activity.startActivity<DetailBovineActivity>(DetailBovineActivity.EXTRA_CONTENT to DetailBovineActivity.CONTENT_MEAT)
     }
 
-    fun navigateToMovements(fragment: Fragment, id: Long, addStack: Boolean = true){
-        fragment.addFragment(R.id.container, MovementsBovineFragment.instance(), addStack)
+    fun navigateToMovements(fragment: Fragment, id: Int, addStack: Boolean = true){
+        fragment.addFragment(R.id.container, MovementsBovineFragment.instance(id), addStack)
     }
 
     fun navigateToMovements(activity: AppCompatActivity, bovine: Bovine){
         activity.startActivity<DetailBovineActivity>(DetailBovineActivity.EXTRA_CONTENT to DetailBovineActivity.CONTENT_MOVEMENTS)
     }
 
-    fun navigateToVaccination(fragment: Fragment, id: Long, addStack: Boolean = true){
-        fragment.addFragment(R.id.container, VaccinationBovineFragment.instance(), addStack)
+    fun navigateToVaccination(fragment: Fragment, id: Int, addStack: Boolean = true){
+        fragment.addFragment(R.id.container, VaccinationBovineFragment.instance(id), addStack)
     }
 
     fun navigateToVaccination(activity: AppCompatActivity, bovine: Bovine){
