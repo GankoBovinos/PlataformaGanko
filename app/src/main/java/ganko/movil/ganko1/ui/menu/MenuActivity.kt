@@ -17,7 +17,6 @@ import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import ganko.movil.ganko1.R
-import ganko.movil.ganko1.databinding.ActivityMenuBinding
 import ganko.movil.ganko1.ui.adapters.MenuAdapter
 import ganko.movil.ganko1.utils.LifeDisposable
 import ganko.movil.ganko1.utils.buildViewModel
@@ -26,9 +25,9 @@ import javax.inject.Inject
 
 class MenuActivity : AppCompatActivity(), HasSupportFragmentInjector, DrawerLayout.DrawerListener {
 
-    lateinit var binding: ActivityMenuBinding
     var dis: LifeDisposable = LifeDisposable(this)
     lateinit var toggle: ActionBarDrawerToggle
+    var phone: Boolean = true;
 
     @Inject
     lateinit var nav: MenuNavigation
@@ -45,12 +44,16 @@ class MenuActivity : AppCompatActivity(), HasSupportFragmentInjector, DrawerLayo
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_menu)
+        setContentView(R.layout.a_menu)
 
+        phone = resources.getBoolean(R.bool.phone)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        toggle = ActionBarDrawerToggle(this, drawer, R.string.open_menu, R.string.close_menu)
-        drawer.addDrawerListener(this)
+        if (phone) {
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+            toggle = ActionBarDrawerToggle(this, drawer, R.string.open_menu, R.string.close_menu)
+            drawer.addDrawerListener(this)
+        }
+
         recycler.adapter = adapter
         adapter.items = menuViewModel.data
 
@@ -71,11 +74,19 @@ class MenuActivity : AppCompatActivity(), HasSupportFragmentInjector, DrawerLayo
 
         adapter.clickMenu
                 .subscribe {
-                    drawer.closeDrawers()
-                    when(it){
-                        1-> nav.navigateToFarm()
-                        in 2..9 -> clickOnMenu(it)
-                        10-> nav.navigateToLogout()
+                    if(phone) {
+                        drawer.closeDrawers()
+                        when (it) {
+                            1 -> nav.navigateToFarm()
+                            in 2..9 -> clickOnMenu(it)
+                            10 -> nav.navigateToLogout()
+                        }
+                    }else{
+                        when (it) {
+                            1 -> nav.navigateToFarm()
+                            in 2..9 -> clickOnMenu(it)
+                            10 -> nav.navigateToLogout()
+                        }
                     }
                 }
     }

@@ -1,5 +1,6 @@
 package ganko.movil.ganko1.data.model
 
+
 import android.annotation.SuppressLint
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.Ignore
@@ -41,6 +42,7 @@ data class Bovine(@PrimaryKey(autoGenerate = true) var localId:Int?,
                   var precio_venta : Int?,
                   var toSync : Boolean? = false
 ): Parcelable {
+
     @Ignore
     constructor(id_bovino: String, imagen: String?, name: String?, fecha: Date, genero: String, proposito: String,
                 peso: Int, color: String?, raza: String?, id_madre: String?, id_padre: String?, salida: String?,

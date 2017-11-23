@@ -13,15 +13,13 @@ import ganko.movil.ganko1.R
 /**
  * A simple [Fragment] subclass.
  */
-class BovineFragment : Fragment() {
+class BovineFragmentTablet : Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater!!.inflate(R.layout.f_bovine, container, false)
+        return inflater!!.inflate(R.layout.fragment_bovine_fragment_tablet, container, false)
     }
-
-
 
 }// Required empty public constructor
