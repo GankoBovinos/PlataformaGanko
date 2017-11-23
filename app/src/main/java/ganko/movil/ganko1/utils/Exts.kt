@@ -47,3 +47,31 @@ fun AppCompatActivity.validateForm(message: Int,
     else it.onNext(fields.toList())
     it.onComplete()
 }
+
+fun AppCompatActivity.putFragment(container: Int, fragment: Fragment){
+    supportFragmentManager.beginTransaction()
+            .replace(container, fragment)
+            .commit()
+}
+
+
+fun Fragment.putFragment(container: Int, fragment: Fragment){
+    childFragmentManager.beginTransaction()
+            .replace(container, fragment)
+            .commit()
+}
+
+fun AppCompatActivity.addFragment(container: Int, fragment: Fragment){
+    supportFragmentManager.beginTransaction()
+            .add(container, fragment)
+            .addToBackStack(null)
+            .commit()
+}
+
+
+fun Fragment.addFragment(container: Int, fragment: Fragment){
+    childFragmentManager.beginTransaction()
+            .add(container, fragment)
+            .addToBackStack(null)
+            .commit()
+}

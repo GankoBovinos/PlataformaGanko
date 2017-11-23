@@ -22,16 +22,6 @@
             app:layoutManager="android.support.v7.widget.LinearLayoutManager"
             />
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fabAddBovine"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/small"
-            app:fabSize="normal"
-            android:backgroundTint="@color/colorPrimary"
-            android:src="@drawable/ic_add" />
-
     </FrameLayout>
 </layout>
 

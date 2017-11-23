@@ -21,4 +21,17 @@ class DetailBovineActivity : AppCompatActivity(), HasSupportFragmentInjector {
 
     override fun supportFragmentInjector(): AndroidInjector<Fragment>
         = injector
+
+    companion object {
+        val CONTENT_DETAIL = 0
+        val CONTENT_MILK = 1
+        val CONTENT_MEAT = 2
+        val CONTENT_MANAGE = 3
+        val CONTENT_FEED = 4
+        val CONTENT_VACCINATION = 5
+        val CONTENT_MOVEMENTS = 6
+        val CONTENT_HEALTH = 7
+
+        val EXTRA_CONTENT = "content"
+    }
 }

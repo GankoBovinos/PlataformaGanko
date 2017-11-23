@@ -22,4 +22,8 @@ class ManageBovineFragment : Fragment() {
         return inflater!!.inflate(R.layout.fragment_manage_bovine, container, false)
     }
 
+    companion object {
+        fun instance() = ManageBovineFragment()
+    }
+
 }// Required empty public constructor

@@ -19,7 +19,7 @@ class BovineFragmentTablet : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater!!.inflate(R.layout.fragment_bovine_fragment_tablet, container, false)
+        return inflater!!.inflate(R.layout.fragment_bovine_tablet, container, false)
     }
 
 }// Required empty public constructor

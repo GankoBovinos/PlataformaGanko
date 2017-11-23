@@ -8,6 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 
 import ganko.movil.ganko1.R
+import ganko.movil.ganko1.ui.bovines.list.ListBovineFragment
+import ganko.movil.ganko1.ui.detail.DetailBovineActivity
+import ganko.movil.ganko1.ui.detail.DetailBovineFragment
+import ganko.movil.ganko1.utils.putFragment
 
 
 /**
@@ -15,6 +19,8 @@ import ganko.movil.ganko1.R
  */
 class BovineFragment : Fragment() {
 
+    val phone: Boolean = resources.getBoolean(R.bool.phone)
+    val land: Boolean = resources.getBoolean(R.bool.land)
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -22,6 +28,22 @@ class BovineFragment : Fragment() {
         return inflater!!.inflate(R.layout.f_bovine, container, false)
     }
 
+    override fun onResume() {
+        super.onResume()
+        val listBovine: ListBovineFragment = childFragmentManager.findFragmentById(R.id.list_bonive) as ListBovineFragment
+        listBovine.bovineSelected()
+                .subscribe {
+                    if (!phone && land) {
+                        putFragment(R.id.container, DetailBovineFragment.instance(it))
+                    } else {
 
+                    }
+                }
+
+    }
+
+    companion object {
+        fun instance() = BovineFragment()
+    }
 
 }// Required empty public constructor
