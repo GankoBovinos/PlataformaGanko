@@ -1,6 +1,5 @@
 package ganko.movil.ganko1.ui.bovines.list
 
-
 import android.arch.lifecycle.ViewModelProvider
 import android.databinding.DataBindingUtil
 import android.os.Bundle
@@ -17,7 +16,6 @@ import ganko.movil.ganko1.utils.buildViewModel
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.subjects.PublishSubject
 import javax.inject.Inject
-
 
 /**
  * A simple [Fragment] subclass.
@@ -75,6 +73,5 @@ class ListBovineFragment : Fragment(), Injectable {
         fun instance(bovine: Bovine): ListBovineFragment = ListBovineFragment()
 
     }
-
 
 }// Required empty public constructor
