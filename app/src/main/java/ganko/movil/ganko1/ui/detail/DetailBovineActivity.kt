@@ -7,17 +7,30 @@ import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import ganko.movil.ganko1.R
+import ganko.movil.ganko1.data.model.Bovine
+import ganko.movil.ganko1.utils.putFragment
 import javax.inject.Inject
 
 class DetailBovineActivity : AppCompatActivity(), HasSupportFragmentInjector {
 
     @Inject
     lateinit var injector: DispatchingAndroidInjector<Fragment>
+    @Inject
+    lateinit var nav: DetailNavigation
+    val bovine: Bovine by lazy { intent.extras.getParcelable<Bovine>(EXTRA_BOVINE) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_bovine)
+
+        val content = intent.extras.getInt(EXTRA_CONTENT)
+        when (content){
+            CONTENT_DETAIL -> putFragment(R.id.container, DetailBovineFragment.instance(bovine))
+        }
+
     }
+
+
 
     override fun supportFragmentInjector(): AndroidInjector<Fragment>
         = injector
@@ -33,5 +46,6 @@ class DetailBovineActivity : AppCompatActivity(), HasSupportFragmentInjector {
         val CONTENT_HEALTH = 7
 
         val EXTRA_CONTENT = "content"
+        val EXTRA_BOVINE = "bovine"
     }
 }
