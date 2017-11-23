@@ -3,5 +3,5 @@
     <bool name="phone">false</bool>
     <bool name="land">false</bool>
     <item name="a_menu" type="layout">@layout/activity_menu_tablet</item>
-    <item name="f_bovine" type="layout">@layout/fragment_list_bovine</item>
+    <item name="f_bovine" type="layout">@layout/fragment_bovine</item>
 </resources>

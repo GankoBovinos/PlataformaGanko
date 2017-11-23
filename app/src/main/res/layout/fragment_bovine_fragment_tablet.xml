@@ -8,7 +8,7 @@
         android:id="@+id/list_bonive"
         android:layout_width="@dimen/list_bovine"
         android:layout_height="match_parent"
-        class="ganko.movil.ganko1.ui.bovines.list.ListBovineFragment"
+        android:name="ganko.movil.ganko1.ui.bovines.list.ListBovineFragment"
         tools:layout="@layout/fragment_list_bovine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
