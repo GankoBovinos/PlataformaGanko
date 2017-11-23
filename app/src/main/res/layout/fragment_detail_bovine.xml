@@ -6,6 +6,10 @@
 
     <data>
 
+        <variable
+            name="bovine"
+            type="ganko.movil.ganko1.data.model.Bovine"/>
+
     </data>
 
     <android.support.v4.widget.NestedScrollView
@@ -29,7 +33,7 @@
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="@{()->clickBovine.onNext(bovine)}">
+                    >
 
                     <ImageView
                         android:layout_width="match_parent"

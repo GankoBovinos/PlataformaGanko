@@ -8,12 +8,14 @@ import android.support.v4.app.Fragment
 import android.view.*
 
 import ganko.movil.ganko1.R
+import ganko.movil.ganko1.data.model.Bovine
 import ganko.movil.ganko1.databinding.FragmentListBovineBinding
 import ganko.movil.ganko1.di.Injectable
 import ganko.movil.ganko1.ui.adapters.BovineAdapter
 import ganko.movil.ganko1.utils.LifeDisposable
 import ganko.movil.ganko1.utils.buildViewModel
 import io.reactivex.rxkotlin.subscribeBy
+import io.reactivex.subjects.PublishSubject
 import javax.inject.Inject
 
 
@@ -25,6 +27,7 @@ class ListBovineFragment : Fragment(), Injectable {
     @Inject
     lateinit var adapter : BovineAdapter
     lateinit var binding : FragmentListBovineBinding
+
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
@@ -50,10 +53,6 @@ class ListBovineFragment : Fragment(), Injectable {
 
     }
 
-    companion object {
-        fun instance(): ListBovineFragment = ListBovineFragment()
-    }
-
     fun getBovines(){
         dis add listBovineViewModel.getAllLocal()
                 .subscribeBy(
@@ -61,6 +60,14 @@ class ListBovineFragment : Fragment(), Injectable {
                             adapter.bovines = it
                         }
                 )
+    }
+
+    fun bovineSelected():PublishSubject<Bovine> = adapter.clickBovine
+
+    companion object {
+
+        fun instance(bovine: Bovine): ListBovineFragment = ListBovineFragment()
+
     }
 
 

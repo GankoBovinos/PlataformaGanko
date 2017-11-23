@@ -3,6 +3,7 @@ package ganko.movil.ganko1.ui.menu
 import android.app.FragmentTransaction
 import android.support.v4.app.Fragment
 import ganko.movil.ganko1.R
+import ganko.movil.ganko1.data.model.Bovine
 import ganko.movil.ganko1.data.prefs.UserSession
 import ganko.movil.ganko1.di.ActivityScope
 import ganko.movil.ganko1.ui.bovines.list.ListBovineFragment
