@@ -33,7 +33,6 @@ class DetailBovineFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_detail_bovine, container, false)
         bovine = arguments.getParcelable<Bovine>(EXTRA_BOVINE)
-        bovine?.id = arguments.getInt(ID_BOVINE)
         return binding.root
     }
 
@@ -43,7 +42,6 @@ class DetailBovineFragment : Fragment() {
     }
 
     companion object {
-        val ID_BOVINE = "id"
         val EXTRA_BOVINE = "bovine"
         fun instance(bovine: Bovine): DetailBovineFragment {
             val fragment = DetailBovineFragment()

@@ -6,10 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import ganko.movil.ganko1.R
-import ganko.movil.ganko1.ui.detail.DetailBovineFragment
-import ganko.movil.ganko1.ui.detail.DetailBovineFragment.Companion.ID_BOVINE
 
 
 /**
@@ -25,11 +22,11 @@ class MeatBovineFragment : Fragment() {
     }
 
     companion object {
-        var id = DetailBovineFragment.ID_BOVINE
-        fun instance(id_bovine: Int): MeatBovineFragment{
+        val EXTRA_ID = "id"
+        fun instance(idBovine: Int): MeatBovineFragment{
             val fragment = MeatBovineFragment()
             val args = Bundle()
-            args.putInt(ID_BOVINE, id_bovine)
+            args.putInt(EXTRA_ID, idBovine)
             fragment.arguments = args
             return fragment
         }

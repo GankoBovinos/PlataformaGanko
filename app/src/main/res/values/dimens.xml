@@ -14,4 +14,5 @@
     <dimen name="medium_small">20dp</dimen>
     <dimen name="elevation">2dp</dimen>
     <dimen name="margin_xxxs">1dp</dimen>
+    <dimen name="padding_medium">20dp</dimen>
 </resources>

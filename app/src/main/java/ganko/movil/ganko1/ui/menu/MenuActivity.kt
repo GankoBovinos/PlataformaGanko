@@ -27,7 +27,7 @@ class MenuActivity : AppCompatActivity(), HasSupportFragmentInjector, DrawerLayo
 
     var dis: LifeDisposable = LifeDisposable(this)
     lateinit var toggle: ActionBarDrawerToggle
-    var phone: Boolean = true;
+    var phone: Boolean = true
 
     @Inject
     lateinit var nav: MenuNavigation

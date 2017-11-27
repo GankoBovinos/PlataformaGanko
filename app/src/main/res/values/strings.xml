@@ -72,8 +72,21 @@
     <string name="bait">Ceba</string>
     <string name="alimentation">Alimentacion</string>
     <string name="vaccine">Vacunas</string>
+
     <string-array name="bovine_sexs">
         <item>Macho</item>
         <item>Hembra</item>
     </string-array>
+
+    //Out spinner
+    <string-array name="out_spinner">
+        <item>Venta</item>
+        <item>Descarte</item>
+        <item>Consumo</item>
+        <item>Muerte</item>
+        <item>Robo</item>
+        <item>Otro</item>
+    </string-array>
+    <string name="date_format">dd/mm/yyyy</string>
+
 </resources>
