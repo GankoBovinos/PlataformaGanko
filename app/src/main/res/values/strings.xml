@@ -68,8 +68,10 @@
     <string name="add_farm">Agregar finca</string>
     <string name="edit_farm">Editar finca</string>
     <string name="farms">Fincas</string>
-    <string-array name="bovine_sexs">
-        <item>Macho</item>
-        <item>Hembra</item>
-    </string-array>
+    <string name="zeal">Celo</string>
+    <string name="service">Servicio</string>
+    <string name="diagnosis">Diagnóstico</string>
+    <string name="birth">Parto</string>
+    <string name="zeal_date">Fecha de celo:</string>
+    <string name="delete_service">Delete service</string>
 </resources>

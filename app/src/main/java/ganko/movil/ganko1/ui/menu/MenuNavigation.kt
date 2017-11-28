@@ -2,6 +2,7 @@ package ganko.movil.ganko1.ui.menu
 
 import ganko.movil.ganko1.data.prefs.UserSession
 import ganko.movil.ganko1.di.ActivityScope
+import ganko.movil.ganko1.ui.detail.reproductive.ReproductiveActivity
 import ganko.movil.ganko1.ui.farm.FarmActivity
 import ganko.movil.ganko1.ui.login.LoginActivity
 import org.jetbrains.anko.startActivity
@@ -39,6 +40,7 @@ class MenuNavigation @Inject constructor(val activity: MenuActivity, val userSes
     }
 
     fun navigateToPrairies(){
+        activity.startActivity<ReproductiveActivity>()
 
     }
 

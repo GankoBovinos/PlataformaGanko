@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="ganko.movil.ganko1.ui.bovines.add.AddBovineActivity">
+    tools:context="ganko.movil.ganko1.ui.bovines.add.AddBovineActivity"
+    >
 
     <data>
         <import type="android.view.View"/>
@@ -16,12 +17,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+
         >
 
         <android.support.v4.widget.NestedScrollView
             android:layout_height="0dp"
             android:layout_width="match_parent"
             android:layout_weight="1"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginRight="@dimen/horizontal_margin"
+            android:layout_marginLeft="@dimen/horizontal_margin"
             >
 
             <LinearLayout
@@ -136,7 +142,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:visibility='@{state == 1 ? View.VISIBLE : View.GONE}'
-                    tools:visibility="visible">
+                    tools:visibility="gone">
 
 
 
@@ -235,7 +241,7 @@
                     android:layout_width="match_parent"
                     android:orientation="vertical"
                     android:visibility='@{state == 2 ? View.VISIBLE : View.GONE}'
-                    tools:visibility="visible">
+                    tools:visibility="gone">
 
 
                     <TextView
@@ -289,7 +295,7 @@
                             android:layout_width="@dimen/big"
                             android:layout_height="@dimen/big"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_add_photo"
+                            app:srcCompat="@drawable/ic_add_photo"
                             android:contentDescription="@string/add_bovine_photo" />
 
                     </FrameLayout>
@@ -301,7 +307,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/light_grey_card">
+            android:background="@color/light_gray_card">
 
             <Button
                 android:id="@+id/back_bovine_button"
