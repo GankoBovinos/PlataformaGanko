@@ -130,7 +130,8 @@
                 android:hint="@string/enterDateMilkProduction"
                 android:gravity="center"
                 android:background="@drawable/input"
-                android:layout_marginBottom="@dimen/medium_small" />
+                android:layout_marginBottom="@dimen/medium_small"
+                />
 
             <TextView
                 android:id="@+id/litersMilkProduction"
