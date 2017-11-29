@@ -87,6 +87,7 @@
         <item>Robo</item>
         <item>Otro</item>
     </string-array>
-    <string name="date_format">dd/mm/yyyy</string>
+    <string name="retired_bovine">Retirados</string>
+    <string name="date_text">Fecha</string>
 
 </resources>

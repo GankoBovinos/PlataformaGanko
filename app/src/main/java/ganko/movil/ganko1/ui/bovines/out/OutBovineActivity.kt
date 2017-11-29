@@ -1,36 +1,35 @@
 package ganko.movil.ganko1.ui.bovines.out
 
-import android.app.DialogFragment
+
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.View
+import com.jakewharton.rxbinding2.view.clicks
 import ganko.movil.ganko1.R
 import ganko.movil.ganko1.databinding.ActivityOutBovineBinding
+import ganko.movil.ganko1.utils.DatePicker
 import kotlinx.android.synthetic.main.activity_out_bovine.*
 
 
-class OutBovineActivity : AppCompatActivity(), View.OnClickListener {
+class OutBovineActivity : AppCompatActivity(){
 
     lateinit var binding: ActivityOutBovineBinding
 
+    var datePicker: DatePicker = DatePicker()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_out_bovine)
-
-        date_picker_out_text.setOnClickListener(this)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setTitle(R.string.retired_bovine)
     }
 
-    override fun onClick(view: View) {
-        when(view.getId()){
-            R.id.date_picker_out_text -> getDate()
-        }
+    override fun onResume() {
+        super.onResume()
+        datePickerText.clicks()
+                .flatMap {datePicker.selected(supportFragmentManager)}
+                .subscribe {
+                    datePickerText.setText( "${it.first}/${it.second}/${it.third}")
+                }
     }
-
-    fun getDate(){
-        var fragment: DialogFragment = DatePickerFragment()
-        //fragment.show(supportFragmentManager, "datePicker")
-    }
-
 
 }

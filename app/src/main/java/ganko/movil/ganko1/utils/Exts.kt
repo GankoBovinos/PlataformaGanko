@@ -75,3 +75,4 @@ fun Fragment.addFragment(container: Int, fragment: Fragment, backStack: Boolean 
     if (backStack) transaction.addToBackStack(null)
     transaction.commit()
 }
+
