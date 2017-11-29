@@ -72,6 +72,10 @@
     <string name="bait">Ceba</string>
     <string name="alimentation">Alimentacion</string>
     <string name="vaccine">Vacunas</string>
+    <string name="morning">Mañana</string>
+    <string name="afternoon">Tarde</string>
+    <string name="enterDateMilkProduction">Ingrese la fecha de ordeño</string>
+    <string name="enterLitersMilkProduction">Ingrese los litros producidos</string>
     <string-array name="bovine_sexs">
         <item>Macho</item>
         <item>Hembra</item>

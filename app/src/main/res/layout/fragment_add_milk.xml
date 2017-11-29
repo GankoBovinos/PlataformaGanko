@@ -1,13 +1,138 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ganko.movil.ganko1.ui.detail.milk.add.AddMilkFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ganko.movil.ganko1.ui.detail.milk.add.AddMilkFragment">
+    android:orientation="vertical"
+    android:padding="@dimen/medium_small"
+    android:layout_marginHorizontal="@dimen/horizontal_margin"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/nameAndIdContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/less_small"
+        >
+        <LinearLayout
+            android:id="@+id/idAndValueContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/less_small"
+            >
+            <TextView
+                android:id="@+id/idBovine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/text_size_add_milk"
+                tools:text="Id Bovino: "
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/idBovineValue"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                tools:text="33AB45" />
+        </LinearLayout>
 
-</FrameLayout>
+        <LinearLayout
+            android:id="@+id/nameAndValueContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/nameBovine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/text_size_add_milk"
+                android:textStyle="bold"
+                tools:text="Nombre:" />
+            <TextView
+                android:id="@+id/nameBovineValue"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                tools:text="MAGGIE" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/milkingDay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="@dimen/text_size"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/less_small"
+        tools:text="Jornada de ordeño:" />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/small"
+        android:checked="true"
+        android:text="@string/morning"
+        android:textSize="@dimen/text_size_add_milk"
+        />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/afternoon"
+        android:textSize="@dimen/text_size_add_milk"
+        android:layout_marginBottom="@dimen/less_small"
+        />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/addDateMilkProduction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enterDateMilkProduction"
+            android:inputType="date"
+            android:gravity="center"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/addLitersMilkProduction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/medium"
+        >
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enterLitersMilkProduction"
+            android:inputType="numberDecimal"
+            android:gravity="center"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity=""
+        android:text="AGREGAR"
+
+        />
+
+
+
+</LinearLayout>
