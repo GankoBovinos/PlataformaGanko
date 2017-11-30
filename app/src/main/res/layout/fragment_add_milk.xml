@@ -1,27 +1,24 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="ganko.movil.ganko1.ui.detail.milk.add.AddMilkFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginHorizontal="@dimen/horizontal_margin"
+    android:layout_marginTop="@dimen/less_small"
     android:orientation="vertical"
     android:padding="@dimen/small"
-    android:layout_marginTop="@dimen/less_small"
-    android:layout_marginHorizontal="@dimen/horizontal_margin"
-    >
+    tools:context="ganko.movil.ganko1.ui.detail.milk.add.AddMilkFragment">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        >
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
             <TableLayout
                 android:id="@+id/nameAndIdContainer"
                 android:layout_width="match_parent"
@@ -32,7 +29,7 @@
                     android:id="@+id/idAndValueContainer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/less_small">
+                    android:layout_marginBottom="@dimen/medium_small">
 
                     <TextView
                         android:id="@+id/idBovine"
@@ -40,14 +37,14 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textSize="@dimen/text_size_add_milk"
-                        tools:text="Id Bovino: "
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:text="Id Bovino: " />
 
                     <TextView
                         android:id="@+id/idBovineValue"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center"
                         tools:text="33AB45" />
                 </TableRow>
@@ -69,8 +66,8 @@
                     <TextView
                         android:id="@+id/nameBovineValue"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center"
                         tools:text="MAGGIE" />
                 </TableRow>
@@ -81,19 +78,19 @@
                 android:id="@+id/milkingDayView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/medium_small"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/text_size"
                 android:textStyle="bold"
-                android:layout_marginBottom="@dimen/medium_small"
                 tools:text="@string/milkingDayText" />
 
             <RadioGroup
                 android:id="@+id/milkingDay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginBottom="@dimen/medium"
-                >
+                android:paddingLeft="@dimen/small"
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/btnMorning"
@@ -102,43 +99,40 @@
                     android:layout_marginBottom="@dimen/less_small"
                     android:checked="true"
                     android:text="@string/morning"
-                    android:textSize="@dimen/text_size_add_milk"
-                    />
+                    android:textSize="@dimen/text_size_add_milk" />
 
                 <RadioButton
                     android:id="@+id/btnAfternoon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/afternoon"
-                    android:textSize="@dimen/text_size_add_milk"
-                    />
+                    android:textSize="@dimen/text_size_add_milk" />
             </RadioGroup>
 
 
             <TextView
                 android:id="@+id/dateMilkProduction"
+                style="@style/TextAppearance.AppCompat.Caption"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/date_of_production"
-                style="@style/TextAppearance.AppCompat.Caption"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/addDateMilkProduction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/enterDateMilkProduction"
-                android:gravity="center"
-                android:background="@drawable/input"
                 android:layout_marginBottom="@dimen/medium_small"
-                />
+                android:background="@drawable/input"
+                android:gravity="center"
+                android:hint="@string/enterDateMilkProduction" />
 
             <TextView
                 android:id="@+id/litersMilkProduction"
+                style="@style/TextAppearance.AppCompat.Caption"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Litros producidos:"
-                style="@style/TextAppearance.AppCompat.Caption"
                 android:textStyle="bold" />
 
             <EditText
@@ -146,40 +140,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/medium"
-                android:hint="@string/enterLitersMilkProduction"
                 android:background="@drawable/input"
-                android:inputType="numberDecimal"
-                android:gravity="center" />
+                android:gravity="center"
+                android:hint="@string/enterLitersMilkProduction"
+                android:inputType="numberDecimal" />
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnCancelMilk"
             style="@android:style/Widget.DeviceDefault.Button.Borderless"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/cancel"
-            android:textColor="@color/milk"
-            />
+            android:textColor="@color/milk" />
+
         <Button
             android:id="@+id/add_bovine_button"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/add"
-            android:textColor="@color/light"
+            android:layout_weight="1"
             android:background="@color/milk"
-            />
+            android:text="@string/add"
+            android:textColor="@color/light" />
 
 
     </LinearLayout>
