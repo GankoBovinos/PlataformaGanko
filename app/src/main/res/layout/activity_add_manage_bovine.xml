@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="bovine"
+            type="ganko.movil.ganko1.data.model.Bovine"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginRight="@dimen/horizontal_margin"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/medium">
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:visibility='@{state == 0 ? View.VISIBLE : View.GONE}'
+                    tools:visibility="visible">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Número del animal" />
+
+                    <TextView
+                        android:id="@+id/idBovine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text='@{bovine.id_bovino}'
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:background="@drawable/input"
+                        tools:text="AC12005"
+                        android:layout_marginBottom="@dimen/small" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre del animal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text='@{bovine.name}'
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:background="@drawable/input"
+                        tools:text="Luna"
+                        android:layout_marginBottom="@dimen/small" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha de evento" />
+
+                    <EditText
+                        android:id="@+id/event_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:hint="Fecha de evento"
+                        android:inputType="date"
+                        android:layout_marginBottom="@dimen/small" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Evento" />
+
+                    <EditText
+                        android:id="@+id/event"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:hint="Evento"
+                        android:inputType="text"
+                        android:layout_marginBottom="@dimen/small" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:visibility='@{state == 1 ? View.VISIBLE : View.GONE}'
+                    tools:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tratamiento o estrategia" />
+
+                    <EditText
+                        android:id="@+id/strategy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:hint="Tratamiento o estrategia"
+                        android:inputType="text"
+                        android:layout_marginBottom="@dimen/small" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Frecuencia (días)" />
+
+                    <EditText
+                        android:id="@+id/frequency"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:hint="Frecuencia (días)"
+                        android:inputType="text"
+                        android:layout_marginBottom="@dimen/small" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Producto" />
+
+                    <EditText
+                        android:id="@+id/product"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:hint="Producto"
+                        android:inputType="text"
+                        android:layout_marginBottom="@dimen/small" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Valor " />
+
+                    <EditText
+                        android:id="@+id/price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:hint="Valor "
+                        android:inputType="text"
+                        android:layout_marginBottom="@dimen/small" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones" />
+
+                    <EditText
+                        android:id="@+id/observations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:hint="Observaciones"
+                        android:inputType="text"
+                        android:layout_marginBottom="@dimen/small" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <Button
+                android:id="@+id/btnCancelManage"
+                android:background="@color/light_gray_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cancelar"
+                android:textColor="@color/colorPrimary"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                />
+            <Button
+                android:id="@+id/btnBackManage"
+                android:background="@color/light_gray_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Atras"
+                android:visibility='@{state == 1 ? View.VISIBLE : View.GONE}'
+                tools:visibility="gone"
+                android:textColor="@color/colorPrimary"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                />
+            <ImageView
+                android:layout_width="2dp"
+                android:layout_height="match_parent" />
+            <Button
+                android:id="@+id/btnNextManage"
+                android:background="@color/light_gray_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Siguiente"
+                android:visibility='@{state == 0 ? View.VISIBLE : View.GONE}'
+                tools:visibility="visible"
+                android:textColor="@color/colorPrimary"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                />
+            <Button
+                android:id="@+id/btnAddManage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Guardar"
+                android:visibility='@{state == 1 ? View.VISIBLE : View.GONE}'
+                tools:visibility="gone"
+                android:background="@color/colorAccent"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:textColor="#fff"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

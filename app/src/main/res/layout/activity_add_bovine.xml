@@ -307,37 +307,58 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/light_gray_card">
+            >
 
             <Button
                 android:id="@+id/back_bovine_button"
-                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="@string/back"
                 android:textColor="@color/colorPrimary"
+                android:background="@color/light_gray_card"
                 android:visibility='@{state == 0 ? View.INVISIBLE : View.VISIBLE}'
-                tools:visibility='@{state == 0 ? View.INVISIBLE : View.VISIBLE}'/>
+                tools:visibility='gone' />
+            <Button
+                android:id="@+id/cancel_bovine_button"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cancelar"
+                android:textColor="@color/colorPrimary"
+                android:background="@color/light_gray_card"
+                android:visibility='@{state == 0 ? View.VISIBLE : View.GONE}'
+                tools:visibility='visible' />
+
+            <ImageView
+                android:layout_width="2dp"
+                android:layout_height="match_parent" />
             <Button
                 android:id="@+id/next_bovine_button"
-                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/light_gray_card"
                 android:text="@string/next"
+                tools:visibility="visible"
                 android:textColor="@color/colorPrimary"
-                android:visibility='@{state == 2 ? View.GONE : View.VISIBLE}'/>
+                android:visibility='@{state == 2 ? View.GONE : View.VISIBLE}'
+                />
+
             <Button
-                tools:visibility="gone"
                 android:id="@+id/add_bovine_button"
-                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="@string/save"
-                android:textColor="@color/colorPrimary"
-                android:visibility='@{state == 2 ? View.VISIBLE : View.GONE}'/>
+                android:background="@color/colorAccent"
+                android:textColor="#fff"
+                android:visibility='@{state == 2 ? View.VISIBLE : View.GONE}'
+                tools:visibility="gone" />
 
 
         </LinearLayout>

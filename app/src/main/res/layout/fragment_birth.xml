@@ -2,12 +2,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.detail.reproductive.birth.BirthFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Parto" />
+        app:layoutManager="android.support.v7.widget.GridLayoutManager"
+        app:spanCount="@dimen/spanCount"
+        tools:listitem="@layout/template_birth"
+        android:layout_marginEnd="@dimen/horizontal_margin"
+        android:layout_marginRight="@dimen/horizontal_margin"
+        android:layout_marginStart="@dimen/horizontal_margin"
+        android:layout_marginLeft="@dimen/horizontal_margin"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/big"/>
 
 </FrameLayout>

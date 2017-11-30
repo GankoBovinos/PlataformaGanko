@@ -2,12 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.farm.add.AddFarm">
+    >
 
     <data>
         <variable
-            name="farm"
-            type="ganko.movil.ganko1.data.model.Farm"/>
+            name="bovine"
+            type="ganko.movil.ganko1.data.model.Bovine"/>
     </data>
 
     <LinearLayout
@@ -36,48 +36,48 @@
                     style="@style/TextAppearance.AppCompat.Caption"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/farm_name" />
-
-                <EditText
-                    android:id="@+id/farm_name"
+                    android:text="Número del animal" />
+                <TextView
+                    android:id="@+id/idBovine"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text='@{bovine.id_bovino}'
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:background="@drawable/input"
-                    android:hint="@string/farm_name"
-                    android:text='@{farm.nombre}'
-                    android:inputType="text" />
+                    tools:text="AC12005"
+                    android:layout_marginBottom="@dimen/small"/>
 
                 <TextView
                     style="@style/TextAppearance.AppCompat.Caption"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/farm_location"
-                    android:layout_marginTop="@dimen/small" />
-
-                <EditText
-                    android:id="@+id/farm_location"
+                    android:text="Nombre del animal" />
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text='@{bovine.name}'
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:background="@drawable/input"
-                    android:hint="@string/farm_location"
-                    android:inputType="text"
-                    android:text='@{farm.ubicacion}' />
+                    tools:text="Luna"
+                    android:layout_marginBottom="@dimen/small"/>
 
                 <TextView
                     style="@style/TextAppearance.AppCompat.Caption"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/farm_size"
-                    android:layout_marginTop="@dimen/small" />
+                    android:text="Fecha de celo" />
 
                 <EditText
-                    android:id="@+id/farm_size"
+                    android:id="@+id/zeal_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/input"
-                    android:hint="@string/farm_size"
-                    android:text='@{farm != null ? ""+farm.hectareas : "" }'
-                    android:inputType="number" />
+                    android:hint="Fecha de celo"
+                    android:inputType="date" />
+
+
+
+
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
 
@@ -88,7 +88,7 @@
             android:orientation="horizontal"
             >
             <Button
-                android:id="@+id/btnCancelFarm"
+                android:id="@+id/btn_cancel_zeal"
                 android:background="@color/light_gray_card"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
                 android:layout_width="2dp"
                 android:layout_height="match_parent" />
             <Button
-                android:id="@+id/btnAddFarm"
+                android:id="@+id/btn_add_zeal"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -112,19 +112,5 @@
                 />
 
         </LinearLayout>
-
-
-        <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fabAddFarm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/big"
-                app:srcCompat="@drawable/ic_confirm"
-                app:backgroundTint="@color/colorPrimary"
-                app:fabSize="normal"
-            android:visibility="gone"/>
-
     </LinearLayout>
 </layout>
-

@@ -201,7 +201,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/straw_id_" />
+                app:layout_constraintTop_toBottomOf="@+id/straw_id" />
 
             <TextView
                 android:id="@+id/bull_breed"
@@ -219,7 +219,7 @@
                 tools:text="Cebu" />
 
             <TextView
-                android:id="@+id/straw_id_"
+                android:id="@+id/straw_id"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/small"
@@ -241,13 +241,13 @@
                 android:layout_marginEnd="@dimen/small"
                 android:layout_marginStart="@dimen/small"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintBottom_toBottomOf="@+id/straw_id_"
+                app:layout_constraintBottom_toBottomOf="@+id/straw_id"
                 android:visibility='@{service.empadre == "inseminacion" ? View.VISIBLE : View.GONE }'
                 app:layout_constraintEnd_toStartOf="@+id/imageView"
                 app:layout_constraintHorizontal_bias="0.0"
                 android:text='@{service.numPajilla ?? ""}'
                 app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toTopOf="@+id/straw_id_"
+                app:layout_constraintTop_toTopOf="@+id/straw_id"
                 tools:text="5025" />
 
             <TextView
