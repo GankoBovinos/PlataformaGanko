@@ -16,4 +16,6 @@
     <dimen name="margin_xxxs">1dp</dimen>
     <dimen name="horizontal_margin">10dp</dimen>
     <dimen name="text_size_add_milk">18sp</dimen>
+    <dimen name="padding_medium">20dp</dimen>
+
 </resources>

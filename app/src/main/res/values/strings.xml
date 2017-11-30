@@ -80,12 +80,27 @@
     <string name="milkingDayText">Jornada de ordeño:</string>
     <string name="add">AGREGAR</string>
     <string name="date_of_production">Fecha de produccion:</string>
+
     <string-array name="bovine_sexs">
         <item>Macho</item>
         <item>Hembra</item>
     </string-array>
+
     <string-array name="milkingDays">
         <item>Mañana</item>
         <item>Tarde</item>
     </string-array>
+
+    //Out spinner
+    <string-array name="out_spinner">
+        <item>Venta</item>
+        <item>Descarte</item>
+        <item>Consumo</item>
+        <item>Muerte</item>
+        <item>Robo</item>
+        <item>Otro</item>
+    </string-array>
+    <string name="retired_bovine">Retirados</string>
+    <string name="date_text">Fecha</string>
+
 </resources>

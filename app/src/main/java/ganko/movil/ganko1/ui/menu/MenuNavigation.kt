@@ -1,9 +1,11 @@
 package ganko.movil.ganko1.ui.menu
 
 import ganko.movil.ganko1.R
+import ganko.movil.ganko1.data.model.Bovine
 import ganko.movil.ganko1.data.prefs.UserSession
 import ganko.movil.ganko1.di.ActivityScope
 import ganko.movil.ganko1.ui.bovines.BovineFragment
+import ganko.movil.ganko1.ui.detail.DetailBovineActivity
 import ganko.movil.ganko1.ui.farm.FarmActivity
 import ganko.movil.ganko1.ui.login.LoginActivity
 import ganko.movil.ganko1.utils.putFragment
@@ -57,8 +59,9 @@ class MenuNavigation @Inject constructor(val activity: MenuActivity, val userSes
         activity.finish()
     }
 
-    fun navigateToDetail(){
-
+    fun navigateToDetail(bovine: Bovine){
+        activity.startActivity<DetailBovineActivity>(DetailBovineActivity.EXTRA_CONTENT to DetailBovineActivity.CONTENT_DETAIL,
+                DetailBovineActivity.EXTRA_BOVINE to bovine)
     }
 
     fun navigateToReports() {

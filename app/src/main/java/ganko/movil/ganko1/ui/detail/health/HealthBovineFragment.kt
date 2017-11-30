@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import ganko.movil.ganko1.R
 
 
@@ -23,7 +22,14 @@ class HealthBovineFragment : Fragment() {
     }
 
     companion object {
-        fun instance() = HealthBovineFragment()
+        val EXTRA_ID = "id"
+        fun instance(idBovine: Int): HealthBovineFragment{
+            val fragment = HealthBovineFragment()
+            val args = Bundle()
+            args.putInt(EXTRA_ID, idBovine)
+            fragment.arguments = args
+            return fragment
+        }
     }
 
 }// Required empty public constructor

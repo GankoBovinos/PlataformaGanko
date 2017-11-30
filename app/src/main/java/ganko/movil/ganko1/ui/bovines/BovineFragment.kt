@@ -11,13 +11,18 @@ import ganko.movil.ganko1.R
 import ganko.movil.ganko1.ui.bovines.list.ListBovineFragment
 import ganko.movil.ganko1.ui.detail.DetailBovineActivity
 import ganko.movil.ganko1.ui.detail.DetailBovineFragment
+import ganko.movil.ganko1.ui.menu.MenuNavigation
 import ganko.movil.ganko1.utils.putFragment
+import javax.inject.Inject
 
 
 /**
  * A simple [Fragment] subclass.
  */
 class BovineFragment : Fragment() {
+
+    @Inject
+    lateinit var menuNavigation: MenuNavigation
 
     val phone: Boolean = resources.getBoolean(R.bool.phone)
     val land: Boolean = resources.getBoolean(R.bool.land)
@@ -36,7 +41,7 @@ class BovineFragment : Fragment() {
                     if (!phone && land) {
                         putFragment(R.id.container, DetailBovineFragment.instance(it))
                     } else {
-
+                        menuNavigation.navigateToDetail(it)
                     }
                 }
 
