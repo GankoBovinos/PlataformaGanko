@@ -1,84 +1,14 @@
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context="ganko.movil.ganko1.ui.detail.milk.MilkBovineFragment"
     >
 
-    <data>
-
-    </data>
-
-    <FrameLayout
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/horizontal_margin">
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="@dimen/less_small"
-            android:layout_marginTop="@dimen/small">
-
-            <TextView
-                android:id="@+id/totalProduction"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Total produccion del mes:"
-                android:layout_marginBottom="@dimen/small"
-                style="@style/TextAppearance.AppCompat.Title"
-                android:gravity="center" />
-
-            <TextView
-                android:id="@+id/totalProductionValue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/medium_small"
-                android:gravity="center"
-                style="@style/TextAppearance.AppCompat.Display2"
-                tools:text="75.4 Lts" />
-
-            <TextView
-                android:id="@+id/averageProduction"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Produccion promedio: "
-                android:layout_marginBottom="@dimen/small"
-                android:gravity="center"
-                style="@style/TextAppearance.AppCompat.Title" />
-
-            <TextView
-                android:id="@+id/averageProductionValue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginBottom="@dimen/medium"
-                style="@style/TextAppearance.AppCompat.Display2"
-                tools:text="5 Lts" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerMilk"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/milk"
-                android:padding="@dimen/margin_xxxs"
-                tools:listitem="@layout/item_milk"
-                app:layoutManager="android.support.v7.widget.LinearLayoutManager">
-
-            </android.support.v7.widget.RecyclerView>
-        </LinearLayout>
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/btnAddMilk"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            app:fabSize="normal"
-            android:backgroundTint="@color/milk"
-            android:src="@drawable/ic_add"
-            android:layout_marginBottom="@dimen/less_small" />
-
-    </FrameLayout>
-</layout>
-
+</FrameLayout>
