@@ -4,7 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     >
-    <data></data>
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="other"
+            type="Boolean"/>
+    </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -30,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:entries="@array/out_spinner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -39,21 +44,23 @@
 
 
         <EditText
-            android:id="@+id/other_text"
+            android:id="@+id/otherText"
             style="@android:style/Widget.DeviceDefault.EditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/input"
             android:ems="10"
-            android:hint="Otro"
+            android:hint="@string/other_option"
             android:inputType="text|textPersonName"
+            android:visibility='@{other == false ? View.INVISIBLE : View.VISIBLE}'
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/out_spinner"
-            tools:text="Otro" />
+            tools:text="Otro"
+            />
 
         <TextView
             android:id="@+id/out_type"
@@ -64,33 +71,29 @@
             android:layout_marginTop="16dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bovine_name"
-            tools:text="Tipo de salida" />
+            app:layout_constraintTop_toBottomOf="@+id/datePickerText"
+            tools:text="Tipo de salida"
+            android:text="@string/out_type"/>
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/date_picker_out"
+
+        <EditText
+            android:id="@+id/datePickerText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/input"
+            android:clickable="true"
+            android:focusable="false"
+            android:hint="@string/date_text"
+            android:inputType="date"
+            android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/date_text">
-
-            <EditText
-                android:id="@+id/datePickerText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/input"
-                android:clickable="true"
-                android:focusable="false"
-                android:hint="@string/date_text"
-                android:inputType="date"
-                android:maxLines="1" />
-        </android.support.design.widget.TextInputLayout>
+            app:layout_constraintTop_toBottomOf="@+id/date_text" />
 
         <TextView
             android:id="@+id/date_text"
@@ -99,30 +102,36 @@
             android:layout_marginEnd="32dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
+            android:text="@string/date_text"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/other_text"
+            app:layout_constraintTop_toBottomOf="@+id/bovine_name"
             tools:text="Fecha" />
 
         <Button
             android:id="@+id/cancel_out"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:text="@string/cancel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/save_out"
             app:layout_constraintStart_toStartOf="parent"
-            tools:text="Cancelar" />
+            tools:text="Cancelar"
+            android:textColor="@color/colorPrimary"/>
 
         <Button
             android:id="@+id/save_out"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:text="@string/add"
+            android:background="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/cancel_out"
-            tools:text="Guardar" />
+            tools:text="Agregar" />
 
     </android.support.constraint.ConstraintLayout>
 </layout>

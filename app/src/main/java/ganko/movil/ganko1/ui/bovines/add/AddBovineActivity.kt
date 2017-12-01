@@ -1,9 +1,8 @@
 package ganko.movil.ganko1.ui.bovines.add
 
 import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.support.v7.app.AppCompatActivity
 import com.jakewharton.rxbinding2.view.clicks
 import ganko.movil.ganko1.R
 import ganko.movil.ganko1.databinding.ActivityAddBovineBinding

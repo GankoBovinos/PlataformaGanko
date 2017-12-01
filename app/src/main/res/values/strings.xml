@@ -7,7 +7,7 @@
     <string name="txt_remember_pass">Por favor ingrese su correo electrónico, al cual se le enviará una contraseña temporal que podrá cambiar más adelante en sus configuraciones.</string>
     <string name="farm_name">Nombre</string>
     <string name="farm_location">Ubicación</string>
-    <string name="empty_fields">Hay Campos Vacios</string>
+    <string name="empty_fields">Hay campos Vacios, por favor llene todos los campos </string>
 
     //Extensiones
     <string name="socket">El servidor no responde</string>
@@ -87,7 +87,11 @@
         <item>Robo</item>
         <item>Otro</item>
     </string-array>
-    <string name="retired_bovine">Retirados</string>
+    <string name="retired_bovine">Retirar bovino</string>
     <string name="date_text">Fecha</string>
+    <string name="out_type">Tipo de salida</string>
+    <string name="cancel">Cancelar</string>
+    <string name="add">Agregar</string>
+    <string name="other_option">Otro</string>
 
 </resources>
