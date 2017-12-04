@@ -18,5 +18,5 @@
     <dimen name="text_size_add_milk">18sp</dimen>
     <dimen name="padding_medium">20dp</dimen>
     <dimen name="extra_small">5dp</dimen>
-
+    <integer name="spanCount">1</integer>
 </resources>

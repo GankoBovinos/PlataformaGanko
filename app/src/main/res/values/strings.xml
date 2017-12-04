@@ -102,5 +102,10 @@
     </string-array>
     <string name="retired_bovine">Retirados</string>
     <string name="date_text">Fecha</string>
-
+    <string name="zeal">Celo</string>
+    <string name="service">Servicio</string>
+    <string name="diagnosis">Diagnóstico</string>
+    <string name="birth">Parto</string>
+    <string name="zeal_date">Fecha de celo:</string>
+    <string name="delete_service">Delete service</string>
 </resources>

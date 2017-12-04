@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#29702c</color>
     <color name="colorAccent">#F3F1BD</color>
     <color name="et_transparent">#0fff</color>
-    <color name="light_grey_card">#eff2f7</color>
+    <color name="light_gray_card">#eff2f7</color>
 
     //Loader
     <color name="btn_disabled">#6629702c</color>
@@ -19,7 +19,7 @@
     <color name="manage">#FF4B3A</color>
     <color name="prairies">#FF7F0B</color>
     <color name="feeding">#0098E2</color>
-    <color name="health">#91A5A7</color>
+    <color name="health">#91a5a7</color>
     <color name="statistics">#FF4B3A</color>
     <color name="light">#fff</color>
     <color name="img">#333333</color>
@@ -28,5 +28,6 @@
     <color name="btn_menu_light">#555555</color>
     <color name="ripple_mask">#66ffffff</color>
     <color name="ColorBtnAddMilk">#10A614</color>
+    <color name="light_gray_background">#22dddddd</color>
 
 </resources>

@@ -1,13 +1,34 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/light_gray_background"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.detail.reproductive.service.ServiceFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        app:layoutManager="android.support.v7.widget.GridLayoutManager"
+        app:spanCount="@integer/spanCount"
+        android:layout_marginEnd="@dimen/horizontal_margin"
+        android:layout_marginStart="@dimen/horizontal_margin"
+        android:layout_marginRight="@dimen/horizontal_margin"
+        android:layout_marginLeft="@dimen/horizontal_margin"
+        tools:listitem="@layout/template_service"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/big"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/small"
+        app:fabSize="normal"
+        android:backgroundTint="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_add" />
 
 </FrameLayout>
