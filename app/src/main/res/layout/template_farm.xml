@@ -76,7 +76,7 @@
                     android:layout_weight="0.5"
                     android:layout_margin="2dp"
                     android:gravity="center"
-                    android:src="@drawable/ic_edit"
+                    app:srcCompat="@drawable/ic_edit"
                     android:onClick='@{()->clickEdit.onNext(farm)}'
                     />
                 <ImageView
@@ -86,7 +86,7 @@
                     android:layout_weight="0.5"
                     android:layout_margin="2dp"
                     android:gravity="center"
-                    android:src="@drawable/ic_delete"
+                    app:srcCompat="@drawable/ic_delete"
                     android:onClick='@{()->clickDelete.onNext(farm)}'
                     />
             </LinearLayout>
