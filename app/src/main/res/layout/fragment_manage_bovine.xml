@@ -12,7 +12,7 @@
         android:id="@+id/recycler"
         tools:listitem="@layout/template_manage_bovine"
         app:layoutManager="android.support.v7.widget.GridLayoutManager"
-        app:spanCount="@dimen/spanCount"
+        app:spanCount="@integer/spanCount"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginEnd="@dimen/horizontal_margin"

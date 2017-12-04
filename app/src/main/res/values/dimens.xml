@@ -12,5 +12,5 @@
     <dimen name="menu_size">280dp</dimen>
     <dimen name="img_menu_template">100dp</dimen>
     <dimen name="horizontal_margin">10dp</dimen>
-    <dimen name="spanCount">1</dimen>
+    <integer name="spanCount">1</integer>
 </resources>

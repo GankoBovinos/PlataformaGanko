@@ -200,7 +200,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:onClick='@{clickDelete.onNext(manage)}'
+                android:onClick='@{()->clickDelete.onNext(manage)}'
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_cancel_gray" />

@@ -8,6 +8,10 @@
         <variable
             name="bovine"
             type="ganko.movil.ganko1.data.model.Bovine"/>
+        <import type="android.view.View"/>
+        <variable
+            name="state"
+            type="Integer"/>
     </data>
 
     <LinearLayout
@@ -197,40 +201,31 @@
             >
             <Button
                 android:id="@+id/btnCancelManage"
-                android:background="@color/light_gray_card"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Cancelar"
-                android:textColor="@color/colorPrimary"
-                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
                 />
             <Button
                 android:id="@+id/btnBackManage"
-                android:background="@color/light_gray_card"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Atras"
                 android:visibility='@{state == 1 ? View.VISIBLE : View.GONE}'
                 tools:visibility="gone"
-                android:textColor="@color/colorPrimary"
-                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
                 />
-            <ImageView
-                android:layout_width="2dp"
-                android:layout_height="match_parent" />
             <Button
                 android:id="@+id/btnNextManage"
-                android:background="@color/light_gray_card"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Siguiente"
                 android:visibility='@{state == 0 ? View.VISIBLE : View.GONE}'
                 tools:visibility="visible"
-                android:textColor="@color/colorPrimary"
-                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
                 />
             <Button
                 android:id="@+id/btnAddManage"
@@ -240,9 +235,7 @@
                 android:text="Guardar"
                 android:visibility='@{state == 1 ? View.VISIBLE : View.GONE}'
                 tools:visibility="gone"
-                android:background="@color/colorAccent"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:textColor="#fff"
+                style="@style/Widget.AppCompat.Button.Colored"
                 />
 
         </LinearLayout>

@@ -22,7 +22,7 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:paddingBottom="@dimen/less_small">
 
             <TextView
@@ -117,12 +117,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/small"
+                android:layout_marginRight="@dimen/small"
                 android:layout_marginTop="@dimen/small"
                 android:contentDescription="@string/delete_service"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_cancel_gray"
-                android:layout_marginRight="@dimen/small" />
+                app:srcCompat="@drawable/ic_cancel_gray" />
 
             <android.support.constraint.Guideline
                 android:id="@+id/guideline"
@@ -168,8 +168,8 @@
                 android:layout_marginTop="@dimen/small"
                 android:gravity="end"
                 android:text="Número del animal:"
-                android:visibility='@{service.empadre == "Natural" ? View.VISIBLE : View.GONE }'
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:visibility='@{service.empadre == "Natural" ? View.VISIBLE : View.GONE }'
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/empadre_txt" />
@@ -180,11 +180,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/small"
                 android:layout_marginStart="@dimen/small"
-                android:visibility='@{service.empadre == "Natural" ? View.VISIBLE : View.GONE }'
+                android:text='@{service.numAnimal ?? ""}'
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:visibility='@{service.empadre == "Natural" ? View.VISIBLE : View.GONE }'
                 app:layout_constraintBottom_toBottomOf="@+id/bull_code_txt"
                 app:layout_constraintEnd_toStartOf="@+id/imageView"
-                android:text='@{service.numAnimal ?? ""}'
                 app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toTopOf="@+id/bull_code_txt"
                 tools:text="1205" />
@@ -195,13 +195,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/small"
                 android:layout_marginStart="@dimen/small"
-                android:layout_marginTop="@dimen/small"
+                android:layout_marginTop="8dp"
                 android:gravity="end"
                 android:text="Raza del animal:"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/straw_id" />
+                app:layout_constraintTop_toBottomOf="@+id/straw_id_txt" />
 
             <TextView
                 android:id="@+id/bull_breed"
@@ -219,20 +219,20 @@
                 tools:text="Cebu" />
 
             <TextView
-                android:id="@+id/straw_id"
+                android:id="@+id/straw_id_txt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/small"
                 android:layout_marginStart="@dimen/small"
-                android:layout_marginTop="@dimen/small"
                 android:gravity="end"
                 android:text="Número de pajilla:"
-                android:visibility='@{service.empadre == "inseminacion" ? View.VISIBLE : View.GONE }'
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:visibility='@{service.empadre == "inseminacion" ? View.VISIBLE : View.GONE }'
+                app:layout_constraintBottom_toBottomOf="@+id/straw_id"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bull_code_txt" />
+                app:layout_constraintTop_toTopOf="@+id/straw_id" />
 
             <TextView
                 android:id="@+id/straw_id"
@@ -240,14 +240,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/small"
                 android:layout_marginStart="@dimen/small"
+                android:layout_marginTop="@dimen/small"
+                android:text='@{service.numPajilla ?? ""}'
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintBottom_toBottomOf="@+id/straw_id"
                 android:visibility='@{service.empadre == "inseminacion" ? View.VISIBLE : View.GONE }'
                 app:layout_constraintEnd_toStartOf="@+id/imageView"
                 app:layout_constraintHorizontal_bias="0.0"
-                android:text='@{service.numPajilla ?? ""}'
                 app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toTopOf="@+id/straw_id"
+                app:layout_constraintTop_toBottomOf="@+id/bull_code_txt"
                 tools:text="5025" />
 
             <TextView
@@ -258,8 +258,8 @@
                 android:layout_marginStart="@dimen/small"
                 android:gravity="end"
                 android:text="Procedencia:"
-                android:visibility='@{service.empadre == "inseminacion" ? View.VISIBLE : View.GONE }'
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:visibility='@{service.empadre == "inseminacion" ? View.VISIBLE : View.GONE }'
                 app:layout_constraintBottom_toBottomOf="@+id/origin"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="parent"
@@ -272,23 +272,23 @@
                 android:layout_marginEnd="@dimen/small"
                 android:layout_marginStart="@dimen/small"
                 android:layout_marginTop="@dimen/small"
-                android:visibility='@{service.empadre == "inseminacion" ? View.VISIBLE : View.GONE}'
+                android:text='@{service.procedencia ?? ""}'
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:visibility='@{service.empadre == "inseminacion" ? View.VISIBLE : View.GONE}'
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/bull_breed_txt"
-                android:text='@{service.procedencia ?? ""}'
                 tools:text="Popayán" />
 
             <TextView
                 android:id="@+id/body_condition_txt"
                 android:layout_width="0dp"
-                android:gravity="end"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/small"
                 android:layout_marginStart="@dimen/small"
                 android:layout_marginTop="@dimen/small"
+                android:gravity="end"
                 android:text="Condición corporal:"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
