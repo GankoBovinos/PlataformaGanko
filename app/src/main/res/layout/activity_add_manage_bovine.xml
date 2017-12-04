@@ -43,27 +43,7 @@
                     android:visibility='@{state == 0 ? View.VISIBLE : View.GONE}'
                     tools:visibility="visible">
 
-                    <TextView
-                        style="@style/TextAppearance.AppCompat.Caption"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Número del animal" />
-
-                    <TextView
-                        android:id="@+id/idBovine"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text='@{bovine.id_bovino}'
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                        android:background="@drawable/input"
-                        tools:text="AC12005"
-                        android:layout_marginBottom="@dimen/small" />
-
-                    <TextView
-                        style="@style/TextAppearance.AppCompat.Caption"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nombre del animal" />
+                    <include layout="@layout/item_id_name"/>
 
                     <TextView
                         android:layout_width="match_parent"
