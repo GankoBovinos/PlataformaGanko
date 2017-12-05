@@ -81,6 +81,9 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
     kapt 'com.android.databinding:compiler:3.0.0'
+
+    //Android Chart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 }
 repositories {
     mavenCentral()

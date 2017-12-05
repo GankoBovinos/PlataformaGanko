@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.github.mikephil.charting.data.Entry
 import ganko.movil.ganko1.R
 
 
@@ -14,11 +15,13 @@ import ganko.movil.ganko1.R
  */
 class MeatBovineFragment : Fragment() {
 
+    var entries: List<Entry> = arrayListOf<Entry>()
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater!!.inflate(R.layout.fragment_meat_bovine, container, false)
+
     }
 
     companion object {
