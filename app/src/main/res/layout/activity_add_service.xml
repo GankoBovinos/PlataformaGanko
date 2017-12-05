@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.farm.add.AddFarm">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="state"
+            type="Integer"/>
+        <variable
+            name="bovine"
+            type="ganko.movil.ganko1.data.model.Bovine"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginRight="@dimen/horizontal_margin"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/medium">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility='@{state == 0 ? View.VISIBLE : View.GONE}'
+                    tools:visibility="visible">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Número del animal" />
+
+                    <TextView
+                        android:id="@+id/idBovine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text='@{bovine.id_bovino}'
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:background="@drawable/input"
+                        tools:text="AC12005"
+                        android:layout_marginBottom="@dimen/small" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre del animal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text='@{bovine.name}'
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:background="@drawable/input"
+                        tools:text="Luna"
+                        android:layout_marginBottom="@dimen/small" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha de monta" />
+
+                    <EditText
+                        android:id="@+id/service_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:hint="Fecha de monta"
+                        android:inputType="date"
+                        android:layout_marginBottom="@dimen/small" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Condición corporal" />
+
+                    <EditText
+                        android:id="@+id/body_condition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:hint="Condición corporal"
+                        android:inputType="text"
+                        android:layout_marginBottom="@dimen/small" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility='@{state == 1 ? View.VISIBLE : View.GONE}'
+                    tools:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Empadre" />
+
+                    <EditText
+                        android:id="@+id/empadre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:hint="Empadre"
+                        android:inputType="text"
+                        android:layout_marginBottom="@dimen/small" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Número de pajilla" />
+
+                    <EditText
+                        android:id="@+id/straw_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:hint="Número de pajilla"
+                        android:inputType="text"
+                        android:layout_marginBottom="@dimen/small" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Número del animal" />
+
+                    <EditText
+                        android:id="@+id/bull_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:hint="Número del animal"
+                        android:inputType="text"
+                        android:layout_marginBottom="@dimen/small" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Raza del animal" />
+
+                    <EditText
+                        android:id="@+id/bull_breed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:hint="Raza del animal"
+                        android:inputType="text"
+                        android:layout_marginBottom="@dimen/small" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Procedencia" />
+
+                    <EditText
+                        android:id="@+id/origin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input"
+                        android:hint="Procedencia"
+                        android:inputType="text"
+                        android:layout_marginBottom="@dimen/small" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <Button
+                android:id="@+id/btnCancelService"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cancelar"
+                style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+                />
+            <Button
+                android:id="@+id/btnBackService"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Atras"
+                android:visibility='@{state == 1 ? View.VISIBLE : View.GONE}'
+                tools:visibility="gone"
+                style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+                />
+            <ImageView
+                android:layout_width="2dp"
+                android:layout_height="match_parent" />
+            <Button
+                android:id="@+id/btnNextService"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Siguiente"
+                android:visibility='@{state == 0 ? View.VISIBLE : View.GONE}'
+                tools:visibility="visible"
+                style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+                />
+            <Button
+                android:id="@+id/btnAddService"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Guardar"
+                android:visibility='@{state == 1 ? View.VISIBLE : View.GONE}'
+                tools:visibility="gone"
+                style="@style/Widget.AppCompat.Button.Colored"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

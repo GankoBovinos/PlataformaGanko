@@ -22,4 +22,8 @@ class BirthFragment : Fragment() {
         return inflater!!.inflate(R.layout.fragment_birth, container, false)
     }
 
+    companion object {
+        fun instance(): BirthFragment = BirthFragment()
+    }
+
 }// Required empty public constructor

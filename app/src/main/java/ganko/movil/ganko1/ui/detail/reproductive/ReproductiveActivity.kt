@@ -13,6 +13,7 @@ import ganko.movil.ganko1.databinding.ActivityReproductiveBinding
 import ganko.movil.ganko1.di.Injectable
 import ganko.movil.ganko1.ui.adapters.ReproductiveAdapter
 import ganko.movil.ganko1.utils.buildViewModel
+import kotlinx.android.synthetic.main.activity_reproductive.*
 import javax.inject.Inject
 
 class ReproductiveActivity : AppCompatActivity(), HasSupportFragmentInjector {
@@ -22,6 +23,8 @@ class ReproductiveActivity : AppCompatActivity(), HasSupportFragmentInjector {
     lateinit var injector: DispatchingAndroidInjector<Fragment>
     @Inject
     lateinit var factory: ViewModelProvider.Factory
+    @Inject
+    lateinit var adapter: ReproductiveAdapter
     val reproductiveViewModel: ReproductiveViewModel by lazy { buildViewModel(factory, ReproductiveViewModel::class) }
     lateinit var binding: ActivityReproductiveBinding
     lateinit var adaper: ReproductiveAdapter
@@ -29,9 +32,20 @@ class ReproductiveActivity : AppCompatActivity(), HasSupportFragmentInjector {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_reproductive)
+        title = getString(R.string.reproductive)
+        pager.adapter = adapter
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back_white)
+        tabs.setupWithViewPager(pager)
 
     }
 
     override fun supportFragmentInjector(): AndroidInjector<Fragment>
             = injector
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
+    }
 }

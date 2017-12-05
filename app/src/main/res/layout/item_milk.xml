@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="milk"
+            type="ganko.movil.ganko1.data.model.Milk"/>
+    </data>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/less_small"
+        android:background="@color/light"
+        android:layout_marginBottom="@dimen/margin_xxxs">
+
+        <TableRow
+            android:id="@+id/dateAndValueContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/dateOfCapture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small"
+                style="@style/TextAppearance.AppCompat.Body2"
+                tools:text="Fecha de captura:" />
+
+            <TextView
+                android:id="@+id/dateCapture"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                style="@style/TextAppearance.AppCompat.Body1"
+                tools:text="29/11/2017" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/milkingAndValueContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/milkingTimesView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Body2"
+                tools:text="Ordeños en el dia:"
+                android:layout_marginLeft="@dimen/small" />
+
+            <TextView
+                android:id="@+id/milkingTimes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                style="@style/TextAppearance.AppCompat.Body1"
+                tools:text="4" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/litersAndValueContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/litersProducedView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Body2"
+                tools:text="Litros producidos:"
+                android:layout_marginLeft="@dimen/small" />
+
+            <TextView
+                android:id="@+id/litersProduced"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                style="@style/TextAppearance.AppCompat.Body1"
+                tools:text="20 Lts" />
+
+        </TableRow>
+
+    </TableLayout>
+</layout>

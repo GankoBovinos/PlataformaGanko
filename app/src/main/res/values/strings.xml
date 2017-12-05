@@ -72,10 +72,23 @@
     <string name="bait">Ceba</string>
     <string name="alimentation">Alimentacion</string>
     <string name="vaccine">Vacunas</string>
+    <string name="morning">Mañana</string>
+    <string name="afternoon">Tarde</string>
+    <string name="enterDateMilkProduction">Ingrese la fecha de ordeño</string>
+    <string name="enterLitersMilkProduction">Ingrese los litros producidos</string>
+    <string name="cancel">Cancelar</string>
+    <string name="milkingDayText">Jornada de ordeño:</string>
+    <string name="add">AGREGAR</string>
+    <string name="date_of_production">Fecha de produccion:</string>
 
     <string-array name="bovine_sexs">
         <item>Macho</item>
         <item>Hembra</item>
+    </string-array>
+
+    <string-array name="milkingDays">
+        <item>Mañana</item>
+        <item>Tarde</item>
     </string-array>
 
     //Out spinner
@@ -89,9 +102,16 @@
     </string-array>
     <string name="retired_bovine">Retirar bovino</string>
     <string name="date_text">Fecha</string>
+
     <string name="out_type">Tipo de salida</string>
-    <string name="cancel">Cancelar</string>
-    <string name="add">Agregar</string>
     <string name="other_option">Otro</string>
+
+
+    <string name="zeal">Celo</string>
+    <string name="service">Servicio</string>
+    <string name="diagnosis">Diagnóstico</string>
+    <string name="birth">Parto</string>
+    <string name="zeal_date">Fecha de celo:</string>
+    <string name="delete_service">Delete service</string>
 
 </resources>

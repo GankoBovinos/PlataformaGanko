@@ -1,13 +1,133 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="ganko.movil.ganko1.ui.detail.milk.add.AddMilkFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginHorizontal="@dimen/horizontal_margin"
+        android:layout_marginTop="@dimen/less_small"
+        android:orientation="vertical"
+        android:padding="@dimen/small"
+        tools:context="ganko.movil.ganko1.ui.detail.milk.add.AddMilkFragment">
 
-</FrameLayout>
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/idNameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/medium"
+                    layout="@layout/item_id_name"
+                    />
+
+                <TextView
+                    android:id="@+id/milkingDayView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/medium_small"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold"
+                    tools:text="@string/milkingDayText" />
+
+                <RadioGroup
+                    android:id="@+id/milkingDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/medium"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/small">
+
+                    <RadioButton
+                        android:id="@+id/btnMorning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/less_small"
+                        android:checked="true"
+                        android:text="@string/morning"
+                        android:textSize="@dimen/text_size_add_milk" />
+
+                    <RadioButton
+                        android:id="@+id/btnAfternoon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/afternoon"
+                        android:textSize="@dimen/text_size_add_milk" />
+                </RadioGroup>
+
+
+                <TextView
+                    android:id="@+id/dateMilkProduction"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/date_of_production"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/addDateMilkProduction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/medium_small"
+                    android:background="@drawable/input"
+                    android:gravity="center"
+                    android:hint="@string/enterDateMilkProduction" />
+
+                <TextView
+                    android:id="@+id/litersMilkProduction"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Litros producidos:"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/addLitersMilkProduction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/medium"
+                    android:background="@drawable/input"
+                    android:gravity="center"
+                    android:hint="@string/enterLitersMilkProduction"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCancelMilk"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cancel"
+                android:textColor="@color/milk" />
+
+            <Button
+                android:id="@+id/add_bovine_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/milk"
+                android:text="@string/add"
+                android:textColor="@color/light" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
+

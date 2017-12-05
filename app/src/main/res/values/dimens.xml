@@ -14,6 +14,13 @@
     <dimen name="medium_small">20dp</dimen>
     <dimen name="elevation">2dp</dimen>
     <dimen name="margin_xxxs">1dp</dimen>
+    <dimen name="horizontal_margin">10dp</dimen>
+    <dimen name="text_size_add_milk">18sp</dimen>
     <dimen name="padding_medium">20dp</dimen>
+
     <dimen name="line_chart_height">150dp</dimen>
+
+    <dimen name="extra_small">5dp</dimen>
+    <integer name="spanCount">1</integer>
+
 </resources>
