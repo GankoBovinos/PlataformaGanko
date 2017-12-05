@@ -1,13 +1,85 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="ganko.movil.ganko1.ui.detail.meat.list.ListMeatFragment">
+    >
+    <data>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</FrameLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="@dimen/less_small"
+                android:paddingLeft="@dimen/less_small"
+                >
+
+                <Button
+                    android:id="@+id/edit_date"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitEnd"
+                    android:drawableRight="@drawable/ic_edit"
+                    android:text="Fecha de destete"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/daily_earning_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/less_small"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    tools:text="Ganancia diaria:" />
+
+                <TextView
+                    android:id="@+id/daily_earning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    tools:text="10 kg" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_chart_height"
+                    android:layout_marginTop="@dimen/less_small"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recylerMeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/less_small"
+                    tools:listitem="@layout/template_meat"
+                    app:spanCount="@integer/spanCount"/>
+
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="@dimen/small"
+            app:backgroundTint="@color/colorPrimary"
+            app:srcCompat="@drawable/ic_add"
+            app:fabSize="normal"
+            />
+    </FrameLayout>
+
+</layout>
+
+
