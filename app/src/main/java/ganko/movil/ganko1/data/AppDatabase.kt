@@ -2,6 +2,7 @@ package ganko.movil.ganko1.data
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
+import ganko.movil.ganko1.data.dao.BovineDao
 import ganko.movil.ganko1.data.dao.FarmDao
 import ganko.movil.ganko1.data.model.Farm
 
@@ -12,5 +13,6 @@ import ganko.movil.ganko1.data.model.Farm
 abstract class AppDatabase: RoomDatabase(){
 
     abstract fun farmDao(): FarmDao
+    abstract fun bovineDao(): BovineDao
 
 }

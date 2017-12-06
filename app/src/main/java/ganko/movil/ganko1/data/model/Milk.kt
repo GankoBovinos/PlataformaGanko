@@ -17,13 +17,13 @@ import java.sql.Date
 @SuppressLint("ParcelCreator")
 data class Milk (@PrimaryKey(autoGenerate = true) var localId:Int?,
                  var id : Int?,
-                 var id_bovino: String,
+                 var id_bovino: Int,
                  var produccion_litro: Float,
                  var fecha: Date,
                  var jornada: String
-) : Parcelable {
+                ) : Parcelable {
     @Ignore
-    constructor(id_bovino: String, produccion_litro: Float, fecha: Date, jornada: String) : this (
+    constructor(id_bovino: Int, produccion_litro: Float, fecha: Date, jornada: String) : this (
             null, null, id_bovino, produccion_litro, fecha, jornada
     )
 }
