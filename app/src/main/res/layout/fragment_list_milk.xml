@@ -5,7 +5,9 @@
     tools:context="ganko.movil.ganko1.ui.detail.milk.list.ListMilkFragment">
 
     <data>
-
+        <variable
+            name="milk"
+            type="ganko.movil.ganko1.data.model.Milk"/>
     </data>
 
     <FrameLayout

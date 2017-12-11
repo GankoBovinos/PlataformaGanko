@@ -5,7 +5,7 @@
     >
 
     <data>
-
+        <import type="android.view.View"/>
         <variable
             name="bovine"
             type="ganko.movil.ganko1.data.model.Bovine"/>
@@ -105,7 +105,9 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility='@{bovine.genero == "Macho" ? View.GONE : View.VISIBLE}'
+                        >
 
                         <Button
                             android:id="@+id/btnMilk"
@@ -137,7 +139,9 @@
                         android:layout_marginBottom="@dimen/margin_xxxs"
                         android:gravity="left|center"
                         android:paddingLeft="@dimen/medium_small"
-                        android:text="@string/reproductive" />
+                        android:text="@string/reproductive"
+                        android:visibility='@{bovine.genero == "Macho" ? View.GONE : View.VISIBLE}'
+                        />
 
                     <Button
                         android:id="@+id/btnBait"
