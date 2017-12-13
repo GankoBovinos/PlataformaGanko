@@ -23,23 +23,6 @@ class ServiceFragment : Fragment(), Injectable {
 
     @Inject
     lateinit var adapter: ServiceAdapter
-    val list: List<Service> = listOf(Service("30 de noviembre del 2017",
-            "8 de agosto del 2018",
-            "15 de diciembre del 2017",
-            "Natural",
-            null,
-            "AC20157",
-            "Cebu",
-            null),
-            Service("30 de noviembre del 2017",
-                    "8 de agosto del 2018",
-                    "15 de diciembre del 2017",
-                    "inseminacion",
-                    "251as",
-                    null,
-                    "Cebu",
-                    "Cali"))
-
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -49,7 +32,7 @@ class ServiceFragment : Fragment(), Injectable {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         recycler.adapter = adapter
-        adapter.services = list
+
     }
 
 

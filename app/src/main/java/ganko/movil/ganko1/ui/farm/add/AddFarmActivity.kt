@@ -48,7 +48,7 @@ class AddFarmActivity : AppCompatActivity(), Injectable {
 
     override fun onResume() {
         super.onResume()
-        dis add fabAddFarm.clicks()
+        dis add btnAddFarm.clicks()
                 .flatMap { validateForm(R.string.empty_fields, farm_name.text(), farm_location.text(), farm_size.text()) }
 //                .flatMap { addFarmViewModel.insertRemoteFarm(it[0],it[1],it[2].toInt()) }
 //                .subscribeByShot(
@@ -64,6 +64,11 @@ class AddFarmActivity : AppCompatActivity(), Injectable {
                             finish()
                         }
                 )
+        dis add btnCancelFarm.clicks().subscribeBy(
+                onNext = {
+                    finish()
+                }
+        )
     }
 
 }

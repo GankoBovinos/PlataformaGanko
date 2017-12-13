@@ -22,7 +22,6 @@ class ZealFragment : Fragment(), Injectable {
 
     @Inject
     lateinit var adapter: ZealAdapter
-    val list: List<Zeal> = listOf(Zeal("20 de Noviembre de 2017"), Zeal("19 de Noviembre de 2017"))
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -33,7 +32,7 @@ class ZealFragment : Fragment(), Injectable {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         recycler.adapter = adapter
-        adapter.zeals = list
+
     }
 
     companion object {

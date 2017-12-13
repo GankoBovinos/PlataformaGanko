@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/small"
                 android:layout_marginStart="@dimen/small"
-                android:text='@{zeal.fechaCelo}'
+                app:dateFormat='@{zeal.fechaCelo}'
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 tools:text="15 de Noviembre de 2017" />
 

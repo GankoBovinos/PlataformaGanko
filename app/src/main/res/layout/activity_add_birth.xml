@@ -34,11 +34,6 @@
 
                 <include layout="@layout/item_id_name"/>
 
-                <TextView
-                    style="@style/TextAppearance.AppCompat.Caption"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Número de partos" />
 
                 <TableLayout
                     android:id="@+id/nameAndIdContainer"
@@ -52,16 +47,16 @@
                         android:layout_marginBottom="@dimen/medium_small">
 
                         <TextView
-                            android:id="@+id/idBovine"
+                            android:id="@+id/birthNumber"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                             android:textSize="@dimen/text_size_add_milk"
                             android:textStyle="bold"
-                            android:text="Número de parto"/>
+                            android:text="Número de parto:"/>
 
                         <TextView
-                            android:id="@+id/idBovineValue"
+                            android:id="@+id/birthNumberValue"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -184,7 +179,6 @@
             >
             <Button
                 android:id="@+id/btn_cancel_birth"
-                android:background="@color/light_gray_card"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

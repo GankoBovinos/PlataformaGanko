@@ -83,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@{vaccine.fecha_vacunacion}"
+            app:dateFormat="@{vaccine.fecha_vacunacion}"
             app:layout_constraintStart_toStartOf="@+id/vaccineName"
             app:layout_constraintTop_toBottomOf="@+id/vaccineName"
             tools:text="12/11/2017" />

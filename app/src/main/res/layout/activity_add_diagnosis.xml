@@ -75,20 +75,7 @@
                         android:layout_marginStart="@dimen/small" />
                 </RadioGroup>
 
-                <TextView
-                    style="@style/TextAppearance.AppCompat.Caption"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Fecha de posible parto" />
 
-                <EditText
-                    android:id="@+id/possible_birth_date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/input"
-                    android:hint="Fecha de posible parto"
-                    android:inputType="date"
-                    android:layout_marginBottom="@dimen/small"/>
 
                 <TextView
                     style="@style/TextAppearance.AppCompat.Caption"
@@ -123,6 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Cancelar"
+                android:textColor="@color/colorPrimary"
                 style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
                 />
             <Button

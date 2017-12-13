@@ -121,7 +121,7 @@
                 android:layout_marginStart="80dp"
                 android:layout_marginLeft="80dp"
                 android:layout_marginTop="8dp"
-                android:text="@{health.fecha}"
+                app:dateFormat="@{health.fecha}"
                 app:layout_constraintStart_toEndOf="@+id/textView6"
                 app:layout_constraintTop_toTopOf="parent" />
 

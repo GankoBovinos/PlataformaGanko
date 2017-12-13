@@ -10,6 +10,10 @@ import ganko.movil.ganko1.ui.bovines.out.OutBovineActivity
 import ganko.movil.ganko1.ui.bovines.search.SearchBovineActivity
 import ganko.movil.ganko1.ui.detail.DetailBovineActivity
 import ganko.movil.ganko1.ui.detail.reproductive.ReproductiveActivity
+import ganko.movil.ganko1.ui.detail.reproductive.birth.add.AddBirthActivity
+import ganko.movil.ganko1.ui.detail.reproductive.diagnosis.add.AddDiagnosisActivity
+import ganko.movil.ganko1.ui.detail.reproductive.service.add.AddServiceActivity
+import ganko.movil.ganko1.ui.detail.reproductive.zeal.add.AddZealActivity
 import ganko.movil.ganko1.ui.farm.add.AddFarmActivity
 import ganko.movil.ganko1.ui.login.LoginActivity
 import ganko.movil.ganko1.ui.farm.FarmActivity
@@ -40,15 +44,15 @@ abstract class ActivityBuilders{
     abstract fun bindAddFarmActivity(): AddFarmActivity
 
     @ActivityScope
-    @ContributesAndroidInjector(modules = arrayOf(MenuFragments::class) )
+    @ContributesAndroidInjector(modules = [(MenuFragments::class)])
     abstract fun bindMenuActivity(): MenuActivity
 
     @ActivityScope
-    @ContributesAndroidInjector(modules = arrayOf(ReproductiveFragment::class))
+    @ContributesAndroidInjector(modules = [(ReproductiveFragment::class)])
     abstract  fun bindReproductiveActivity(): ReproductiveActivity
 
     @ActivityScope
-    @ContributesAndroidInjector(modules = arrayOf(DetailFragment::class))
+    @ContributesAndroidInjector(modules = [(DetailFragment::class)])
     abstract fun bindDetailBovineActivity(): DetailBovineActivity
 
     @ActivityScope
@@ -62,5 +66,21 @@ abstract class ActivityBuilders{
     @ActivityScope
     @ContributesAndroidInjector
     abstract fun bindSearchBovineActivity(): SearchBovineActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector
+    abstract fun bindAddBirthActivity(): AddBirthActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector
+    abstract fun bindAddDiagnosisActivity(): AddDiagnosisActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector
+    abstract fun bindAddServiceActivity(): AddServiceActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector
+    abstract fun bindAddZealActivity():AddZealActivity
 
 }

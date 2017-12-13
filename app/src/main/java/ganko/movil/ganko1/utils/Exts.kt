@@ -4,13 +4,17 @@ import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.content.SharedPreferences
+import android.databinding.BindingAdapter
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.TextView
 import io.reactivex.Observable
 import org.jetbrains.anko.toast
+import java.text.SimpleDateFormat
+import java.util.*
 import kotlin.reflect.KClass
 
 /**
@@ -74,5 +78,12 @@ fun Fragment.addFragment(container: Int, fragment: Fragment, backStack: Boolean 
             .add(container, fragment)
     if (backStack) transaction.addToBackStack(null)
     transaction.commit()
+}
+
+
+@BindingAdapter("app:dateFormat")
+fun applyFormat(textView: TextView, date: Date){
+    val format = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+    textView.text = format.format(date)
 }
 
