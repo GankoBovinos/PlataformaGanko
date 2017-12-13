@@ -19,8 +19,8 @@ import java.util.*
 @SuppressLint("ParcelCreator")
 data class Bovine(@PrimaryKey(autoGenerate = true) var localId:Int?,
                   var id : Int?,
-                  @SerializedName("id_bovino")
-                  var idBovino: String,
+                  @SerializedName("id_bovino_finca")
+                  var idBovinoFinca: String,
                   var imagen: String?,
                   var nombre: String?,
                   @SerializedName("fecha_nacimiento")

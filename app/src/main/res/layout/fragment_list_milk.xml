@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/small"
                 android:gravity="center"
-                android:text="Total produccion del mes:" />
+                android:text="@string/total_production" />
 
             <TextView
                 android:id="@+id/totalProductionValue"
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/small"
                 android:gravity="center"
-                android:text="Produccion promedio: " />
+                android:text="@string/average_production" />
 
             <TextView
                 android:id="@+id/averageProductionValue"

@@ -17,10 +17,12 @@
         android:id="@+id/containerBovine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/medium_small"
+        android:paddingTop="@dimen/small"
         android:paddingRight="@dimen/medium_small"
-        android:paddingLeft="@dimen/medium_small"
+        android:paddingLeft="@dimen/small"
         android:onClick="@{()->clickBovine.onNext(bovine)}"
+        android:background="@color/light"
+        android:layout_marginBottom="@dimen/margin_xxxs"
         >
         <TableRow>
             <TextView
@@ -112,6 +114,7 @@
                 android:layout_height="wrap_content"
                 style="@style/Base.TextAppearance.AppCompat.Body2"
                 android:text="@string/purpose"
+                android:layout_marginBottom="@dimen/small"
                 tools:text="Propósito:" />
             <TextView
                 android:id="@+id/bovinePurpose"

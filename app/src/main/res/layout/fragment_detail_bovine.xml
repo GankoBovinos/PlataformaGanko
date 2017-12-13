@@ -36,54 +36,14 @@
                     >
 
                     <ImageView
+                        android:id="@+id/imgBovine"
                         android:layout_width="match_parent"
                         android:layout_height="140dp"
                         android:src="@drawable/ic_android"
                         android:background="@color/img"
                         android:layout_marginBottom="@dimen/small" />
 
-                    <TextView
-                        android:id="@+id/bovine_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/TextAppearance.AppCompat.Medium"
-                        tools:text="Nombre:" />
-
-                    <TextView
-                        android:id="@+id/bovine_number"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/Base.TextAppearance.AppCompat.Body2"
-                        tools:text="Numero:" />
-
-                    <TextView
-                        android:id="@+id/bovine_birth_date"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/Base.TextAppearance.AppCompat.Body2"
-                        tools:text="Fecha de nacimiento:" />
-
-                    <TextView
-                        android:id="@+id/bovine_breed"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/Base.TextAppearance.AppCompat.Body2"
-                        tools:text="Raza:" />
-
-                    <TextView
-                        android:id="@+id/bovine_sex"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/Base.TextAppearance.AppCompat.Body2"
-                        tools:text="Sexo:" />
-
-                    <TextView
-                        android:id="@+id/bovine_purpose"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/small"
-                        style="@style/Base.TextAppearance.AppCompat.Body2"
-                        tools:text="Proposito:" />
+                    <include layout="@layout/item_bovine"/>
 
                 </LinearLayout>
 

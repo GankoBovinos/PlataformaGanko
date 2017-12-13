@@ -104,5 +104,8 @@
     <string name="date_text">Fecha</string>
     <string name="name">Nombre:</string>
     <string name="purpose">Propósito:</string>
+    <string name="total_production">Total produccion del mes:</string>
+    <string name="average_production">Produccion promedio:</string>
+    <string name="date_of_capture">Fecha de captura:</string>
 
 </resources>
