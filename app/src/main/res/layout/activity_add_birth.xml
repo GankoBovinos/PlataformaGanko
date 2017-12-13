@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="bovine"
+            type="ganko.movil.ganko1.data.model.Bovine"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginRight="@dimen/horizontal_margin"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/medium">
+
+                <include layout="@layout/item_id_name"/>
+
+
+                <TableLayout
+                    android:id="@+id/nameAndIdContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/medium">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/medium_small">
+
+                        <TextView
+                            android:id="@+id/birthNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textSize="@dimen/text_size_add_milk"
+                            android:textStyle="bold"
+                            android:text="Número de parto:"/>
+
+                        <TextView
+                            android:id="@+id/birthNumberValue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@{bovine.numero_partos}"
+                            tools:text="1"/>
+                    </TableRow>
+
+
+                </TableLayout>
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha de parto" />
+
+                <EditText
+                    android:id="@+id/birth_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="Fecha de parto"
+                    android:inputType="date"
+                    android:layout_marginBottom="@dimen/small"/>
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dias vacios" />
+
+                <EditText
+                    android:id="@+id/possible_birth_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="Dias vacios"
+                    android:inputType="date"
+                    android:layout_marginBottom="@dimen/small"/>
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Intervalo entre partos" />
+
+                <EditText
+                    android:id="@+id/novelty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:hint="Intervalo entre partos"
+                    android:inputType="text"
+                    android:layout_marginBottom="@dimen/small"/>
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cría" />
+                <RadioGroup
+                    android:id="@+id/calf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/small">
+                    <RadioButton
+                        android:id="@+id/calf_live"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:checked="true"
+                        android:text="Vivo"/>
+                    <RadioButton
+                        android:id="@+id/calf_died"
+                        android:layout_marginLeft="@dimen/small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Muerto"
+                        android:layout_marginStart="@dimen/small" />
+                </RadioGroup>
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sexo" />
+                <RadioGroup
+                    android:id="@+id/calf_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/small">
+                    <RadioButton
+                        android:id="@+id/calf_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:checked="true"
+                        android:text="Macho"/>
+                    <RadioButton
+                        android:id="@+id/calf_female"
+                        android:layout_marginLeft="@dimen/small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hembra"
+                        android:layout_marginStart="@dimen/small" />
+                </RadioGroup>
+
+
+
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <Button
+                android:id="@+id/btn_cancel_birth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cancelar"
+                style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+                />
+            <Button
+                android:id="@+id/btn_add_birth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Guardar"
+                style="@style/Widget.AppCompat.Button.Colored"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -6,6 +6,8 @@ import ganko.movil.ganko1.data.prefs.UserSession
 import ganko.movil.ganko1.di.ActivityScope
 import ganko.movil.ganko1.ui.bovines.BovineFragment
 import ganko.movil.ganko1.ui.detail.DetailBovineActivity
+import ganko.movil.ganko1.ui.bovines.add.AddBovineActivity
+import ganko.movil.ganko1.ui.detail.reproductive.ReproductiveActivity
 import ganko.movil.ganko1.ui.farm.FarmActivity
 import ganko.movil.ganko1.ui.login.LoginActivity
 import ganko.movil.ganko1.utils.putFragment
@@ -39,11 +41,12 @@ class MenuNavigation @Inject constructor(val activity: MenuActivity, val userSes
 
     }
 
-    fun navigateToMovements() {
-
+    fun navigateToMovements(){
+        activity.startActivity<AddBovineActivity>()
     }
 
-    fun navigateToPrairies() {
+    fun navigateToPrairies(){
+        activity.startActivity<ReproductiveActivity>()
 
     }
 

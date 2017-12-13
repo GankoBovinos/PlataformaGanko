@@ -22,4 +22,8 @@ class DiagnosisFragment : Fragment() {
         return inflater!!.inflate(R.layout.fragment_diagnosis, container, false)
     }
 
+    companion object {
+        fun instance(): DiagnosisFragment = DiagnosisFragment()
+    }
+
 }// Required empty public constructor

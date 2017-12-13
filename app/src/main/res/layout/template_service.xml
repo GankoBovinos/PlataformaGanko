@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="service"
+            type="ganko.movil.ganko1.data.model.Service"/>
+        <variable
+            name="clickDelete"
+            type="io.reactivex.subjects.Subject"/>
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/less_small">
+
+            <TextView
+                android:id="@+id/service_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:gravity="end"
+                android:text="Fecha servicio:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                app:layout_constraintBottom_toBottomOf="@+id/service_date"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/service_date" />
+
+            <TextView
+                android:id="@+id/service_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:layout_marginTop="@dimen/small"
+                app:dateFormat="@{service.fecha}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/imageView"
+                tools:text="20 de Noviembre del 2017" />
+
+            <TextView
+                android:id="@+id/possible_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:gravity="end"
+                android:text="Fecha de posible parto:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                app:layout_constraintBottom_toBottomOf="@+id/possible_birth_date"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/possible_birth_date" />
+
+            <TextView
+                android:id="@+id/possible_birth_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:layout_marginTop="@dimen/small"
+                app:dateFormat="@{service.fechaPosParto}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/body_condition_txt"
+                tools:text="30 de agosto del 2018" />
+
+            <TextView
+                android:id="@+id/palpation_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:gravity="end"
+                android:text="Fecha de palpación:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                app:layout_constraintBottom_toBottomOf="@+id/palpation_date"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/palpation_date" />
+
+            <TextView
+                android:id="@+id/palpation_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:layout_marginTop="@dimen/small"
+                app:dateFormat="@{service.fechaPalpacion}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/possible_txt"
+                tools:text="01 de diciembre del 2017" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginRight="@dimen/small"
+                android:layout_marginTop="@dimen/small"
+                android:contentDescription="@string/delete_service"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_cancel_gray" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <TextView
+                android:id="@+id/empadre_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:gravity="end"
+                android:text="Empadre:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                app:layout_constraintBottom_toBottomOf="@+id/empadre"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/empadre" />
+
+            <TextView
+                android:id="@+id/empadre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:layout_marginTop="@dimen/small"
+                android:text='@{service.empadre}'
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/palpation_date"
+                tools:text="Monta natural" />
+
+            <TextView
+                android:id="@+id/bull_code_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:layout_marginTop="@dimen/small"
+                android:gravity="end"
+                android:text="Número del animal:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:visibility='@{service.empadre == "Natural" ? View.VISIBLE : View.GONE }'
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/empadre_txt" />
+
+            <TextView
+                android:id="@+id/bull_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:text='@{service.numAnimal ?? ""}'
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:visibility='@{service.empadre == "Natural" ? View.VISIBLE : View.GONE }'
+                app:layout_constraintBottom_toBottomOf="@+id/bull_code_txt"
+                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/bull_code_txt"
+                tools:text="1205" />
+
+            <TextView
+                android:id="@+id/bull_breed_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:layout_marginTop="8dp"
+                android:gravity="end"
+                android:text="Raza del animal:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/straw_id_txt" />
+
+            <TextView
+                android:id="@+id/bull_breed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintBottom_toBottomOf="@+id/bull_breed_txt"
+                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/bull_breed_txt"
+                tools:text="Cebu" />
+
+            <TextView
+                android:id="@+id/straw_id_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:gravity="end"
+                android:text="Número de pajilla:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:visibility='@{service.empadre == "inseminacion" ? View.VISIBLE : View.GONE }'
+                app:layout_constraintBottom_toBottomOf="@+id/straw_id"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/straw_id" />
+
+            <TextView
+                android:id="@+id/straw_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:layout_marginTop="@dimen/small"
+                android:text='@{service.idPajilla ?? ""}'
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:visibility='@{service.empadre == "inseminacion" ? View.VISIBLE : View.GONE }'
+                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/bull_code_txt"
+                tools:text="5025" />
+
+            <TextView
+                android:id="@+id/origin_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:gravity="end"
+                android:text="Procedencia:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:visibility='@{service.empadre == "inseminacion" ? View.VISIBLE : View.GONE }'
+                app:layout_constraintBottom_toBottomOf="@+id/origin"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/origin" />
+
+            <TextView
+                android:id="@+id/origin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:layout_marginTop="@dimen/small"
+                android:text='@{service.procedencia ?? ""}'
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:visibility='@{service.empadre == "inseminacion" ? View.VISIBLE : View.GONE}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/bull_breed_txt"
+                tools:text="Popayán" />
+
+            <TextView
+                android:id="@+id/body_condition_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:layout_marginTop="@dimen/small"
+                android:gravity="end"
+                android:text="Condición corporal:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/service_date" />
+
+            <TextView
+                android:id="@+id/body_condition"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small"
+                android:layout_marginStart="@dimen/small"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintBottom_toBottomOf="@+id/body_condition_txt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/body_condition_txt"
+                tools:text="1.5" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+
+</layout>

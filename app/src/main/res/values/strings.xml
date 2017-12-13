@@ -107,5 +107,11 @@
     <string name="total_production">Total produccion del mes:</string>
     <string name="average_production">Produccion promedio:</string>
     <string name="date_of_capture">Fecha de captura:</string>
+    <string name="zeal">Celo</string>
+    <string name="service">Servicio</string>
+    <string name="diagnosis">Diagnóstico</string>
+    <string name="birth">Parto</string>
+    <string name="zeal_date">Fecha de celo:</string>
+    <string name="delete_service">Delete service</string>
 
 </resources>

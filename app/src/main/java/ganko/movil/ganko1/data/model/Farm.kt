@@ -13,14 +13,14 @@ import kotlinx.android.parcel.Parcelize
 @Entity
 @Parcelize
 @SuppressLint("ParcelCreator")
-class Farm(@PrimaryKey(autoGenerate = true) var localId:Int?,
+class Farm(@PrimaryKey(autoGenerate = true) var localId: Int?,
            var id: Int?,
-           var nombre:String,
-           var ubicacion:String,
-           var hectareas:Int,
+           var nombre: String,
+           var ubicacion: String,
+           var hectareas: Int,
            var usuario: Int,
            var toSync: Boolean? = false
-            ): Parcelable{
+) : Parcelable {
     @Ignore
-    constructor(nombre: String, ubicacion: String, hectareas: Int, usuario: Int): this(null,null, nombre, ubicacion, hectareas, usuario, true)
+    constructor(nombre: String, ubicacion: String, hectareas: Int, usuario: Int) : this(null, null, nombre, ubicacion, hectareas, usuario, true)
 }

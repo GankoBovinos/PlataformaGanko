@@ -3,4 +3,5 @@
     <dimen name="side_menu">210dp</dimen>
     <dimen name="list_bovine">230dp</dimen>
     <dimen name="horizontal_margin">100dp</dimen>
+    <integer name="spanCount">2</integer>
 </resources>

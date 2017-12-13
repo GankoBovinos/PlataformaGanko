@@ -12,7 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.farm.FarmActivity" />
+        <activity android:name=".ui.farm.FarmActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.login.password.PasswordActivity"
             android:theme="@style/NoActionBar" />
@@ -20,10 +25,7 @@
         <activity android:name=".ui.detail.DetailBovineActivity" />
         <activity android:name=".ui.menu.MenuActivity"/>
         <activity android:name=".ui.bovines.out.OutBovineActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".ui.login.LoginActivity" />
         <activity android:name=".ui.bovines.add.AddBovineActivity" />
