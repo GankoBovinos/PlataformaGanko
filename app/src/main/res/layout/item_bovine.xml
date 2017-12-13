@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/TextAppearance.AppCompat.Body1"
-                android:text="@{bovine.idBovino}"
+                android:text="@{bovine.codigo}"
                 tools:text="24D73A" />
         </TableRow>
         <TableRow>
@@ -72,7 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/TextAppearance.AppCompat.Body1"
-                android:text="@{bovine.fechaNacimiento}"
+                android:text="@{bovine.fechaNacimiento.toString()}"
                 tools:text="18/10/2007" />
         </TableRow>
         <TableRow>

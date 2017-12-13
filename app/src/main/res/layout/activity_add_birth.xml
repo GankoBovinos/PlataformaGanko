@@ -61,7 +61,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="@{bovine.numero_partos}"
+                            android:text="@{bovine.numeroPartos}"
                             tools:text="1"/>
                     </TableRow>
 
