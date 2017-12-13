@@ -13,11 +13,10 @@ import java.util.*
 /**
  * Created by jlbeltran94 on 15/11/2017.
  */
-//@Entity(foreignKeys = [(ForeignKey(entity = Bovine::class,
-//        parentColumns = ["localId"],
-//        childColumns = ["idBovino"],
-//        onDelete = ForeignKey.CASCADE))])
-@Entity
+@Entity(foreignKeys = [(ForeignKey(entity = Bovine::class,
+        parentColumns = ["localId"],
+        childColumns = ["idBovino"],
+        onDelete = ForeignKey.CASCADE))])
 @Parcelize
 @SuppressLint("ParcelCreator")
 class Zeal(@PrimaryKey(autoGenerate = true) var localId: Int?,

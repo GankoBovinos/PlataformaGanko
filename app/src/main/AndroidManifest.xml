@@ -13,10 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.farm.FarmActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity
             android:name=".ui.login.password.PasswordActivity"
@@ -32,6 +29,12 @@
         <activity android:name=".ui.detail.reproductive.ReproductiveActivity"
             android:theme="@style/NoActionBar"/>
         <activity android:name=".ui.bovines.search.SearchBovineActivity"/>
+        <activity android:name=".ui.detail.reproductive.zeal.add.AddZealActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 </manifest>

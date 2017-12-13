@@ -2,6 +2,7 @@ package ganko.movil.ganko1.data.model
 
 import android.annotation.SuppressLint
 import android.arch.persistence.room.Entity
+import android.arch.persistence.room.ForeignKey
 import android.arch.persistence.room.Ignore
 import android.arch.persistence.room.PrimaryKey
 import android.os.Parcelable
@@ -13,16 +14,15 @@ import java.util.*
  * Created by jlbeltran94 on 29/11/2017.
  */
 
-//@Entity(foreignKeys = [(ForeignKey(entity = Bovine::class,
-//        parentColumns = ["localId"],
-//        childColumns = ["idBovino"],
-//        onDelete = ForeignKey.CASCADE))])
-@Entity
+@Entity(foreignKeys = [(ForeignKey(entity = Bovine::class,
+        parentColumns = ["localId"],
+        childColumns = ["idBovino"],
+        onDelete = ForeignKey.CASCADE))])
 @Parcelize
 @SuppressLint("ParcelCreator")
 class Birth(@PrimaryKey(autoGenerate = true) var localId: Int?,
             var id: Int?,
-            @SerializedName("idBovino")
+            @SerializedName("id_bovino")
             var idBovino: Int,
             var fecha: Date,
             @SerializedName("dias_vacios")

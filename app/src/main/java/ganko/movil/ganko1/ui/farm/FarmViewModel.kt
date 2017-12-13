@@ -3,7 +3,6 @@ package ganko.movil.ganko1.ui.farm
 import android.arch.lifecycle.ViewModel
 import ganko.movil.ganko1.data.dao.FarmDao
 import ganko.movil.ganko1.data.model.Farm
-import ganko.movil.ganko1.data.model.FarmResponse
 import ganko.movil.ganko1.data.prefs.UserSession
 import ganko.movil.ganko1.net.FarmClient
 import ganko.movil.ganko1.net.ResponseData
@@ -24,7 +23,7 @@ class FarmViewModel @Inject constructor(val farmClient: FarmClient, val farmDao:
 
     fun getAllLocal(): Flowable<List<Farm>> = farmDao.all(userSession.userId).applySchedulers()
 
-    fun deleteRemote(id:Long): Observable<ResponseData<FarmResponse>>
+    fun deleteRemote(id:Long): Observable<ResponseData<String>>
             = farmClient.deleteFinca(userSession.token,id).applySchedulers()
 
     fun deleteLocal(farm: Farm)

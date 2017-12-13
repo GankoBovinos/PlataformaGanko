@@ -66,13 +66,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Evento" />
+                    <Spinner
+                        android:id="@+id/event_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/events_types"
+                        />
 
                     <EditText
-                        android:id="@+id/event"
+                        android:id="@+id/other_event"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/input"
-                        android:hint="Evento"
+                        android:hint="Otro"
                         android:inputType="text"
                         android:layout_marginBottom="@dimen/small" />
 

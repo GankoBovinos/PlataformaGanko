@@ -108,4 +108,13 @@
     <string name="birth">Parto</string>
     <string name="zeal_date">Fecha de celo:</string>
     <string name="delete_service">Delete service</string>
+    <string-array name="events_types">
+        <item>Corte de ombligo</item>
+        <item>Identificación</item>
+        <item>Descorné</item>
+        <item>Arreglo de cascos</item>
+        <item>Castración</item>
+        <item>Secado</item>
+        <item>Otro</item>
+    </string-array>
 </resources>

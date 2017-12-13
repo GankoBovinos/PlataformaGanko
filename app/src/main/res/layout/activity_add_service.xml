@@ -111,7 +111,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:visibility='@{state == 1 ? View.VISIBLE : View.GONE}'
-                    tools:visibility="gone">
+                    tools:visibility="visible">
 
                     <TextView
                         style="@style/TextAppearance.AppCompat.Caption"
