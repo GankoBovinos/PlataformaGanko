@@ -41,7 +41,7 @@
                     android:id="@+id/idBovine"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text='@{bovine.id_bovino}'
+                    android:text='@{bovine.codigo}'
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:background="@drawable/input"
                     tools:text="AC12005"
@@ -55,7 +55,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text='@{bovine.name}'
+                    android:text='@{bovine.nombre}'
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:background="@drawable/input"
                     tools:text="Luna"

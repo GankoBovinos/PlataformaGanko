@@ -28,6 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/small"
                 style="@style/TextAppearance.AppCompat.Body2"
+                android:text="@string/date_of_capture"
                 tools:text="Fecha de captura:" />
 
             <TextView
@@ -37,7 +38,15 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 style="@style/TextAppearance.AppCompat.Body1"
+                android:text="@{milk.fecha.toString()}"
                 tools:text="29/11/2017" />
+
+            <ImageView
+                android:id="@+id/iconDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_close"
+                />
         </TableRow>
 
         <TableRow

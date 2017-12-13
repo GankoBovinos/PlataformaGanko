@@ -7,6 +7,7 @@ import android.content.SharedPreferences
 import dagger.Module
 import dagger.Provides
 import ganko.movil.ganko1.data.AppDatabase
+import ganko.movil.ganko1.data.dao.BovineDao
 import ganko.movil.ganko1.data.dao.FarmDao
 import javax.inject.Singleton
 
@@ -30,6 +31,11 @@ class AppModule{
     @Provides
     fun providesFarmDao(appDatabase: AppDatabase): FarmDao =
             appDatabase.farmDao()
+
+    @Singleton
+    @Provides
+    fun providesBovineDao(appDatabase: AppDatabase): BovineDao =
+            appDatabase.bovineDao()
 
     @Singleton
     @Provides

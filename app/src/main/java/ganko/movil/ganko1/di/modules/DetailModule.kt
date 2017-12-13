@@ -12,7 +12,6 @@ import ganko.movil.ganko1.ui.detail.meat.add.AddMeatFragment
 import ganko.movil.ganko1.ui.detail.meat.list.ListMeatFragment
 import ganko.movil.ganko1.ui.detail.milk.MilkBovineFragment
 import ganko.movil.ganko1.ui.detail.milk.add.AddMilkFragment
-import ganko.movil.ganko1.ui.detail.milk.list.ListMilkFragment
 import ganko.movil.ganko1.ui.detail.movements.MovementsBovineFragment
 import ganko.movil.ganko1.ui.detail.vaccination.VaccinationBovineFragment
 
@@ -57,10 +56,6 @@ abstract class DetailFragment{
     @FragmentScope
     @ContributesAndroidInjector
     abstract fun bindAddMilkFragment(): AddMilkFragment
-
-    @FragmentScope
-    @ContributesAndroidInjector
-    abstract fun bindListMilkFragment(): ListMilkFragment
 
     @FragmentScope
     @ContributesAndroidInjector

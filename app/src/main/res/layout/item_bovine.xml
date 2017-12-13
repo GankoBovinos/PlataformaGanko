@@ -13,57 +13,117 @@
             type="io.reactivex.subjects.PublishSubject"/>
     </data>
 
-    <LinearLayout
-        android:orientation="vertical"
+    <TableLayout
+        android:id="@+id/containerBovine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/medium_small"
+        android:paddingTop="@dimen/small"
         android:paddingRight="@dimen/medium_small"
-        android:paddingLeft="@dimen/medium_small"
+        android:paddingLeft="@dimen/small"
         android:onClick="@{()->clickBovine.onNext(bovine)}"
+        android:background="@color/light"
+        android:layout_marginBottom="@dimen/margin_xxxs"
         >
+        <TableRow>
+            <TextView
 
-        <TextView
-            android:id="@+id/bovine_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/TextAppearance.AppCompat.Medium"
-            tools:text="Nombre:" />
+                android:id="@+id/bovineNameTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:text="@string/name"
+                android:textStyle="bold"
+                tools:text="Nombre:" />
+            <TextView
+                android:id="@+id/bovineName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:text="@{bovine.nombre}"
+                tools:text="CLARA BELLA" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/bovineNumberTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Base.TextAppearance.AppCompat.Body2"
+                android:text="@string/number"
+                tools:text="Numero:" />
+            <TextView
+                android:id="@+id/bovineNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:text="@{bovine.codigo}"
+                tools:text="24D73A" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/bovineBirthDateTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/small"
+                style="@style/Base.TextAppearance.AppCompat.Body2"
+                android:text="@string/birth_date"
+                tools:text="Fecha de nacimiento:" />
+            <TextView
+                android:id="@+id/bovineBirthDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:text="@{bovine.fechaNacimiento.toString()}"
+                tools:text="18/10/2007" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/bovineBreedTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Base.TextAppearance.AppCompat.Body2"
+                android:text="@string/breed"
+                tools:text="Raza:" />
+            <TextView
+                android:id="@+id/bovineBreed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:text="@{bovine.raza}"
+                tools:text="Holstein" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/bovineSexTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Base.TextAppearance.AppCompat.Body2"
+                android:text="@string/sex"
+                tools:text="Sexo:" />
+            <TextView
+                android:id="@+id/bovineSex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:text="@{bovine.genero}"
+                tools:text="Hembra" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:id="@+id/bovinePurposeTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Base.TextAppearance.AppCompat.Body2"
+                android:text="@string/purpose"
+                android:layout_marginBottom="@dimen/small"
+                tools:text="Propósito:" />
+            <TextView
+                android:id="@+id/bovinePurpose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:text="@{bovine.proposito}"
+                tools:text="Leche" />
+        </TableRow>
+    </TableLayout>
 
-        <TextView
-            android:id="@+id/bovine_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Base.TextAppearance.AppCompat.Body2"
-            tools:text="Numero:" />
-
-        <TextView
-            android:id="@+id/bovine_birth_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Base.TextAppearance.AppCompat.Body2"
-            tools:text="Fecha de nacimiento:" />
-
-        <TextView
-            android:id="@+id/bovine_breed"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Base.TextAppearance.AppCompat.Body2"
-            tools:text="Raza:" />
-
-        <TextView
-            android:id="@+id/bovine_sex"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Base.TextAppearance.AppCompat.Body2"
-            tools:text="Sexo:" />
-
-        <TextView
-            android:id="@+id/bovine_purpose"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Base.TextAppearance.AppCompat.Body2"
-            tools:text="Proposito:" />
-
-    </LinearLayout>
 </layout>
