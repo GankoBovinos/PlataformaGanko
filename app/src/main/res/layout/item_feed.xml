@@ -1,138 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginBottom="@dimen/margin_xxxs"
-    android:background="@color/light"
-    android:padding="@dimen/less_small"
     >
 
-    <TableRow
-        android:id="@+id/dateAndValueContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <data>
+        <variable
+            name="feed"
+            type="ganko.movil.ganko1.data.model.Feed"/>
+    </data>
 
-        <TextView
-            android:id="@+id/dateView"
-            style="@style/TextAppearance.AppCompat.Body2"
-            tools:text="Fecha:"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/small" />
-
-        <TextView
-            android:id="@+id/date"
-            style="@style/TextAppearance.AppCompat.Body1"
-            tools:text="30/11/2017"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center" />
-        <ImageView
-            android:id="@+id/iconDelete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_close"
-            />
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/rationAndValueContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/rationView"
-            style="@style/TextAppearance.AppCompat.Body2"
-            tools:text="Ración:"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/small" />
-
-        <TextView
-            android:id="@+id/ration"
-            style="@style/TextAppearance.AppCompat.Body1"
-            tools:text="15 Kg"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/productAndValueContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/productView"
-            style="@style/TextAppearance.AppCompat.Body2"
-            tools:text="Producto:"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/small" />
-
-        <TextView
-            android:id="@+id/product"
-            style="@style/TextAppearance.AppCompat.Body1"
-            tools:text="Bloque nutricional:"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/kiloAndValueContainer"
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
-        <TextView
-            android:id="@+id/valueXKiloView"
-            style="@style/TextAppearance.AppCompat.Body2"
-            tools:text="Valor x Kilo:"
+        android:layout_marginBottom="@dimen/margin_xxxs"
+        android:background="@color/light"
+        android:padding="@dimen/less_small">
+
+        <TableRow
+            android:id="@+id/dateAndValueContainer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/small"
-            />
-        <TextView
-            android:id="@+id/valueXKilo"
-            style="@style/TextAppearance.AppCompat.Body1"
-            tools:text="10000"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            />
+            android:layout_height="wrap_content">
 
-    </TableRow>
+            <TextView
+                android:id="@+id/dateView"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small"
+                android:text="@string/date_text"
+                tools:text="Fecha:"
+                />
 
-    <TableRow
-        android:id="@+id/totalAndValueContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-        <TextView
-            android:id="@+id/totalValueView"
-            style="@style/TextAppearance.AppCompat.Body2"
-            tools:text="Valor Total:"
+            <TextView
+                android:id="@+id/date"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                app:dateFormat="@{feed.fecha}"
+                tools:text="30/11/2017"
+                />
+
+            <ImageView
+                android:id="@+id/iconDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_close" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/rationAndValueContainer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/small"
-            />
-        <TextView
-            android:id="@+id/totalValue"
-            style="@style/TextAppearance.AppCompat.Body1"
-            tools:text="150000"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center" />
+            android:layout_height="wrap_content">
 
-    </TableRow>
-</TableLayout>
+            <TextView
+                android:id="@+id/rationView"
+                style="@style/TextAppearance.AppCompat.Body2"
+                tools:text="Ración:"
+                android:text="@string/ration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small" />
+
+            <TextView
+                android:id="@+id/ration"
+                style="@style/TextAppearance.AppCompat.Body1"
+                tools:text="15 Kg"
+                android:text="@{feed.racion}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/productAndValueContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/productView"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:text="@string/product"
+                tools:text="Producto:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small" />
+
+            <TextView
+                android:id="@+id/product"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:text="@{feed.producto}"
+                tools:text="Bloque nutricional:"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/kiloAndValueContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/valueXKiloView"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:text="@string/kilo_value"
+                tools:text="Valor x Kilo:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small" />
+
+            <TextView
+                android:id="@+id/valueXKilo"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:text="@{feed.valorKilo}"
+                tools:text="10000"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/totalAndValueContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/totalValueView"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:text="@string/total_value"
+                tools:text="Valor Total:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small" />
+
+            <TextView
+                android:id="@+id/totalValue"
+                style="@style/TextAppearance.AppCompat.Body1"
+                tools:text="150000"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+        </TableRow>
+    </TableLayout>
+</layout>

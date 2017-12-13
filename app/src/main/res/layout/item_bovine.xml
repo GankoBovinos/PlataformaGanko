@@ -2,6 +2,7 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
     <data>
@@ -72,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/TextAppearance.AppCompat.Body1"
-                android:text="@{bovine.fechaNacimiento}"
+                app:dateFormat="@{bovine.fechaNacimiento}"
                 tools:text="18/10/2007" />
         </TableRow>
         <TableRow>
