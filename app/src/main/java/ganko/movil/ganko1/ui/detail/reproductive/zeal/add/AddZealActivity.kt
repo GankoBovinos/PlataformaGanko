@@ -13,7 +13,7 @@ class AddZealActivity:AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_manage_bovine)
+        setContentView(R.layout.activity_add_zeal)
     }
 
 }
