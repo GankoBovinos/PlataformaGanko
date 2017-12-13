@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@{bovine.idBovinoFinca}"
+                android:text="@{bovine.codigo}"
                 tools:text="33AB45" />
         </TableRow>
 

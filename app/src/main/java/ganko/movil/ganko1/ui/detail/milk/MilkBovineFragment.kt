@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ganko.movil.ganko1.R
-import ganko.movil.ganko1.databinding.FragmentListMilkBinding
+import ganko.movil.ganko1.databinding.FragmentMilkBovineBinding
 import ganko.movil.ganko1.ui.adapters.MilkAdapter
 import javax.inject.Inject
 
@@ -21,7 +21,7 @@ class MilkBovineFragment : Fragment() {
 
     @Inject
     lateinit var adapter : MilkAdapter
-    lateinit var binding : FragmentListMilkBinding
+    lateinit var binding : FragmentMilkBovineBinding
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
