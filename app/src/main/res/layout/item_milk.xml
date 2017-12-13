@@ -39,6 +39,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 style="@style/TextAppearance.AppCompat.Body1"
+                app:dateFormat="@{milk.fecha}"
                 tools:text="29/11/2017" />
 
             <ImageView

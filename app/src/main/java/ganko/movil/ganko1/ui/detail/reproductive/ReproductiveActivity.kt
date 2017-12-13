@@ -25,7 +25,6 @@ class ReproductiveActivity : AppCompatActivity(), HasSupportFragmentInjector {
     lateinit var factory: ViewModelProvider.Factory
     @Inject
     lateinit var adapter: ReproductiveAdapter
-    val reproductiveViewModel: ReproductiveViewModel by lazy { buildViewModel(factory, ReproductiveViewModel::class) }
     lateinit var binding: ActivityReproductiveBinding
     lateinit var adaper: ReproductiveAdapter
 
