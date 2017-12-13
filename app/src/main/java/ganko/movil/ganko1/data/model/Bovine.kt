@@ -6,6 +6,7 @@ import android.arch.persistence.room.Entity
 import android.arch.persistence.room.Ignore
 import android.arch.persistence.room.PrimaryKey
 import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 import java.util.*
 
@@ -18,37 +19,48 @@ import java.util.*
 @SuppressLint("ParcelCreator")
 data class Bovine(@PrimaryKey(autoGenerate = true) var localId:Int?,
                   var id : Int?,
-                  var id_bovino: String,
+                  @SerializedName("id_bovino_finca")
+                  var idBovinoFinca: String,
                   var imagen: String?,
-                  var name: String?,
-                  var fecha: Date,
+                  var nombre: String?,
+                  @SerializedName("fecha_nacimiento")
+                  var fechaNacimiento: Date,
+                  @SerializedName("fecha_nacimiento")
+                  var fechaIngreso: Date?,
                   var genero: String,
                   var proposito: String,
                   var peso: Int,
                   var color: String?,
                   var raza: String?,
-                  var id_madre: String?,
-                  var id_padre: String?,
-                  var salida: String?,
-                  var lote: String?,
-                  var salida_por: String?,
-                  var numero_partos: Int?,
-                  var parto_fallo: String?,
-                  var fecha_salida: Date?,
+                  @SerializedName("id_madre")
+                  var idMadre: String?,
+                  @SerializedName("id_padre")
+                  var idPadre: String?,
+                  var pradera: String?,
+                  @SerializedName("salida_por")
+                  var salidaPor: String?,
+                  @SerializedName("numero_partos")
+                  var numeroPartos: Int?,
+                  @SerializedName("parto_fallo")
+                  var partoFallo: String?,
+                  @SerializedName("fecha_salida")
+                  var fechaSalida: Date?,
+                  @SerializedName("precio_compra")
+                  var precioCompra: Int?,
+                  @SerializedName("precio_venta")
+                  var precioVenta : Int?,
                   var finca: Int,
                   var usuario: Int,
-                  var fecha_compra: Date?,
-                  var precio_compra : Int?,
-                  var precio_venta : Int?,
                   var toSync : Boolean? = false
 ): Parcelable {
 
     @Ignore
-    constructor(id_bovino: String, imagen: String?, name: String?, fecha: Date, genero: String, proposito: String,
-                peso: Int, color: String?, raza: String?, id_madre: String?, id_padre: String?, salida: String?,
-                lote: String?, salida_por: String?, numero_partos: Int?, parto_fallo: String?, fecha_salida: Date?,
-                finca: Int, usuario: Int, fecha_compra: Date?, precio_compra: Int?, precio_venta: Int?): this (
-            null, null, id_bovino, imagen, name, fecha, genero, proposito, peso, color, raza, id_madre, id_padre, salida, lote,
-            salida_por, numero_partos, parto_fallo, fecha_salida, finca, usuario, fecha_compra, precio_compra, precio_venta, true )
+    constructor(idBovino: String, imagen: String?, nombre: String?, fechaNacimiento: Date, fechaIngreso: Date?,
+                genero: String, proposito: String, peso: Int, color: String?, raza: String?, idMadre: String?,
+                idPadre: String?, pradera: String?, salidaPor: String?, numeroPartos: Int?, partoFallo: String?,
+                fechaSalida: Date?, precioCompra: Int?, precioVenta: Int?, finca: Int, usuario: Int): this (
+            null, null, idBovino, imagen, nombre, fechaNacimiento, fechaIngreso, genero, proposito,
+            peso, color, raza, idMadre, idPadre, pradera, salidaPor, numeroPartos, partoFallo, fechaSalida,
+            precioCompra, precioVenta, finca, usuario, true )
 }
 

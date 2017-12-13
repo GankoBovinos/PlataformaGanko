@@ -37,7 +37,6 @@ class BovineAdapter @Inject constructor() : RecyclerView.Adapter<BovineAdapter.B
 
     override fun getItemCount(): Int = bovines.size
 
-
     class BovineHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val binding: ItemBovineBinding = DataBindingUtil.bind(itemView)
     }

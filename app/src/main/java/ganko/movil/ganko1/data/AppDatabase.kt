@@ -2,6 +2,7 @@ package ganko.movil.ganko1.data
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
+import ganko.movil.ganko1.data.dao.BovineDao
 import android.arch.persistence.room.TypeConverter
 import android.arch.persistence.room.TypeConverters
 import ganko.movil.ganko1.data.dao.FarmDao
@@ -28,5 +29,6 @@ object DateConverter{
 abstract class AppDatabase: RoomDatabase(){
 
     abstract fun farmDao(): FarmDao
+    abstract fun bovineDao(): BovineDao
 
 }
