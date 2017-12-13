@@ -9,11 +9,14 @@
         <variable
             name="milk"
             type="ganko.movil.ganko1.data.model.Milk"/>
+        <variable
+            name="clickDelete"
+            type="io.reactivex.subjects.PublishSubject"/>
     </data>
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="@dimen/less_small"
         android:background="@color/light"
         android:layout_marginBottom="@dimen/margin_xxxs">
@@ -47,6 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_close"
+                android:onClick="@{()->clickDelete.onNext(milk)}"
                 />
         </TableRow>
 

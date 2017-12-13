@@ -8,12 +8,15 @@ import ganko.movil.ganko1.R
 import ganko.movil.ganko1.data.model.Milk
 import ganko.movil.ganko1.databinding.ItemMilkBinding
 import ganko.movil.ganko1.utils.inflate
+import io.reactivex.subjects.PublishSubject
 import javax.inject.Inject
 
 /**
  * Created by Asus on 30/11/2017.
  */
 class MilkAdapter @Inject constructor() : RecyclerView.Adapter<MilkAdapter.MilkHolder>() {
+
+    val clickDelete = PublishSubject.create<Milk>()
 
     var milks : List<Milk> = emptyList()
         set(value){
@@ -26,6 +29,7 @@ class MilkAdapter @Inject constructor() : RecyclerView.Adapter<MilkAdapter.MilkH
 
     override fun onBindViewHolder(holder: MilkHolder, position: Int) {
         holder.binding.milk = milks[position]
+        holder.binding.clickDelete = clickDelete
     }
 
     override fun getItemCount(): Int = milks.size
